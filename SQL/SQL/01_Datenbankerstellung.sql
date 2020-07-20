@@ -24,10 +24,10 @@ go
 create table Persons (
 person_id						int				not null,
 firstname						varchar(50)		not null,
-lastname						varchar(50)		not null,
+lastname						varchar(50)		null,
 email							varchar(50)		not null,
-phone_nr						varchar(20)		not null,
-manager_id						int				not null
+phone_nr						varchar(20)		null,
+manager_id						int				null
 );
 go
 
@@ -52,9 +52,9 @@ go
 
 create table Sellers (
 seller_id						int				not null,
-subscriptions_id				int				not null,
+subscriptions_id				int				null,
 "description"					text			null,
-last_update						datetime		not null
+last_update						datetime		null
 );
 go
 
@@ -89,8 +89,8 @@ credit_cheks_id					int				not null,
 employee_id						int				not null,
 seller_id						int				not null,
 visit_date						date			not null,
-approved						bit				not null,
-approved_on						datetime		not null
+approved						bit				null,
+approved_on						datetime		null
 );
 go
 
@@ -99,8 +99,8 @@ quality_chek_id					int				not null,
 inspector_id					int				not null,
 seller_id						int				not null,
 round_chek						tinyint			not null,
-approved						bit				not null,
-approved_on						datetime		not null
+approved						bit				null,
+approved_on						datetime		null
 );
 go
 
@@ -108,7 +108,7 @@ create table Invoices(
 invoice_id						int				not null,
 person_id						int				not null,
 vat								decimal(5,2)	not null,
-paid_on							datetime		not null,
+paid_on							datetime		null,
 created_on						datetime		not null
 );
 go

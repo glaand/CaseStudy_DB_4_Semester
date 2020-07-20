@@ -25,11 +25,11 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>01_Datenbankerstellung.sql</FullPath>
         </FileNode>
-        <FileNode Name="Constraints.sql">
+        <FileNode Name="02_Constraints.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Constraints.sql</FullPath>
+          <FullPath>02_Constraints.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
