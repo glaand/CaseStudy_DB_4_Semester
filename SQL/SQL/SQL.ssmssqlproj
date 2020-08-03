@@ -25,11 +25,23 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>01_Datenbankerstellung.sql</FullPath>
         </FileNode>
-        <FileNode Name="02_Constraints.sql">
+        <FileNode Name="02_01_Constraint-Primary-Keys.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>02_Constraints.sql</FullPath>
+          <FullPath>02_01_Constraint-Primary-Keys.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02_02_Constraint-Foreign-Keys.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>02_02_Constraint-Foreign-Keys.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02_03_Constraint-Conditions.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>02_03_Constraint-Conditions.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
