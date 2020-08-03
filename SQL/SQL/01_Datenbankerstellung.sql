@@ -39,7 +39,7 @@ event_date						datetime		not null
 );
 go
 
-create table Landlord (
+create table Landlords (
 landlord_id						int				not null
 )
 go
@@ -60,7 +60,7 @@ go
 
 create table Inspectors (
 inspector_id					int				not null,
-salary_hourly					decimal(6,2)	not null
+hourly_salary					decimal(6,2)	not null
 );
 go
 
@@ -85,7 +85,7 @@ employee_role_id				int				not null,
 go
 
 create table CreditChecks (
-credit_cheks_id					int				not null,
+credit_check_id					int				not null,
 employee_id						int				not null,
 seller_id						int				not null,
 visit_date						date			not null,
@@ -94,11 +94,11 @@ approved_on						datetime		null
 );
 go
 
-create table QualityCheks (
-quality_chek_id					int				not null,
+create table QualityChecks (
+quality_check_id				int				not null,
 inspector_id					int				not null,
 seller_id						int				not null,
-round_chek						tinyint			not null,
+round_check						tinyint			not null,
 approved						bit				null,
 approved_on						datetime		null
 );
@@ -141,7 +141,7 @@ subscription_id					int				not null
 go
 
 create table Subscriptions (
-subscritpion_id					int				not null,
+subscription_id					int				not null,
 "name"							varchar(50)		not null,
 duration						int				not null,
 rental_properties_quantity		tinyint			not null,
@@ -194,5 +194,4 @@ district_id						int				not null,
 district						varchar(50)		not null,
 );
 go
-
 
