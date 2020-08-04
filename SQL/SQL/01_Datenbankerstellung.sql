@@ -152,7 +152,7 @@ go
 create table Areas (
 	area_id							int				not null,
 	latitude						decimal(9,6)	not null,
-	longtitude						decimal(9,6)	not null,
+	longitude						decimal(9,6)	not null,
 	address_id						int				not null,
 	additional_info					varchar(50)		null,
 	"square"						decimal(6,2)	not null,
