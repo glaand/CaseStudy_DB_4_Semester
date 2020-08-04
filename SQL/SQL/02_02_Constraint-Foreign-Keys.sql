@@ -27,11 +27,12 @@ alter table "Events"
 add constraint FK_Events_Areas foreign key (area_id) references Areas (area_id);
 go
 
--- Fremdschlüssel Landlords
+-- Fremdschlüssel Landlords (IS-A Beziehung)
 
 alter table Landlords
-add constraint FK_Landlords_Persons foreign key (person_id) references Persons (person_id);
+add constraint FK_Landlords_Persons foreign key (landlord_id) references Persons (person_id);
 go
+
 -- Fremdschlüssel RentalPropertyReservations
 
 alter table RentalPropertyReservations
@@ -48,20 +49,21 @@ alter table Sellers
 add constraint FK_Sellers_Subscriptions foreign key (subscription_id) references Subscriptions (subscription_id);
 go
 
+-- (IS-A Beziehung)
 alter table Sellers
-add constraint FK_Sellers_Persons foreign key (person_id) references Persons (person_id);
+add constraint FK_Sellers_Persons foreign key (seller_id) references Persons (person_id);
 go
 
--- Fremdschlüssel Inspectors
+-- Fremdschlüssel Inspectors (IS-A Beziehung)
 
 alter table Inspectors
-add constraint FK_Inspectors_Persons foreign key (person_id) references Persons (person_id);
+add constraint FK_Inspectors_Persons foreign key (inspector_id) references Persons (person_id);
 go
 
--- Fremdschlüssel Visitors
+-- Fremdschlüssel Visitors (IS-A Beziehung)
 
 alter table Visitors
-add constraint FK_Visitors_Persons foreign key (person_id) references Persons (person_id);
+add constraint FK_Visitors_Persons foreign key (visitor_id) references Persons (person_id);
 go
 
 -- Fremdschlüssel Employees
@@ -70,8 +72,10 @@ alter table Employees
 add constraint FK_Employees_EmployeeRoles foreign key (employee_role_id) references EmployeeRoles (employee_role_id);
 go
 
+-- (IS-A Beziehung)
+
 alter table Employees
-add constraint FK_Employees_Persons foreign key (person_id) references Persons (person_id);
+add constraint FK_Employees_Persons foreign key (employee_id) references Persons (person_id);
 go
 
 -- Fremdschlüssel CreditChecks
@@ -116,8 +120,10 @@ alter table SalaryOrders
 add constraint FK_SalaryOrders_Persons foreign key (person_id) references Persons (person_id);
 go
 
+-- (IS-A Beziehung)
+
 alter table SalaryOrders
-add constraint FK_SalaryOrders_Orders foreign key (order_id) references Orders (order_id);
+add constraint FK_SalaryOrders_Orders foreign key (salary_order_id) references Orders (order_id);
 go
 
 -- Fremdschlüssel SubscriptionsOrders
@@ -126,8 +132,10 @@ alter table SubscriptionsOrders
 add constraint FK_SubscriptionsOrders_Subscriptions foreign key (subscription_id) references Subscriptions (subscription_id);
 go
 
+-- (IS-A Beziehung)
+
 alter table SubscriptionsOrders
-add constraint FK_SubscriptionsOrders_Orders foreign key (order_id) references Orders (order_id);
+add constraint FK_SubscriptionsOrders_Orders foreign key (subscription_order_id) references Orders (order_id);
 go
 
 -- Fremdschlüssel Areas
