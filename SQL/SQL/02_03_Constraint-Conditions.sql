@@ -40,7 +40,7 @@ go
 
 -- Grundwert der Mehrwertsteuer festlegen.
 alter table Invoices
-add default (8.00) for vat;
+add default (7.70) for vat;
 go
 
 -- Ein Bezirk ist einmalig.

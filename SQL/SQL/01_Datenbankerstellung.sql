@@ -40,7 +40,8 @@ event_date						datetime		not null
 go
 
 create table Landlords (
-landlord_id						int				not null
+landlord_id						int				not null,
+person_id						int				not null
 )
 go
 
@@ -52,29 +53,33 @@ go
 
 create table Sellers (
 seller_id						int				not null,
-subscriptions_id				int				null,
+subscription_id					int				null,
 "description"					text			null,
-last_update						datetime		null
+last_update						datetime		null,
+person_id						int				not null
 );
 go
 
 create table Inspectors (
 inspector_id					int				not null,
-hourly_salary					decimal(6,2)	not null
+hourly_salary					decimal(6,2)	not null,
+person_id						int				not null
 );
 go
 
 create table Visitors (
 visitor_id						int				not null,
 "password"						text			not null,
-wants_newsletter				bit				not null
+wants_newsletter				bit				not null,
+person_id						int				not null
 );
 go
 
 create table Employees (
 employee_id						int				not null,
 employee_role_id				int				not null,
-hourly_salary					decimal(6,2)	not null
+hourly_salary					decimal(6,2)	not null,
+person_id						int				not null
 );
 go
 
@@ -130,13 +135,15 @@ go
 create table SalaryOrders(
 salary_order_id					int				not null,
 person_id						int				not null,
-"hours"							int				not null
+"hours"							int				not null,
+order_id						int				not null
 );
 go
 
 create table SubscriptionsOrders (
 subscription_order_id			int				not null,
-subscription_id					int				not null
+subscription_id					int				not null,
+order_id						int				not null
 );
 go
 
@@ -194,5 +201,8 @@ district_id						int				not null,
 district						varchar(50)		not null,
 );
 go
+
+
+
 
 
