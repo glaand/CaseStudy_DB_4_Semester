@@ -8,6 +8,10 @@
 	- Datum:			19.07.2020
 */
 
+-- Datenbank löschen, falls es existiert
+
+drop database if exists Marktverwaltungssystem;
+
 
 -- Datenbank erstellen
 
@@ -177,7 +181,7 @@ go
 
 create table RentalPermissions (
 	rental_permission_id			int				not null,
-	rental_property_id				int				not null,
+	area_id							int				not null,
 	"date"							date			not null
 );
 go
