@@ -43,6 +43,24 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>02_03_Constraint-Conditions.sql</FullPath>
         </FileNode>
+        <FileNode Name="03_01_Berechtigungen-Rollenerstellung.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>03_01_Berechtigungen-Rollenerstellung.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03_02_Berechtigungen-Grants.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>03_02_Berechtigungen-Grants.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03_03_Berechtigungen-Kontoerstellung.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>03_03_Berechtigungen-Kontoerstellung.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Sonstiges" Type="3" Sorted="true">
