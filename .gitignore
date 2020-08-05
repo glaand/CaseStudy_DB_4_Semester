@@ -1,0 +1,32 @@
+GUI/*.swp
+GUI/*.*~
+GUI/project.lock.json
+GUI/.DS_Store
+GUI/*.pyc
+
+# Visual Studio Code
+GUI/.vscode
+
+# User-specific files
+GUI/*.suo
+GUI/*.user
+GUI/*.userosscache
+GUI/*.sln.docstates
+
+# Build results
+GUI/[Dd]ebug/
+GUI/[Dd]ebugPublic/
+GUI/[Rr]elease/
+GUI/[Rr]eleases/
+GUI/x64/
+GUI/x86/
+GUI/build/
+GUI/bld/
+GUI/[Bb]in/
+GUI/[Oo]bj/
+GUI/msbuild.log
+GUI/msbuild.err
+GUI/msbuild.wrn
+
+# Visual Studio 2015
+GUI/.vs/

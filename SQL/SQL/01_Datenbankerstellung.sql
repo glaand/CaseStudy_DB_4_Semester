@@ -8,6 +8,10 @@
 	- Datum:			19.07.2020
 */
 
+-- Datenbank löschen, falls es existiert
+
+drop database if exists Marktverwaltungssystem;
+
 
 -- Datenbank erstellen
 
@@ -152,7 +156,7 @@ go
 create table Areas (
 	area_id							int				not null,
 	latitude						decimal(9,6)	not null,
-	longtitude						decimal(9,6)	not null,
+	longitude						decimal(9,6)	not null,
 	address_id						int				not null,
 	additional_info					varchar(50)		null,
 	"square"						decimal(6,2)	not null,
@@ -177,7 +181,7 @@ go
 
 create table RentalPermissions (
 	rental_permission_id			int				not null,
-	rental_property_id				int				not null,
+	area_id							int				not null,
 	"date"							date			not null
 );
 go
