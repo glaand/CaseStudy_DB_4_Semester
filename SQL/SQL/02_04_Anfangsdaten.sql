@@ -1,5 +1,5 @@
 /*	
-	- Dateiname:		02_03_Constraint-Conditions.sql
+	- Dateiname:		02_04_Anfangsdaten.sql
 	- Beschreibung:		Konditionen und Bedingungen
 	- Autor:			André Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.3
