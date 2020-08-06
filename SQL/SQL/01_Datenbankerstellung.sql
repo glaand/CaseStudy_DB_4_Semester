@@ -188,7 +188,7 @@ create table RentalPermissions (
 go
 
 create table Places (
-	place_id						int				IDENTITY(1,1),
+	place_id						int				not null,
 	district_id						int				not null,
 	place							varchar(50)		not null
 );
