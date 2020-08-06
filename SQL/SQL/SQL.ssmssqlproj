@@ -43,6 +43,12 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>02_03_Constraint-Conditions.sql</FullPath>
         </FileNode>
+        <FileNode Name="02_04_Anfangsdaten.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>02_04_Anfangsdaten.sql</FullPath>
+        </FileNode>
         <FileNode Name="03_01_Berechtigungen-Rollenerstellung.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
