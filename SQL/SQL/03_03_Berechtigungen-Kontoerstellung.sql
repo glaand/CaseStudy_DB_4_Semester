@@ -19,6 +19,11 @@ go
 ALTER ROLE customer_service ADD MEMBER VandaDeplazes;
 go
 
+-- Query zum Persons erstellen mit sql_user_id von sys.database_principals
+--INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, sql_user_id) 
+--VALUES ('Vanda', 'Deplazes', 'vandadeplazes@gmail.com', '0792009988', null, (select principal_id from sys.database_principals where name = 'VandaDeplazes'));
+go
+
 -- Neues Konto f�r Walter Mozart f�r die Standortverwaltung
 CREATE LOGIN WalterMozart WITH PASSWORD = '*xC4$1#w9PvK', CHECK_POLICY = OFF;
 go
