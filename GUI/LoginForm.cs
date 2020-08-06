@@ -20,7 +20,7 @@ namespace GUI
             try
             {
                 connection.Open();
-            } 
+            }
             catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Error on login!");
@@ -30,15 +30,12 @@ namespace GUI
             if (connection != null && connection.State == ConnectionState.Open)
             {
                 MessageBox.Show("Login successfully!");
-                String msg = "";
-                DataTable dt = connection.GetSchema("Tables");
-                foreach (DataRow row in dt.Rows)
-                {
-                    string tablename = (string)row[2];
-                    msg += tablename + "\n";
-                }
-                MessageBox.Show(msg);
-            } else
+                Program.OpenWelcomeFormOnClose = true;
+                this.Close();
+                var welcomeform = new WelcomeForms();
+                welcomeform.Show();
+            }
+            else
             {
                 MessageBox.Show("Error on login!");
             }

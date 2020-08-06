@@ -6,18 +6,27 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    static class Program
+    public static class Program
     {
+        public static bool OpenWelcomeFormOnClose { get; set; }
+
         /// <summary>
-        ///  The main entry point for the application.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            OpenWelcomeFormOnClose = false;
+
             Application.Run(new LoginForm());
+
+            if (OpenWelcomeFormOnClose)
+            {
+                Application.Run(new WelcomeForms());
+            }
         }
     }
 }
