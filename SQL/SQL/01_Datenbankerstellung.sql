@@ -26,7 +26,7 @@ go
 -- Tabellen erstellen
 
 create table Persons (
-	person_id						int				not null,
+	person_id						int				IDENTITY(1,1),
 	firstname						varchar(50)		not null,
 	lastname						varchar(50)		null,
 	email							varchar(50)		not null,
@@ -37,7 +37,7 @@ create table Persons (
 go
 
 create table "Events" (
-	event_id						int				not null,
+	event_id						int				IDENTITY(1,1),
 	employee_id						int				not null,
 	area_id							int				not null,
 	event_date						datetime		not null
@@ -84,13 +84,13 @@ create table Employees (
 go
 
 create table EmployeeRoles (
-	employee_role_id				int				not null,
+	employee_role_id				int				IDENTITY(1,1),
 	"name"							varchar(30)		not null
 );
 go
 
 create table CreditChecks (
-	credit_check_id					int				not null,
+	credit_check_id					int				IDENTITY(1,1),
 	employee_id						int				not null,
 	seller_id						int				not null,
 	visit_date						date			not null,
@@ -100,7 +100,7 @@ create table CreditChecks (
 go
 
 create table QualityChecks (
-	quality_check_id				int				not null,
+	quality_check_id				int				IDENTITY(1,1),
 	inspector_id					int				not null,
 	seller_id						int				not null,
 	round_check						tinyint			not null,
@@ -110,7 +110,7 @@ create table QualityChecks (
 go
 
 create table Invoices(
-	invoice_id						int				not null,
+	invoice_id						int				IDENTITY(1,1),
 	person_id						int				not null,
 	vat								decimal(5,2)	not null,
 	paid_on							datetime		null,
@@ -119,14 +119,14 @@ create table Invoices(
 go
 
 create table InvoiceItem (
-	invoice_item_id					int				not null,
+	invoice_item_id					int				IDENTITY(1,1),
 	invoice_id						int				not null,
 	order_id						int				not null
 );	
 go
 
 create table Orders (
-	order_id						int				not null,
+	order_id						int				IDENTITY(1,1),
 	created_on						datetime		not null,
 	total_price						decimal(9,2)	not null
 );
@@ -146,7 +146,7 @@ create table SubscriptionsOrders (
 go
 
 create table Subscriptions (
-	subscription_id					int				not null,
+	subscription_id					int				IDENTITY(1,1),
 	"name"							varchar(50)		not null,
 	duration						int				not null,
 	rental_properties_quantity		tinyint			not null,
@@ -155,7 +155,7 @@ create table Subscriptions (
 go
 
 create table Areas (
-	area_id							int				not null,
+	area_id							int				IDENTITY(1,1),
 	latitude						decimal(9,6)	not null,
 	longitude						decimal(9,6)	not null,
 	address_id						int				not null,
@@ -167,35 +167,35 @@ create table Areas (
 go
 
 create table RentalProperties (
-	rental_property_id				int				not null,
+	rental_property_id				int				IDENTITY(1,1),
 	area_id							int				not null,
 	"square"						decimal(6,2)	not null
 );
 go
 
 create table Addresses (
-	address_id						int				not null,
+	address_id						int				IDENTITY(1,1),
 	place_id						int				not null,
 	"address"						varchar(50)		not null
 ); 
 go
 
 create table RentalPermissions (
-	rental_permission_id			int				not null,
+	rental_permission_id			int				IDENTITY(1,1),
 	area_id							int				not null,
 	"date"							date			not null
 );
 go
 
 create table Places (
-	place_id						int				not null,
+	place_id						int				IDENTITY(1,1),
 	district_id						int				not null,
 	place							varchar(50)		not null
 );
 go
 
-create table	Districts (
-	district_id						int				not null,
+create table Districts (
+	district_id						int				IDENTITY(1,1),
 	district						varchar(50)		not null,
 );
 go
