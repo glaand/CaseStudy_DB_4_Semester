@@ -201,7 +201,7 @@ go
  */
 GRANT SELECT, UPDATE, INSERT ON Subscriptions TO customer_service;
 go
-GRANT SELECT Subscriptions TO accounting;
+GRANT SELECT ON Subscriptions TO accounting;
 go
 
 /*
