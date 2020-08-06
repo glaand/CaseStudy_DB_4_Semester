@@ -1,7 +1,7 @@
 /*	
 	- Dateiname:		03_02_Berechtigungen-Grants.sql
 	- Beschreibung:		Grants 
-	- Autor:			André Glatzl und Alban Ljutvija
+	- Autor:			Andrï¿½ Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.2
 	- Version:			1.0
 	- Datum:			04.08.2020
@@ -22,7 +22,7 @@ GRANT SELECT ON Persons TO quality_inspection;
 go
 GRANT SELECT ON Persons TO accounting;
 go
-GRANT SELECT ON Persons TO information_platform;
+GRANT SELECT, UPDATE, INSERT ON Persons TO information_platform;
 go
 
 /*
@@ -43,6 +43,8 @@ go
  *	- Tabelle: Landlords
  */
 GRANT SELECT, UPDATE, INSERT on Landlords TO customer_service;
+go
+GRANT SELECT, UPDATE, INSERT on Landlords TO area_management;
 go
 
 /*
@@ -199,7 +201,7 @@ go
  */
 GRANT SELECT, UPDATE, INSERT ON Subscriptions TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON Subscriptions TO accounting;
+GRANT SELECT Subscriptions TO accounting;
 go
 
 /*
