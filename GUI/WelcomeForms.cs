@@ -24,5 +24,17 @@ namespace GUI
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var Arealverwaltung = new Arealeverwaltung();
+            Arealverwaltung.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

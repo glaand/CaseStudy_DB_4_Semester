@@ -46,25 +46,25 @@
             // 
             // usernameTextbox
             // 
-            this.usernameTextbox.Location = new System.Drawing.Point(44, 168);
-            this.usernameTextbox.Multiline = true;
+            this.usernameTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.usernameTextbox.Location = new System.Drawing.Point(44, 201);
             this.usernameTextbox.Name = "usernameTextbox";
             this.usernameTextbox.PlaceholderText = "Username";
-            this.usernameTextbox.Size = new System.Drawing.Size(195, 46);
+            this.usernameTextbox.Size = new System.Drawing.Size(195, 23);
             this.usernameTextbox.TabIndex = 1;
+            this.usernameTextbox.TextChanged += new System.EventHandler(this.usernameTextbox_TextChanged);
             // 
             // passwordTextbox
             // 
-            this.passwordTextbox.Location = new System.Drawing.Point(44, 237);
-            this.passwordTextbox.Multiline = true;
+            this.passwordTextbox.Location = new System.Drawing.Point(44, 247);
             this.passwordTextbox.Name = "passwordTextbox";
             this.passwordTextbox.PlaceholderText = "Passwort";
-            this.passwordTextbox.Size = new System.Drawing.Size(195, 51);
+            this.passwordTextbox.Size = new System.Drawing.Size(195, 23);
             this.passwordTextbox.TabIndex = 1;
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(44, 313);
+            this.loginButton.Location = new System.Drawing.Point(44, 365);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(195, 59);
             this.loginButton.TabIndex = 2;
@@ -74,6 +74,7 @@
             // 
             // LoginForm
             // 
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(282, 507);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordTextbox);
@@ -83,6 +84,7 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.Text = "Marktverwaltungssystem - Einloggen";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
