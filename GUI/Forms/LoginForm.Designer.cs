@@ -51,8 +51,9 @@
             this.usernameTextbox.Name = "usernameTextbox";
             this.usernameTextbox.PlaceholderText = "Username";
             this.usernameTextbox.Size = new System.Drawing.Size(195, 23);
-            this.usernameTextbox.TabIndex = 1;
-            this.usernameTextbox.TextChanged += new System.EventHandler(this.usernameTextbox_TextChanged);
+            this.usernameTextbox.TabIndex = 0;
+            this.usernameTextbox.Text = "WalterMozart";
+            this.usernameTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameTextbox_KeyDown);
             // 
             // passwordTextbox
             // 
@@ -61,6 +62,9 @@
             this.passwordTextbox.PlaceholderText = "Passwort";
             this.passwordTextbox.Size = new System.Drawing.Size(195, 23);
             this.passwordTextbox.TabIndex = 1;
+            this.passwordTextbox.Text = "*xC4$1#w9PvK";
+            this.passwordTextbox.UseSystemPasswordChar = true;
+            this.passwordTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextbox_KeyDown);
             // 
             // loginButton
             // 
@@ -84,7 +88,6 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.Text = "Marktverwaltungssystem - Einloggen";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,4 +101,3 @@
         private System.Windows.Forms.Button loginButton;
     }
 }
-

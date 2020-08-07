@@ -4,30 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using GUI.Klassen;
+
 namespace GUI
 {
     public static class Program
     {
-        public static bool OpenWelcomeFormOnClose { get; set; }
-
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        // Beim Program wird der SQLUser verwaltet. Somit können alle Forms auf diese Globale Variabel zugreifen.
+        public static SQLUser sqlUser { get; set; }
+        
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            OpenWelcomeFormOnClose = false;
-
             Application.Run(new LoginForm());
-
-            if (OpenWelcomeFormOnClose)
-            {
-                Application.Run(new WelcomeForms());
-            }
-            
         }
     }
 }
