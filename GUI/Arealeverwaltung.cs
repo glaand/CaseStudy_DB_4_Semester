@@ -31,6 +31,9 @@ namespace GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            var Mietobjekt_erstellen = new Mietobjekt_erstellen();
+            Mietobjekt_erstellen.Show();
 
         }
 

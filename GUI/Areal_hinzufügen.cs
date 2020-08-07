@@ -36,5 +36,10 @@ namespace GUI
             Arealeverwaltung frm = new Arealeverwaltung();
             frm.Show();
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

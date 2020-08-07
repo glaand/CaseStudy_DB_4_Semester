@@ -34,5 +34,12 @@ namespace GUI
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Arealeverwaltung frm = new Arealeverwaltung();
+            frm.Show();
+        }
     }
 }
