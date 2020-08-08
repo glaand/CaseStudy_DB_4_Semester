@@ -18,7 +18,7 @@ namespace GUI.Klassen
         private string database = "Marktverwaltungssystem";
         private string username;
         private string password;
-        private SqlConnection connection;
+        public SqlConnection connection;
         public bool isLoggedIn = false;
 
         // Daten

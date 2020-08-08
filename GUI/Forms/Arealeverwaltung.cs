@@ -18,8 +18,8 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var Mieter_hinzufügen = new Mieter_hinzufügen ();
-            Mieter_hinzufügen.Show();
+            var Person_hinzufügen = new Person_hinzufügen();
+            Person_hinzufügen.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

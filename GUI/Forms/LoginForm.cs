@@ -36,6 +36,7 @@ namespace GUI
         {
             String username = usernameTextbox.Text;
             String password = passwordTextbox.Text;
+            loginButton.Text = "Bitte warten...";
 
             Program.sqlUser = new SQLUser(username, password);
             Program.sqlUser.login();
@@ -49,6 +50,7 @@ namespace GUI
             } else
             {
                 MessageBox.Show("Dein Username oder Passwort ist ungültig. \n\nBitte überprüfe deine Login-Daten.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loginButton.Text = "Einloggen";
             }
         }
     }
