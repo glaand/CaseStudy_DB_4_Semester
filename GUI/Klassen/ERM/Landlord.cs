@@ -4,9 +4,9 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    public class Employees : Person
+    class Landlord : Person
     {
-        public int employee_id
+        public int landlord_id
         {
             get
             {
@@ -17,8 +17,5 @@ namespace GUI.Klassen.ERM
                 this.person_id = value;
             }
         }
-        public EmployeeRoles employeeRole { set; get; }
-
-        public Employees(int person_id) : base(person_id) { }
     }
 }

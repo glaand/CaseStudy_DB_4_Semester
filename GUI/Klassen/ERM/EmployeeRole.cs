@@ -5,12 +5,12 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    public class EmployeeRoles
+    public class EmployeeRole
     {
         public int employee_role_id { get; set; }
         public string name { get; set; }
 
-        public EmployeeRoles(int employee_role_id)
+        public EmployeeRole(int employee_role_id)
         {
             string query = @"
                 SELECT TOP 1
