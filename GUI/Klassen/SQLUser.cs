@@ -67,7 +67,7 @@ namespace GUI.Klassen
             DataTable table = this.select(formattedQuery);
             if (table.Rows.Count < 1)
             {
-                MessageBox.Show("Du hast noch keinen Profil. \n\nBitte kontaktiere der Datenbankadministrator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Du hast noch kein Profil. \n\nBitte kontaktiere den Datenbankadministrator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 System.Environment.Exit(1);
             }
             foreach (DataRow row in table.Rows)
