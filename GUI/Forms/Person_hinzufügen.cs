@@ -16,24 +16,18 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void Person_hinzufügen_Load(object sender, EventArgs e)
         {
-            
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            List<object> personList = (new Person()).selectAll();
+            Dictionary<Person, string> managerItems = new Dictionary<Person, string>();
+            managerItems.Add((new Person()), " -- Kein Vorgesetzter --");
+            foreach (Person person in personList)
+            {
+                managerItems.Add(person, person.firstname + " " + person.lastname);
+            }
+            managerCombobox.DataSource = new BindingSource(managerItems, null);
+            managerCombobox.DisplayMember = "Value";
+            managerCombobox.ValueMember = "Key";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,13 +39,18 @@ namespace GUI
 
         private void createButton_Click(object sender, EventArgs e)
         {
+            Person selectedManager = ((KeyValuePair<Person, string>)managerCombobox.SelectedItem).Key;
             createButton.Text = "Bitte warten...";
-            Person newPerson = new Person(null);
+            Person newPerson = new Person();
             newPerson.firstname = firstnameTextbox.Text;
             newPerson.lastname = lastnameTextbox.Text;
             newPerson.email = emailTextbox.Text;
             newPerson.phone_nr = phoneNrTextbox.Text;
             newPerson.manager = null;
+            if (selectedManager.person_id > 0)
+            {
+                newPerson.manager = selectedManager;
+            }
             int newPersonId = newPerson.save(personType.SelectedItem.ToString());
             if (newPersonId > 0)
             {

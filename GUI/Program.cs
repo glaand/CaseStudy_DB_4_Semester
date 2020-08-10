@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using GUI.Klassen;
+using GUI.Klassen.ERM;
 
 namespace GUI
 {

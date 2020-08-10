@@ -45,6 +45,7 @@ namespace GUI.Klassen
 
             if (connection != null && connection.State == ConnectionState.Open)
             {
+                // Das Login war erfolgreich
                 this.connection.Close();
                 isLoggedIn = true;
                 this.fetchSQLUser();
@@ -67,6 +68,7 @@ namespace GUI.Klassen
             DataTable table = this.select(formattedQuery);
             if (table.Rows.Count < 1)
             {
+                // Dieser Meldung erscheint wenn der SQL User kein Person-Eintrag hat.
                 MessageBox.Show("Du hast noch kein Profil. \n\nBitte kontaktiere den Datenbankadministrator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 System.Environment.Exit(1);
             }

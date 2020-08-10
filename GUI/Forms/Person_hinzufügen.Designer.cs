@@ -38,6 +38,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
             this.personType = new System.Windows.Forms.ComboBox();
+            this.managerCombobox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -67,25 +70,23 @@
             this.firstnameTextbox.Location = new System.Drawing.Point(50, 146);
             this.firstnameTextbox.Name = "firstnameTextbox";
             this.firstnameTextbox.PlaceholderText = "Vorname";
-            this.firstnameTextbox.Size = new System.Drawing.Size(100, 23);
+            this.firstnameTextbox.Size = new System.Drawing.Size(156, 23);
             this.firstnameTextbox.TabIndex = 4;
-            this.firstnameTextbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lastnameTextbox
             // 
             this.lastnameTextbox.Location = new System.Drawing.Point(50, 184);
             this.lastnameTextbox.Name = "lastnameTextbox";
             this.lastnameTextbox.PlaceholderText = "Nachname";
-            this.lastnameTextbox.Size = new System.Drawing.Size(100, 23);
+            this.lastnameTextbox.Size = new System.Drawing.Size(156, 23);
             this.lastnameTextbox.TabIndex = 5;
-            this.lastnameTextbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // emailTextbox
             // 
             this.emailTextbox.Location = new System.Drawing.Point(50, 222);
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.PlaceholderText = "E-Mail";
-            this.emailTextbox.Size = new System.Drawing.Size(100, 23);
+            this.emailTextbox.Size = new System.Drawing.Size(156, 23);
             this.emailTextbox.TabIndex = 6;
             // 
             // phoneNrTextbox
@@ -93,7 +94,7 @@
             this.phoneNrTextbox.Location = new System.Drawing.Point(50, 262);
             this.phoneNrTextbox.Name = "phoneNrTextbox";
             this.phoneNrTextbox.PlaceholderText = "Telefon";
-            this.phoneNrTextbox.Size = new System.Drawing.Size(100, 23);
+            this.phoneNrTextbox.Size = new System.Drawing.Size(156, 23);
             this.phoneNrTextbox.TabIndex = 7;
             // 
             // label3
@@ -104,11 +105,10 @@
             this.label3.Size = new System.Drawing.Size(106, 15);
             this.label3.TabIndex = 8;
             this.label3.Text = "Person hinzufügen";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(50, 360);
+            this.button1.Location = new System.Drawing.Point(50, 479);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -118,7 +118,7 @@
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(164, 360);
+            this.createButton.Location = new System.Drawing.Point(131, 479);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(75, 23);
             this.createButton.TabIndex = 10;
@@ -128,6 +128,7 @@
             // 
             // personType
             // 
+            this.personType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.personType.FormattingEnabled = true;
             this.personType.Items.AddRange(new object[] {
             "Vermieter",
@@ -135,17 +136,53 @@
             "Qualitätsinspektion",
             "Marktbesucher",
             "Mitarbeiter"});
-            this.personType.Location = new System.Drawing.Point(50, 301);
+            this.personType.Location = new System.Drawing.Point(149, 334);
             this.personType.Name = "personType";
-            this.personType.Size = new System.Drawing.Size(121, 23);
+            this.personType.Size = new System.Drawing.Size(156, 23);
             this.personType.TabIndex = 4;
+            // 
+            // managerCombobox
+            // 
+            this.managerCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.managerCombobox.FormattingEnabled = true;
+            this.managerCombobox.Items.AddRange(new object[] {
+            "Vermieter",
+            "Anbieter",
+            "Qualitätsinspektion",
+            "Marktbesucher",
+            "Mitarbeiter"});
+            this.managerCombobox.Location = new System.Drawing.Point(149, 305);
+            this.managerCombobox.Name = "managerCombobox";
+            this.managerCombobox.Size = new System.Drawing.Size(156, 23);
+            this.managerCombobox.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(50, 308);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Vorgesetzter:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(50, 337);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 15);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Personentyp:";
             // 
             // Person_hinzufügen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 537);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.managerCombobox);
             this.Controls.Add(this.personType);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.button1);
@@ -158,6 +195,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Person_hinzufügen";
             this.Text = "Person hinzufügen";
+            this.Load += new System.EventHandler(this.Person_hinzufügen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +213,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.ComboBox personType;
+        private System.Windows.Forms.ComboBox managerCombobox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
