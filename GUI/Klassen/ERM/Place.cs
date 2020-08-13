@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    class Place : ERMTable
+    public class Place : ERMTable
     {
         // Attributen der Tabelle
         public int place_id { set; get; }

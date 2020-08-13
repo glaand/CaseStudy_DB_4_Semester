@@ -14,5 +14,15 @@ namespace GUI.Klassen.ERM
         // Konstruktoren
         public EmployeeRole() : base(null) { }
         public EmployeeRole(int employee_role_id) : base(employee_role_id) { }
+
+        // Methoden
+        public override string getTableName()
+        {
+            if (Program.sqlUser.currentRole.Length > 1)
+            {
+                return "viewEmployeeRoles_" + Program.sqlUser.currentRole;
+            }
+            return base.getTableName();
+        }
     }
 }

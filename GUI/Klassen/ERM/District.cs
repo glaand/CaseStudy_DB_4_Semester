@@ -4,11 +4,11 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    class District : ERMTable
+    public class District : ERMTable
     {
         // Attributen der Tabelle
         public int district_id { get; set; }
-        public string name { get; set; }
+        public string district { get; set; }
 
         // Konstruktoren
         public District() : base(null) { }

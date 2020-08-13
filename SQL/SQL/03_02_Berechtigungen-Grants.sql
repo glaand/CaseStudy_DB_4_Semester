@@ -14,49 +14,49 @@ go
 /*
  *	- Tabelle: Persons
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO customerService;
 go
-GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO areaManagement;
 go
-GRANT SELECT ON Persons TO quality_inspection;
+GRANT SELECT ON Persons TO qualityInspection;
 go
 GRANT SELECT ON Persons TO accounting;
 go
-GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO information_platform;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO informationPlatform;
 go
 
 /*
  *	- Tabelle: Events
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON Events TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Events TO customerService;
 go
-GRANT SELECT ON Events TO information_platform;
+GRANT SELECT ON Events TO informationPlatform;
 go
 
 /*
  *	- Tabelle: RentalPropertyReservations
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON RentalPropertyReservations TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON RentalPropertyReservations TO customerService;
 go
 
 /*
  *	- Tabelle: Landlords
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON Landlords TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Landlords TO customerService;
 go
-GRANT SELECT, UPDATE, INSERT, DELETE ON Landlords TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Landlords TO areaManagement;
 go
 
 /*
  *	- Tabelle: Sellers
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON Sellers TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Sellers TO customerService;
 go
-GRANT SELECT ON Sellers TO quality_inspection;
+GRANT SELECT ON Sellers TO qualityInspection;
 go
 GRANT SELECT ON Sellers TO accounting;
 go
-GRANT SELECT ON Sellers TO information_platform;
+GRANT SELECT ON Sellers TO informationPlatform;
 go
 
 /*
@@ -68,7 +68,7 @@ go
 /*
  *	- Tabelle: Visitors
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON Visitors TO information_platform;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Visitors TO informationPlatform;
 go
 
 /*
@@ -85,13 +85,13 @@ go
 /*
  *	- Tabelle: CreditChecks
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON CreditChecks TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON CreditChecks TO customerService;
 go
 
 /*
  *	- Tabelle: Invoices
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON Invoices TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Invoices TO customerService;
 go
 GRANT SELECT, UPDATE, INSERT, DELETE ON Invoices TO accounting;
 go
@@ -99,99 +99,99 @@ go
 /*
  *	- Tabelle: Areas
  */
-GRANT SELECT ON Areas TO customer_service;
+GRANT SELECT ON Areas TO customerService;
 go
-GRANT SELECT, UPDATE, INSERT, DELETE ON Areas TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Areas TO areaManagement;
 go
-GRANT SELECT ON Areas TO quality_inspection;
+GRANT SELECT ON Areas TO qualityInspection;
 go
 GRANT SELECT ON Areas TO accounting;
 go
-GRANT SELECT ON Areas TO information_platform;
+GRANT SELECT ON Areas TO informationPlatform;
 go
 
 /*
  *	- Tabelle: RentalProperties
  */
-GRANT SELECT ON RentalProperties TO customer_service;
+GRANT SELECT ON RentalProperties TO customerService;
 go
-GRANT SELECT, UPDATE, INSERT, DELETE ON RentalProperties TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON RentalProperties TO areaManagement;
 go
-GRANT SELECT ON RentalProperties TO quality_inspection;
+GRANT SELECT ON RentalProperties TO qualityInspection;
 go
 GRANT SELECT ON RentalProperties TO accounting;
 go
-GRANT SELECT ON RentalProperties TO information_platform;
+GRANT SELECT ON RentalProperties TO informationPlatform;
 go
 
 /*
  *	- Tabelle: RentalPermissions
  */
-GRANT SELECT ON RentalProperties TO customer_service;
+GRANT SELECT ON RentalProperties TO customerService;
 go
-GRANT SELECT, UPDATE, INSERT, DELETE ON RentalProperties TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON RentalProperties TO areaManagement;
 go
-GRANT SELECT ON RentalProperties TO quality_inspection;
+GRANT SELECT ON RentalProperties TO qualityInspection;
 go
 GRANT SELECT ON RentalProperties TO accounting;
 go
-GRANT SELECT ON RentalProperties TO information_platform;
+GRANT SELECT ON RentalProperties TO informationPlatform;
 go
 
 /*
  *	- Tabelle: QualityChecks
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON QualityChecks TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON QualityChecks TO customerService;
 go
-GRANT SELECT, UPDATE, INSERT, DELETE ON QualityChecks TO quality_inspection;
+GRANT SELECT, UPDATE, INSERT, DELETE ON QualityChecks TO qualityInspection;
 go
 
 /*
  *	- Tabelle: Addresses
  */
-GRANT SELECT ON Addresses TO customer_service;
+GRANT SELECT ON Addresses TO customerService;
 go
-GRANT SELECT ON Addresses TO area_management;
+GRANT SELECT ON Addresses TO areaManagement;
 go
-GRANT SELECT ON Addresses TO quality_inspection;
+GRANT SELECT ON Addresses TO qualityInspection;
 go
 GRANT SELECT ON Addresses TO accounting;
 go
-GRANT SELECT ON Addresses TO information_platform;
+GRANT SELECT ON Addresses TO informationPlatform;
 go
 
 /*
  *	- Tabelle: Places
  */
-GRANT SELECT ON Places TO customer_service;
+GRANT SELECT ON Places TO customerService;
 go
-GRANT SELECT ON Places TO area_management;
+GRANT SELECT ON Places TO areaManagement;
 go
-GRANT SELECT ON Places TO quality_inspection;
+GRANT SELECT ON Places TO qualityInspection;
 go
 GRANT SELECT ON Places TO accounting;
 go
-GRANT SELECT ON Places TO information_platform;
+GRANT SELECT ON Places TO informationPlatform;
 go
 
 /*
  *	- Tabelle: Districts
  */
-GRANT SELECT ON Districts TO customer_service;
+GRANT SELECT ON Districts TO customerService;
 go
-GRANT SELECT ON Districts TO area_management;
+GRANT SELECT ON Districts TO areaManagement;
 go
-GRANT SELECT ON Districts TO quality_inspection;
+GRANT SELECT ON Districts TO qualityInspection;
 go
 GRANT SELECT ON Districts TO accounting;
 go
-GRANT SELECT ON Districts TO information_platform;
+GRANT SELECT ON Districts TO informationPlatform;
 go
 
 /*
  *	- Tabelle: InvoiceItem
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON InvoiceItem TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON InvoiceItem TO customerService;
 go
 GRANT SELECT, UPDATE, INSERT, DELETE ON InvoiceItem TO accounting;
 go
@@ -199,7 +199,7 @@ go
 /*
  *	- Tabelle: Subscriptions
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON Subscriptions TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Subscriptions TO customerService;
 go
 GRANT SELECT ON Subscriptions TO accounting;
 go
@@ -207,7 +207,7 @@ go
 /*
  *	- Tabelle: Orders
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON Orders TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Orders TO customerService;
 go
 GRANT SELECT, UPDATE, INSERT, DELETE ON Orders TO accounting;
 go
@@ -221,7 +221,7 @@ go
 /*
  *	- Tabelle: SubscriptionsOrders
  */
-GRANT SELECT, UPDATE, INSERT, DELETE ON SubscriptionsOrders TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON SubscriptionsOrders TO customerService;
 go
 GRANT SELECT, UPDATE, INSERT, DELETE ON SubscriptionsOrders TO accounting;
 go

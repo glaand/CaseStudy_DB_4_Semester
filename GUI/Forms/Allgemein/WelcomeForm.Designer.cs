@@ -221,7 +221,7 @@
             this.inspectionManagementButton.Name = "inspectionManagementButton";
             this.inspectionManagementButton.Size = new System.Drawing.Size(179, 64);
             this.inspectionManagementButton.TabIndex = 1;
-            this.inspectionManagementButton.Text = "Inspektionsvrewaltung";
+            this.inspectionManagementButton.Text = "Inspektionsverwaltung";
             this.inspectionManagementButton.UseVisualStyleBackColor = true;
             // 
             // personManagementButton

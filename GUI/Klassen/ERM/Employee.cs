@@ -9,6 +9,7 @@ namespace GUI.Klassen.ERM
         // Attributen der Tabelle
         public int employee_id { set; get; }
         public EmployeeRole employeeRole { set; get; }
+        public decimal hourly_salary { set; get; }
 
         // Konstruktoren
         public Employee() : base(null) { }
@@ -21,6 +22,15 @@ namespace GUI.Klassen.ERM
                 INNER JOIN Employees ON Employees.employee_id = Persons.person_id
             ");
             return personList;
+        }
+
+        public override string getTableName()
+        {
+            if (Program.sqlUser.currentRole.Length > 1)
+            {
+                return "viewEmployees_" + Program.sqlUser.currentRole;
+            }
+            return base.getTableName();
         }
     }
 }

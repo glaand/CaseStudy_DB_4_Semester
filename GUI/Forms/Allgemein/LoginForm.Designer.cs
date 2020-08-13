@@ -52,7 +52,7 @@
             this.usernameTextbox.PlaceholderText = "Username";
             this.usernameTextbox.Size = new System.Drawing.Size(195, 23);
             this.usernameTextbox.TabIndex = 0;
-            this.usernameTextbox.Text = "VandaDeplazes";
+            this.usernameTextbox.Text = "WalterMozart";
             this.usernameTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameTextbox_KeyDown);
             // 
             // passwordTextbox
@@ -62,7 +62,7 @@
             this.passwordTextbox.PlaceholderText = "Passwort";
             this.passwordTextbox.Size = new System.Drawing.Size(195, 23);
             this.passwordTextbox.TabIndex = 1;
-            this.passwordTextbox.Text = "mBGf5RhF[GqyD=mS";
+            this.passwordTextbox.Text = "*xC4$1#w9PvK";
             this.passwordTextbox.UseSystemPasswordChar = true;
             this.passwordTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextbox_KeyDown);
             // 

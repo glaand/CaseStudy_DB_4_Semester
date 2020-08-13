@@ -17,6 +17,10 @@ alter table Persons
 add constraint FK_Persons_Persons foreign key (manager_id) references Persons (person_id);
 go
 
+alter table Persons
+add constraint FK_Persons_Addresses foreign key (address_id) references Addresses (address_id);
+go
+
 -- Fremdschlüssel Events
 
 alter table "Events"

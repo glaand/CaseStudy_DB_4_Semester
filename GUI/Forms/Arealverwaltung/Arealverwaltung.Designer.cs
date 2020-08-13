@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -36,7 +35,7 @@
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.areaList = new System.Windows.Forms.ListView();
+            this.areaListview = new System.Windows.Forms.ListView();
             this.area_id = new System.Windows.Forms.ColumnHeader();
             this.latitude = new System.Windows.Forms.ColumnHeader();
             this.longitude = new System.Windows.Forms.ColumnHeader();
@@ -47,16 +46,12 @@
             this.landlord = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(355, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Mieter hinzufügen";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -66,6 +61,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Areal hinzufügen";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -78,9 +74,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(355, 77);
+            this.button4.Location = new System.Drawing.Point(355, 29);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 31);
+            this.button4.Size = new System.Drawing.Size(153, 42);
             this.button4.TabIndex = 3;
             this.button4.Text = "Zurück";
             this.button4.UseVisualStyleBackColor = true;
@@ -108,9 +104,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Freie Marktgruppe";
             // 
-            // areaList
+            // areaListview
             // 
-            this.areaList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.areaListview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.areaListview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.area_id,
             this.latitude,
             this.longitude,
@@ -119,13 +118,13 @@
             this.square,
             this.employee,
             this.landlord});
-            this.areaList.HideSelection = false;
-            this.areaList.Location = new System.Drawing.Point(12, 130);
-            this.areaList.Name = "areaList";
-            this.areaList.Size = new System.Drawing.Size(848, 425);
-            this.areaList.TabIndex = 4;
-            this.areaList.UseCompatibleStateImageBehavior = false;
-            this.areaList.View = System.Windows.Forms.View.Details;
+            this.areaListview.HideSelection = false;
+            this.areaListview.Location = new System.Drawing.Point(3, 0);
+            this.areaListview.Name = "areaListview";
+            this.areaListview.Size = new System.Drawing.Size(834, 383);
+            this.areaListview.TabIndex = 4;
+            this.areaListview.UseCompatibleStateImageBehavior = false;
+            this.areaListview.View = System.Windows.Forms.View.Details;
             // 
             // area_id
             // 
@@ -167,30 +166,63 @@
             this.landlord.Name = "landlord";
             this.landlord.Text = "landlord";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 141);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(848, 414);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.areaListview);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(840, 386);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Areale";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(840, 386);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Mietobjekte";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // Areaverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(872, 567);
-            this.Controls.Add(this.areaList);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Name = "Areaverwaltung";
             this.Text = "Arealverwaltung";
-            this.Load += new System.EventHandler(this.Arealeverwaltung_Load);
+            this.Activated += new System.EventHandler(this.Areaverwaltung_Activated);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -198,7 +230,7 @@
         private System.Windows.Forms.ColorDialog colorDialog2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView areaList;
+        private System.Windows.Forms.ListView areaListview;
         private System.Windows.Forms.ColumnHeader area_id;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -213,5 +245,8 @@
         private System.Windows.Forms.ColumnHeader landlord;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

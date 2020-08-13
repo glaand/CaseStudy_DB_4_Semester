@@ -18,6 +18,7 @@ namespace GUI.Klassen.ERM
         public string email { set; get; }
         public string phone_nr { set; get; }
         public Person manager { set; get; }
+        public Address address { set; get; }
         public int sql_user_id { set; get; }
 
         // Konstruktoren

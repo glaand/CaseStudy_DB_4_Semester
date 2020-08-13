@@ -8,11 +8,11 @@ namespace GUI.Klassen.ERM
     {
         // Attributen der Tabelle
         public int area_id { set; get; }
-        public double latitude { set; get; }
-        public double longitude { set; get; }
+        public decimal latitude { set; get; }
+        public decimal longitude { set; get; }
         public Address address { set; get; }
         public string additional_info { set; get; }
-        public double square { set; get; }
+        public decimal square { set; get; }
         public Employee employee { set; get; }
         public Landlord landlord { set; get; }
 

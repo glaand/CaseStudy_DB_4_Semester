@@ -22,6 +22,10 @@ namespace GUI.Klassen
         public SqlTransaction transaction;
         public bool isLoggedIn = false;
 
+        // Datenbankrollen
+        private string[] roles = new string[] { "customerService", "areaManagement", "qualityInspection", "accounting", "informationPlatform" };
+        public string currentRole = "";
+
         // Daten
         public Person person;
 
@@ -93,6 +97,22 @@ namespace GUI.Klassen
             {
                 int personId = (int)row[0];
                 this.person = new Person(personId);
+            }
+
+            // Die 1. zugewiesene Rolle finden
+            foreach (string role in this.roles)
+            {
+                DataTable roleTable = this.select("SELECT IS_MEMBER('" + role + "');");
+                foreach (DataRow row in roleTable.Rows)
+                {
+                    if (Convert.IsDBNull(row[0]) == false)
+                    {
+                        if ((int)row[0] == 1)
+                        {
+                            this.currentRole = role;
+                        }
+                    }
+                }
             }
         }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    class Address : ERMTable
+    public class Address : ERMTable
     {
         // Attributen der Tabelle
         public int address_id { set; get; }
@@ -14,5 +14,11 @@ namespace GUI.Klassen.ERM
         // Konstruktoren
         public Address() : base(null) { }
         public Address(int address_id) : base(address_id) { }
+
+        // Methoden
+        public override string getTableName()
+        {
+            return "Addresses";
+        }
     }
 }

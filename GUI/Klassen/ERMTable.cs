@@ -13,14 +13,10 @@ namespace GUI.Klassen
 {
     public class ERMTable
     {
-        private String tableName;
         private List<PropertyInfo> attributes = new List<PropertyInfo>();
 
         public ERMTable(object id)
         {
-            // Holt Name von der Klasse und fügt ein s vorne hinzu, um zum pluralisieren.
-            this.tableName = this.GetType().Name + "s";
-
             // Alle definierte Attributen in der Klasse auflisten
             foreach (PropertyInfo attribute in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
@@ -33,13 +29,19 @@ namespace GUI.Klassen
             if (id != null)
             {
                 string query = "SELECT TOP 1 {0} FROM {1} WHERE {2} = {3};";
-                string formattedQuery = string.Format(query, this.getQueryAttributes(), this.tableName, this.attributes[0].Name, id);
+                string formattedQuery = string.Format(query, this.getQueryAttributes(), this.getTableName(), this.attributes[0].Name, id);
                 DataTable table = Program.sqlUser.select(formattedQuery);
                 foreach (DataRow row in table.Rows)
                 {
                     this.convert(row, true);
                 }
             }
+        }
+
+        public virtual string getTableName()
+        {
+            // Holt Name von der Klasse und fügt ein s vorne hinzu, um zum pluralisieren.
+            return this.GetType().Name + "s";
         }
 
         public List<dynamic> selectAll(string condition = "")
@@ -49,7 +51,7 @@ namespace GUI.Klassen
              */
             List<object> objectList = new List<object>();
             string query = "SELECT {0} FROM {1} {2};";
-            string formattedQuery = string.Format(query, this.getQueryAttributes(), this.tableName, condition);
+            string formattedQuery = string.Format(query, this.getQueryAttributes(), this.getTableName(), condition);
             DataTable table = Program.sqlUser.select(formattedQuery);
             foreach (DataRow row in table.Rows)
             {
@@ -63,7 +65,8 @@ namespace GUI.Klassen
             string queryAttributes = "";
             for (int i = startCount; i < this.attributes.Count; i++)
             {
-                string queryAttribute = this.attributes[i].Name;
+                string normalString = string.Concat(this.attributes[i].Name.Select((x, i) => i > 0 && char.IsUpper(x) ? "_" + x.ToString() : x.ToString()));
+                string queryAttribute = normalString;
                 if (this.attributes[i].PropertyType.IsClass && (this.attributes[i].PropertyType.Namespace == "System" && this.attributes[i].PropertyType.Name == "String") != true)
                 {
                     queryAttribute += "_id";
@@ -162,14 +165,14 @@ namespace GUI.Klassen
                     finalset += ",";
                 }
             }
-            string formattedUpdateQuery = string.Format(updateQuery, this.tableName, finalset, this.attributes[0].Name, this.attributes[0].GetValue(this, null));
+            string formattedUpdateQuery = string.Format(updateQuery, this.getTableName(), finalset, this.attributes[0].Name, this.attributes[0].GetValue(this, null));
             return formattedUpdateQuery;
         }
 
         public string deleteQuery()
         {
             string deleteQuery = "DELETE FROM {0} WHERE {1} = {2};";
-            string formattedDeleteQuery = string.Format(deleteQuery, this.tableName, this.attributes[0].Name, this.attributes[0].GetValue(this, null));
+            string formattedDeleteQuery = string.Format(deleteQuery, this.getTableName(), this.attributes[0].Name, this.attributes[0].GetValue(this, null));
             return formattedDeleteQuery;
         }
 
@@ -183,8 +186,16 @@ VALUES (
             string formattedInsertQuery = "";
             if (id == null)
             {
-                placeholder = string.Concat(Enumerable.Repeat("\t\t'EMPTY',\r\n", this.attributes.Count - 1));
-                formattedInsertQuery = string.Format(insertQuery, this.tableName, this.getQueryAttributesNoPK(), placeholder);
+                for (int i = 1; i < this.attributes.Count; i++)
+                {
+                    placeholder += "\t\t'EMPTY'";
+                    if (i < this.attributes.Count - 1)
+                    {
+                        placeholder += ",";
+                    }
+                    placeholder += "\r\n";
+                }
+                formattedInsertQuery = string.Format(insertQuery, this.getTableName(), this.getQueryAttributesNoPK(), placeholder);
             } 
             else
             {
@@ -194,8 +205,16 @@ VALUES (
                     placeholder += ",";
                 }
                 placeholder += "\r\n";
-                placeholder += string.Concat(Enumerable.Repeat("\t\t'EMPTY',\r\n", this.attributes.Count - 1));
-                formattedInsertQuery = string.Format(insertQuery, this.tableName, this.getQueryAttributes(), placeholder);
+                for (int i = 1; i < this.attributes.Count; i++)
+                {
+                    placeholder += "\t\t'EMPTY'";
+                    if (i < this.attributes.Count - 1)
+                    {
+                        placeholder += ",";
+                    }
+                    placeholder += "\r\n";
+                }
+                formattedInsertQuery = string.Format(insertQuery, this.getTableName(), this.getQueryAttributes(), placeholder);
             }
 
             return formattedInsertQuery;
