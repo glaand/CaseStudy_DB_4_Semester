@@ -1,9 +1,13 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
+﻿using GUI.Klassen.ERM;
+using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Windows.Forms;
 
 namespace GUI.Klassen
 {
@@ -14,10 +18,10 @@ namespace GUI.Klassen
 
         public ERMTable(object id)
         {
-            // Get Plural name from data table. Ex: "Person" to "Persons"
+            // Holt Name von der Klasse und fügt ein s vorne hinzu, um zum pluralisieren.
             this.tableName = this.GetType().Name + "s";
 
-            // Get all attributes
+            // Alle definierte Attributen in der Klasse auflisten
             foreach (PropertyInfo attribute in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
                 if (attribute.CanWrite & attribute.CanRead)
@@ -25,7 +29,7 @@ namespace GUI.Klassen
                     this.attributes.Add(attribute);
                 }
             }
-            // Fetch row from datatable
+            // Zeile von der Datenbank-Tabelle holen
             if (id != null)
             {
                 string query = "SELECT TOP 1 {0} FROM {1} WHERE {2} = {3};";
@@ -38,7 +42,7 @@ namespace GUI.Klassen
             }
         }
 
-        public List<object> selectAll(string condition = "")
+        public List<dynamic> selectAll(string condition = "")
         {
             /*
              * Gibt alle Objekten gemäss CONDITION-Klausel zurück und returniert eine Liste von Objekten
@@ -54,10 +58,10 @@ namespace GUI.Klassen
             return objectList;
         }
 
-        protected string getQueryAttributes()
+        protected string getQueryAttributes(int startCount = 0)
         {
             string queryAttributes = "";
-            for (int i = 0; i < this.attributes.Count; i++)
+            for (int i = startCount; i < this.attributes.Count; i++)
             {
                 string queryAttribute = this.attributes[i].Name;
                 if (this.attributes[i].PropertyType.IsClass && (this.attributes[i].PropertyType.Namespace == "System" && this.attributes[i].PropertyType.Name == "String") != true)
@@ -73,7 +77,44 @@ namespace GUI.Klassen
             return queryAttributes;
         }
 
-        protected object convert(DataRow row, bool isThis = false)
+        protected string getQueryAttributesNoPK()
+        {
+            return this.getQueryAttributes(1);
+        }
+
+        protected string getQueryValues(int startCount = 0)
+        {
+            string queryValues = "";
+            for (int i = startCount; i < this.attributes.Count; i++)
+            {
+                object value = this.attributes[i].GetValue(this, null);
+                string queryAttribute = this.attributes[i].Name;
+                if (this.attributes[i].PropertyType.IsClass && (this.attributes[i].PropertyType.Namespace == "System" && this.attributes[i].PropertyType.Name == "String") != true)
+                {
+                    // Falls Attribut ist eine ERM-Klasse, dann nimm 1. Attribut und speichere den Wert für den Foreign Key.
+                    if (value == null)
+                    {
+                        value = "NULL";
+                    } else
+                    {
+                        Type attr_type = Type.GetType(this.attributes[i].PropertyType.FullName);
+                        value = attr_type.GetProperties()[0].GetValue(value, null);
+                    }
+                }
+                else if (this.attributes[i].PropertyType.Namespace == "System" && this.attributes[i].PropertyType.Name == "String")
+                {
+                    value = "'" + value + "'";
+                }
+                queryValues += value;
+                if (i < this.attributes.Count - 1)
+                {
+                    queryValues += ",";
+                }
+            }
+            return queryValues;
+        }
+
+        protected dynamic convert(DataRow row, bool isThis = false)
         {
             object obj = null;
             if (!isThis)
@@ -105,6 +146,59 @@ namespace GUI.Klassen
                 }
             }
             return obj;
+        }
+
+        public string updateQuery()
+        {
+            string updateQuery = "UPDATE {0} \r\nSET {1} \r\nWHERE {2} = {3};";
+            string[] splittedQueryAttributes = this.getQueryAttributes().Split(',');
+            string[] splittedQueryValues = this.getQueryValues().Split(',');
+            string finalset = "";
+            for (int i = 1; i < splittedQueryAttributes.Length; i++)
+            {
+                finalset += "\r\n\t" + splittedQueryAttributes[i] + " = " + splittedQueryValues[i];
+                if (i < splittedQueryAttributes.Length - 1)
+                {
+                    finalset += ",";
+                }
+            }
+            string formattedUpdateQuery = string.Format(updateQuery, this.tableName, finalset, this.attributes[0].Name, this.attributes[0].GetValue(this, null));
+            return formattedUpdateQuery;
+        }
+
+        public string deleteQuery()
+        {
+            string deleteQuery = "DELETE FROM {0} WHERE {1} = {2};";
+            string formattedDeleteQuery = string.Format(deleteQuery, this.tableName, this.attributes[0].Name, this.attributes[0].GetValue(this, null));
+            return formattedDeleteQuery;
+        }
+
+        public string insertQuery(object id = null)
+        {
+            string insertQuery = @"
+INSERT INTO {0} ({1}) 
+VALUES (
+{2}
+);";        string placeholder = "";
+            string formattedInsertQuery = "";
+            if (id == null)
+            {
+                placeholder = string.Concat(Enumerable.Repeat("\t\t'EMPTY',\r\n", this.attributes.Count - 1));
+                formattedInsertQuery = string.Format(insertQuery, this.tableName, this.getQueryAttributesNoPK(), placeholder);
+            } 
+            else
+            {
+                placeholder = "\t\t" + id;
+                if (this.attributes.Count > 1)
+                {
+                    placeholder += ",";
+                }
+                placeholder += "\r\n";
+                placeholder += string.Concat(Enumerable.Repeat("\t\t'EMPTY',\r\n", this.attributes.Count - 1));
+                formattedInsertQuery = string.Format(insertQuery, this.tableName, this.getQueryAttributes(), placeholder);
+            }
+
+            return formattedInsertQuery;
         }
 
         private object this[string name]

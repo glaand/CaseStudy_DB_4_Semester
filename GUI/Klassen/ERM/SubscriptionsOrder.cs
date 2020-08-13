@@ -4,19 +4,14 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    class SubscriptionsOrder : Order
+    class SubscriptionsOrder : ERMTable
     {
-        public int subscription_order_id
-        {
-            get
-            {
-                return this.order_id;
-            }
-            set
-            {
-                this.order_id = value;
-            }
-        }
+        // Attributen der Tabelle
+        public int subscription_order_id { set; get; }
         public Subscription subscription { set; get; }
+
+        // Konstruktoren
+        public SubscriptionsOrder() : base(null) { }
+        public SubscriptionsOrder(int subscription_order_id) : base(subscription_order_id) { }
     }
 }

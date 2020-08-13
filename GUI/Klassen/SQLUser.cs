@@ -19,6 +19,7 @@ namespace GUI.Klassen
         private string username;
         private string password;
         public SqlConnection connection;
+        public SqlTransaction transaction;
         public bool isLoggedIn = false;
 
         // Daten
@@ -56,6 +57,22 @@ namespace GUI.Klassen
             }
         }
 
+        public void OpenConnection()
+        {
+            if (this.connection.State == ConnectionState.Closed)
+            {
+                this.connection.Open();
+            }
+        }
+
+        public void CloseConnection()
+        {
+            if (this.connection.State == ConnectionState.Open)
+            {
+                this.connection.Close();
+            }
+        }
+
         private void fetchSQLUser()
         {
             string query = @"
@@ -84,18 +101,18 @@ namespace GUI.Klassen
         public DataTable select(string query)
         {
             SqlCommand cmd = new SqlCommand(query, this.connection);
-            this.connection.Open();
+            this.OpenConnection();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             dataAdapter.Fill(table);
-            this.connection.Close();
+            this.CloseConnection();
             dataAdapter.Dispose();
             return table;
         }
 
         ~SQLUser()
         {
-            this.connection.Close();
+            this.CloseConnection();
             this.connection = null;
         }
 

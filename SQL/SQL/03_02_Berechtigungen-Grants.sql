@@ -14,21 +14,21 @@ go
 /*
  *	- Tabelle: Persons
  */
-GRANT SELECT, UPDATE, INSERT ON Persons TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON Persons TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO area_management;
 go
 GRANT SELECT ON Persons TO quality_inspection;
 go
 GRANT SELECT ON Persons TO accounting;
 go
-GRANT SELECT, UPDATE, INSERT ON Persons TO information_platform;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Persons TO information_platform;
 go
 
 /*
  *	- Tabelle: Events
  */
-GRANT SELECT, UPDATE, INSERT ON Events TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Events TO customer_service;
 go
 GRANT SELECT ON Events TO information_platform;
 go
@@ -36,21 +36,21 @@ go
 /*
  *	- Tabelle: RentalPropertyReservations
  */
-GRANT SELECT, UPDATE, INSERT on RentalPropertyReservations TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON RentalPropertyReservations TO customer_service;
 go
 
 /*
  *	- Tabelle: Landlords
  */
-GRANT SELECT, UPDATE, INSERT on Landlords TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Landlords TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT on Landlords TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Landlords TO area_management;
 go
 
 /*
  *	- Tabelle: Sellers
  */
-GRANT SELECT, UPDATE, INSERT ON Sellers TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Sellers TO customer_service;
 go
 GRANT SELECT ON Sellers TO quality_inspection;
 go
@@ -68,7 +68,7 @@ go
 /*
  *	- Tabelle: Visitors
  */
-GRANT SELECT, UPDATE, INSERT ON Visitors TO information_platform;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Visitors TO information_platform;
 go
 
 /*
@@ -85,15 +85,15 @@ go
 /*
  *	- Tabelle: CreditChecks
  */
-GRANT SELECT, UPDATE, INSERT ON CreditChecks TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON CreditChecks TO customer_service;
 go
 
 /*
  *	- Tabelle: Invoices
  */
-GRANT SELECT, UPDATE, INSERT ON Invoices TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Invoices TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON Invoices TO accounting;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Invoices TO accounting;
 go
 
 /*
@@ -101,7 +101,7 @@ go
  */
 GRANT SELECT ON Areas TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON Areas TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Areas TO area_management;
 go
 GRANT SELECT ON Areas TO quality_inspection;
 go
@@ -115,7 +115,7 @@ go
  */
 GRANT SELECT ON RentalProperties TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON RentalProperties TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON RentalProperties TO area_management;
 go
 GRANT SELECT ON RentalProperties TO quality_inspection;
 go
@@ -129,7 +129,7 @@ go
  */
 GRANT SELECT ON RentalProperties TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON RentalProperties TO area_management;
+GRANT SELECT, UPDATE, INSERT, DELETE ON RentalProperties TO area_management;
 go
 GRANT SELECT ON RentalProperties TO quality_inspection;
 go
@@ -141,9 +141,9 @@ go
 /*
  *	- Tabelle: QualityChecks
  */
-GRANT SELECT, UPDATE, INSERT ON QualityChecks TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON QualityChecks TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON QualityChecks TO quality_inspection;
+GRANT SELECT, UPDATE, INSERT, DELETE ON QualityChecks TO quality_inspection;
 go
 
 /*
@@ -191,15 +191,15 @@ go
 /*
  *	- Tabelle: InvoiceItem
  */
-GRANT SELECT, UPDATE, INSERT ON InvoiceItem TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON InvoiceItem TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON InvoiceItem TO accounting;
+GRANT SELECT, UPDATE, INSERT, DELETE ON InvoiceItem TO accounting;
 go
 
 /*
  *	- Tabelle: Subscriptions
  */
-GRANT SELECT, UPDATE, INSERT ON Subscriptions TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Subscriptions TO customer_service;
 go
 GRANT SELECT ON Subscriptions TO accounting;
 go
@@ -207,21 +207,21 @@ go
 /*
  *	- Tabelle: Orders
  */
-GRANT SELECT, UPDATE, INSERT ON Orders TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Orders TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON Orders TO accounting;
+GRANT SELECT, UPDATE, INSERT, DELETE ON Orders TO accounting;
 go
 
 /*
  *	- Tabelle: SalaryOrders
  */
-GRANT SELECT, UPDATE, INSERT ON SalaryOrders TO accounting;
+GRANT SELECT, UPDATE, INSERT, DELETE ON SalaryOrders TO accounting;
 go
 
 /*
  *	- Tabelle: SubscriptionsOrders
  */
-GRANT SELECT, UPDATE, INSERT ON SubscriptionsOrders TO customer_service;
+GRANT SELECT, UPDATE, INSERT, DELETE ON SubscriptionsOrders TO customer_service;
 go
-GRANT SELECT, UPDATE, INSERT ON SubscriptionsOrders TO accounting;
+GRANT SELECT, UPDATE, INSERT, DELETE ON SubscriptionsOrders TO accounting;
 go
