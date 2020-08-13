@@ -20,5 +20,16 @@ namespace GUI.Klassen.ERM
         {
             return "Addresses";
         }
+
+        public override string ToString()
+        {
+            return string.Join(", ", new string[] {
+                this.address,
+                this.place.place_id.ToString(),
+                this.place.place,
+                this.place.district.district
+            });
+        }
+
     }
 }

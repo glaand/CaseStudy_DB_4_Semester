@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Forms.Allgemein;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +53,13 @@ namespace GUI
             this.Hide();
             var personalverwaltung = new Personalverwaltung();
             personalverwaltung.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var adressenliste = new Adressenliste();
+            adressenliste.Show();
         }
     }
 }

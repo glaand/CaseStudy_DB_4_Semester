@@ -28,7 +28,8 @@ namespace GUI
                     person.lastname,
                     person.email,
                     person.phone_nr,
-                    person.manager != null ? person.manager.firstname + " " + person.manager.lastname  : " -- Kein Vorgesetzter --"
+                    person.manager != null ? person.manager.firstname + " " + person.manager.lastname  : " -- Kein Vorgesetzter --",
+                    person.address.ToString()
                 }));
             }
             personListview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);

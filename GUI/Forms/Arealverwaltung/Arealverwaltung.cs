@@ -32,10 +32,10 @@ namespace GUI
                     area.area_id.ToString(),
                     area.latitude.ToString(),
                     area.longitude.ToString(),
-                    area.address.address,
+                    area.address.ToString(),
                     area.additional_info,
                     area.square.ToString(),
-                    employeePerson.firstname + " " + employeePerson.lastname,
+                    employeePerson.firstname + " " + employeePerson.lastname + " (" + area.employee.employeeRole.name + ")",
                     landlordPerson.firstname + " " + landlordPerson.lastname
                 }));
             }
