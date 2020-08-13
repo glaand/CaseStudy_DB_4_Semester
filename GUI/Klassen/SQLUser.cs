@@ -19,7 +19,12 @@ namespace GUI.Klassen
         private string username;
         private string password;
         public SqlConnection connection;
+        public SqlTransaction transaction;
         public bool isLoggedIn = false;
+
+        // Datenbankrollen
+        private string[] roles = new string[] { "customerService", "areaManagement", "qualityInspection", "accounting", "informationPlatform" };
+        public string currentRole = "";
 
         // Daten
         public Person person;
@@ -45,6 +50,7 @@ namespace GUI.Klassen
 
             if (connection != null && connection.State == ConnectionState.Open)
             {
+                // Das Login war erfolgreich
                 this.connection.Close();
                 isLoggedIn = true;
                 this.fetchSQLUser();
@@ -52,6 +58,22 @@ namespace GUI.Klassen
             else
             {
                 isLoggedIn = false;
+            }
+        }
+
+        public void OpenConnection()
+        {
+            if (this.connection.State == ConnectionState.Closed)
+            {
+                this.connection.Open();
+            }
+        }
+
+        public void CloseConnection()
+        {
+            if (this.connection.State == ConnectionState.Open)
+            {
+                this.connection.Close();
             }
         }
 
@@ -67,6 +89,7 @@ namespace GUI.Klassen
             DataTable table = this.select(formattedQuery);
             if (table.Rows.Count < 1)
             {
+                // Dieser Meldung erscheint wenn der SQL User kein Person-Eintrag hat.
                 MessageBox.Show("Du hast noch kein Profil. \n\nBitte kontaktiere den Datenbankadministrator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 System.Environment.Exit(1);
             }
@@ -75,6 +98,22 @@ namespace GUI.Klassen
                 int personId = (int)row[0];
                 this.person = new Person(personId);
             }
+
+            // Die 1. zugewiesene Rolle finden
+            foreach (string role in this.roles)
+            {
+                DataTable roleTable = this.select("SELECT IS_MEMBER('" + role + "');");
+                foreach (DataRow row in roleTable.Rows)
+                {
+                    if (Convert.IsDBNull(row[0]) == false)
+                    {
+                        if ((int)row[0] == 1)
+                        {
+                            this.currentRole = role;
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -82,18 +121,18 @@ namespace GUI.Klassen
         public DataTable select(string query)
         {
             SqlCommand cmd = new SqlCommand(query, this.connection);
-            this.connection.Open();
+            this.OpenConnection();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             dataAdapter.Fill(table);
-            this.connection.Close();
+            this.CloseConnection();
             dataAdapter.Dispose();
             return table;
         }
 
         ~SQLUser()
         {
-            this.connection.Close();
+            this.CloseConnection();
             this.connection = null;
         }
 

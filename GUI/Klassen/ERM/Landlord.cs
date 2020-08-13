@@ -4,18 +4,22 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    class Landlord : Person
+    class Landlord : ERMTable
     {
-        public int landlord_id
+        // Attributen der Tabelle
+        public int landlord_id { set; get; }
+
+        // Konstruktoren
+        public Landlord() : base(null) { }
+        public Landlord(int landlord_id) : base(landlord_id) { }
+
+        // Methoden
+        public static List<object> getAllPersons()
         {
-            get
-            {
-                return this.person_id;
-            }
-            set
-            {
-                this.person_id = value;
-            }
+            var personList = (new Person()).selectAll(@"
+                INNER JOIN Landlords ON Landlords.landlord_id = Persons.person_id
+            ");
+            return personList;
         }
     }
 }

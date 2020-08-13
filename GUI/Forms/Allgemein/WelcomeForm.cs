@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Forms.Allgemein;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,13 +32,34 @@ namespace GUI
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void areaManagementButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var Arealverwaltung = new Arealeverwaltung();
-            Arealverwaltung.Show();
+            var arealverwaltung = new Areaverwaltung();
+            arealverwaltung.Show();
         }
 
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            Program.sqlUser = null;
+            this.Hide();
+            MessageBox.Show("Du hast dich erfolgreich ausgeloggt.", "Ausgeloggt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var loginForm = new LoginForm();
+            loginForm.Show();
+        }
 
+        private void personManagementButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var personalverwaltung = new Personalverwaltung();
+            personalverwaltung.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var adressenliste = new Adressenliste();
+            adressenliste.Show();
+        }
     }
 }

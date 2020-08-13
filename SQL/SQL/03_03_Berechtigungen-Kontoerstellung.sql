@@ -16,11 +16,11 @@ CREATE LOGIN VandaDeplazes WITH PASSWORD = 'mBGf5RhF[GqyD=mS', CHECK_POLICY = OF
 go
 CREATE USER VandaDeplazes FOR LOGIN VandaDeplazes WITH DEFAULT_SCHEMA = Marktverwaltungssystem;
 go
-ALTER ROLE customer_service ADD MEMBER VandaDeplazes;
+ALTER ROLE customerService ADD MEMBER VandaDeplazes;
 go
 
 -- Query zum Persons erstellen mit sql_user_id von sys.database_principals
-INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, sql_user_id) 
+INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, address_id, sql_user_id) 
 VALUES 
 (
 	'Vanda', 
@@ -28,6 +28,7 @@ VALUES
 	'vandadeplazes@gmail.com', 
 	'0792009988', 
 	null, 
+	1,
 	(select principal_id from sys.database_principals where "name" = 'VandaDeplazes')
 );
 go
@@ -51,10 +52,10 @@ CREATE LOGIN WalterMozart WITH PASSWORD = '*xC4$1#w9PvK', CHECK_POLICY = OFF;
 go
 CREATE USER WalterMozart FOR LOGIN WalterMozart WITH DEFAULT_SCHEMA = Marktverwaltungssystem;
 go
-ALTER ROLE area_management ADD MEMBER WalterMozart;
+ALTER ROLE areaManagement ADD MEMBER WalterMozart;
 go
 -- Query zum Persons erstellen mit sql_user_id von sys.database_principals
-INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, sql_user_id) 
+INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, address_id, sql_user_id) 
 VALUES 
 (
 	'Walter', 
@@ -62,6 +63,7 @@ VALUES
 	'waltermozart@gmail.com', 
 	'0761234455', 
 	(SELECT person_id FROM Persons WHERE email = 'vandadeplazes@gmail.com'), 
+	2,
 	(select principal_id from sys.database_principals where "name" = 'WalterMozart')
 );
 go
@@ -90,10 +92,10 @@ CREATE LOGIN BeatStrikt WITH PASSWORD = 'sT!wzbE4bpEX', CHECK_POLICY = OFF;
 go
 CREATE USER BeatStrikt FOR LOGIN BeatStrikt WITH DEFAULT_SCHEMA = Marktverwaltungssystem;
 go
-ALTER ROLE quality_inspection ADD MEMBER BeatStrikt;
+ALTER ROLE qualityInspection ADD MEMBER BeatStrikt;
 go
 -- Query zum Persons erstellen mit sql_user_id von sys.database_principals
-INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, sql_user_id) 
+INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, address_id, sql_user_id) 
 VALUES 
 (
 	'Beat', 
@@ -101,6 +103,7 @@ VALUES
 	'beatstrikt@gmail.com', 
 	'0769998877', 
 	(SELECT person_id FROM Persons WHERE email = 'vandadeplazes@gmail.com'), 
+	3,
 	(select principal_id from sys.database_principals where "name" = 'BeatStrikt')
 );
 go
@@ -132,7 +135,7 @@ go
 ALTER ROLE accounting ADD MEMBER ClaudiusNumerus;
 go
 -- Query zum Persons erstellen mit sql_user_id von sys.database_principals
-INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, sql_user_id) 
+INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, address_id, sql_user_id) 
 VALUES 
 (
 	'Claudius', 
@@ -140,6 +143,7 @@ VALUES
 	'claudiusnumerus@gmail.com', 
 	'0782367283', 
 	(SELECT person_id FROM Persons WHERE email = 'waltermozart@gmail.com'), 
+	4,
 	(select principal_id from sys.database_principals where "name" = 'ClaudiusNumerus')
 );
 go
@@ -166,5 +170,5 @@ CREATE LOGIN LinuxServer001 WITH PASSWORD = 'ixLjh@Vb1$cv', CHECK_POLICY = OFF;
 go
 CREATE USER LinuxServer001 FOR LOGIN LinuxServer001 WITH DEFAULT_SCHEMA = Marktverwaltungssystem;
 go
-ALTER ROLE information_platform ADD MEMBER LinuxServer001;
+ALTER ROLE informationPlatform ADD MEMBER LinuxServer001;
 go

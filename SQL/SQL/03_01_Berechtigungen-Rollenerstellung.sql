@@ -12,21 +12,21 @@ use Marktverwaltungssystem;
 go
 
 -- Rolle für den Kundendienst erstellen
-drop role if exists customer_service;
+drop role if exists customerService;
 go
-create role customer_service;
+create role customerService;
 go
 
 -- Rolle für die Standortverwaltung erstellen
-drop role if exists area_management;
+drop role if exists areaManagement;
 go
-create role area_management;
+create role areaManagement;
 go
 
 -- Rolle für die Qualitätsinspektion erstellen
-drop role if exists quality_inspection;
+drop role if exists qualityInspection;
 go
-create role quality_inspection;
+create role qualityInspection;
 go
 
 -- Rolle für die Buchhaltung
@@ -36,7 +36,7 @@ create role accounting;
 go
 
 -- Rolle für die Informationsplattform
-drop role if exists information_platform;
+drop role if exists informationPlatform;
 go
-create role information_platform;
+create role informationPlatform;
 go

@@ -5,27 +5,24 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    public class EmployeeRole
+    public class EmployeeRole : ERMTable
     {
+        // Attributen der Tabelle
         public int employee_role_id { get; set; }
         public string name { get; set; }
 
-        public EmployeeRole(int employee_role_id)
+        // Konstruktoren
+        public EmployeeRole() : base(null) { }
+        public EmployeeRole(int employee_role_id) : base(employee_role_id) { }
+
+        // Methoden
+        public override string getTableName()
         {
-            string query = @"
-                SELECT TOP 1
-                    employee_role_id,
-                    name
-                FROM EmployeeRoles
-                WHERE EmployeeRoles.employee_role_id = {0};
-            ";
-            string formattedQuery = string.Format(query, employee_role_id);
-            DataTable table = Program.sqlUser.select(formattedQuery);
-            foreach (DataRow row in table.Rows)
+            if (Program.sqlUser.currentRole.Length > 1)
             {
-                this.employee_role_id = (int)row[0];
-                this.name = (string)row[1];
+                return "viewEmployeeRoles_" + Program.sqlUser.currentRole;
             }
+            return base.getTableName();
         }
     }
 }

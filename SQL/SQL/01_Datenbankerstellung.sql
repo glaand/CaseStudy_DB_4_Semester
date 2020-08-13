@@ -32,6 +32,7 @@ create table Persons (
 	email							varchar(50)		not null,
 	phone_nr						varchar(20)		null,
 	manager_id						int				null,
+	address_id						int				not null,
 	sql_user_id						int				null
 );
 go

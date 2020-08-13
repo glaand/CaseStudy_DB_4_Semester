@@ -4,21 +4,17 @@ using System.Text;
 
 namespace GUI.Klassen.ERM
 {
-    class Seller : Person
+    class Seller : ERMTable
     {
-        public int seller_id
-        {
-            get
-            {
-                return this.person_id;
-            }
-            set
-            {
-                this.person_id = value;
-            }
-        }
+        // Attributen der Tabelle
+        public int seller_id { set; get; }
         public Subscription subscription { set; get; }
         public string description { set; get; }
         public string last_update { set; get; }
+
+        // Konstruktoren
+
+        public Seller() : base(null) { }
+        public Seller(int seller_id) : base(seller_id) { }
     }
 }
