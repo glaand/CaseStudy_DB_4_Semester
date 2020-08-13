@@ -47,6 +47,7 @@
             this.inspectionManagementButton = new System.Windows.Forms.Button();
             this.personManagementButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.accountingButton.Location = new System.Drawing.Point(25, 209);
             this.accountingButton.Name = "accountingButton";
             this.accountingButton.Size = new System.Drawing.Size(179, 64);
-            this.accountingButton.TabIndex = 0;
+            this.accountingButton.TabIndex = 2;
             this.accountingButton.Text = "Buchhaltung";
             this.accountingButton.UseVisualStyleBackColor = false;
             // 
@@ -65,7 +66,7 @@
             this.areaManagementButton.Location = new System.Drawing.Point(25, 139);
             this.areaManagementButton.Name = "areaManagementButton";
             this.areaManagementButton.Size = new System.Drawing.Size(179, 64);
-            this.areaManagementButton.TabIndex = 1;
+            this.areaManagementButton.TabIndex = 0;
             this.areaManagementButton.Text = "Arealverwaltung";
             this.areaManagementButton.UseVisualStyleBackColor = true;
             this.areaManagementButton.Click += new System.EventHandler(this.areaManagementButton_Click);
@@ -220,7 +221,7 @@
             this.inspectionManagementButton.Location = new System.Drawing.Point(210, 209);
             this.inspectionManagementButton.Name = "inspectionManagementButton";
             this.inspectionManagementButton.Size = new System.Drawing.Size(179, 64);
-            this.inspectionManagementButton.TabIndex = 1;
+            this.inspectionManagementButton.TabIndex = 3;
             this.inspectionManagementButton.Text = "Inspektionsverwaltung";
             this.inspectionManagementButton.UseVisualStyleBackColor = true;
             // 
@@ -229,20 +230,29 @@
             this.personManagementButton.Location = new System.Drawing.Point(25, 279);
             this.personManagementButton.Name = "personManagementButton";
             this.personManagementButton.Size = new System.Drawing.Size(179, 64);
-            this.personManagementButton.TabIndex = 1;
+            this.personManagementButton.TabIndex = 4;
             this.personManagementButton.Text = "Personalverwaltung";
             this.personManagementButton.UseVisualStyleBackColor = true;
             this.personManagementButton.Click += new System.EventHandler(this.personManagementButton_Click);
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(210, 279);
+            this.logoutButton.Location = new System.Drawing.Point(645, 35);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(179, 64);
-            this.logoutButton.TabIndex = 1;
+            this.logoutButton.TabIndex = 6;
             this.logoutButton.Text = "Ausloggen";
             this.logoutButton.UseVisualStyleBackColor = true;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(210, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 64);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Adressenliste";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // WelcomeForm
             // 
@@ -251,6 +261,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(888, 369);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.personManagementButton);
             this.Controls.Add(this.inspectionManagementButton);
@@ -291,5 +302,6 @@
         private System.Windows.Forms.Button inspectionManagementButton;
         private System.Windows.Forms.Button personManagementButton;
         private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.Button button1;
     }
 }
