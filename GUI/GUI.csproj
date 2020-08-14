@@ -34,10 +34,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Forms\Eventverwaltung\" />
-    <Folder Include="Forms\Inspektionsverwaltung\" />
-    <Folder Include="Forms\Buchhaltung\" />
-  </ItemGroup>
-
 </Project>

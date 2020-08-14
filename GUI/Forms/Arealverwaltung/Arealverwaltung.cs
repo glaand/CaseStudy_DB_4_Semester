@@ -59,5 +59,15 @@ namespace GUI
         {
             new QueryForm(new Area().insertQuery(), this).Show();
         }
+
+        private void areaListview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

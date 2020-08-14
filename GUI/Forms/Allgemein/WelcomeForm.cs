@@ -1,4 +1,5 @@
 ﻿using GUI.Forms.Allgemein;
+using GUI.Forms.Buchhaltung;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +61,13 @@ namespace GUI
             this.Hide();
             var adressenliste = new Adressenliste();
             adressenliste.Show();
+        }
+
+        private void accountingButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var Buchhaltung = new Buchhaltung();
+            Buchhaltung.Show();
         }
     }
 }

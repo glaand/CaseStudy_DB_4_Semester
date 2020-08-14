@@ -59,15 +59,15 @@
             this.menuDeleteEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.insertPerson = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.personMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(659, 179);
-            this.button4.Margin = new System.Windows.Forms.Padding(6);
+            this.button4.Location = new System.Drawing.Point(355, 84);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(284, 66);
+            this.button4.Size = new System.Drawing.Size(153, 31);
             this.button4.TabIndex = 3;
             this.button4.Text = "Zurück";
             this.button4.UseVisualStyleBackColor = true;
@@ -78,10 +78,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(78, 62);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(42, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(567, 47);
+            this.label1.Size = new System.Drawing.Size(288, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Marktverwaltungssystem";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,10 +89,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(78, 173);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(42, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(482, 54);
+            this.label2.Size = new System.Drawing.Size(250, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "Freie Marktgruppe";
             // 
@@ -111,11 +109,10 @@
             this.manager,
             this.address});
             this.personListview.HideSelection = false;
-            this.personListview.Location = new System.Drawing.Point(22, 277);
-            this.personListview.Margin = new System.Windows.Forms.Padding(6);
+            this.personListview.Location = new System.Drawing.Point(12, 130);
             this.personListview.MultiSelect = false;
             this.personListview.Name = "personListview";
-            this.personListview.Size = new System.Drawing.Size(1753, 855);
+            this.personListview.Size = new System.Drawing.Size(946, 403);
             this.personListview.TabIndex = 4;
             this.personListview.UseCompatibleStateImageBehavior = false;
             this.personListview.View = System.Windows.Forms.View.Details;
@@ -178,115 +175,123 @@
             this.menuAddEmployee,
             this.menuDeleteEmployee});
             this.personMenu.Name = "personMenu";
-            this.personMenu.Size = new System.Drawing.Size(415, 460);
+            this.personMenu.Size = new System.Drawing.Size(236, 268);
             this.personMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.personMenu_ItemClicked);
             // 
             // menuPersonEdit
             // 
             this.menuPersonEdit.Name = "menuPersonEdit";
-            this.menuPersonEdit.Size = new System.Drawing.Size(414, 38);
+            this.menuPersonEdit.Size = new System.Drawing.Size(235, 22);
             this.menuPersonEdit.Text = "Person bearbeiten";
             // 
             // menuPersonDelete
             // 
             this.menuPersonDelete.Name = "menuPersonDelete";
-            this.menuPersonDelete.Size = new System.Drawing.Size(414, 38);
+            this.menuPersonDelete.Size = new System.Drawing.Size(235, 22);
             this.menuPersonDelete.Text = "Person löschen";
             // 
             // menuAddLandlord
             // 
             this.menuAddLandlord.Name = "menuAddLandlord";
-            this.menuAddLandlord.Size = new System.Drawing.Size(414, 38);
+            this.menuAddLandlord.Size = new System.Drawing.Size(235, 22);
             this.menuAddLandlord.Text = "Als Vermieter hinzufügen";
             // 
             // menuDeleteLandlord
             // 
             this.menuDeleteLandlord.Name = "menuDeleteLandlord";
-            this.menuDeleteLandlord.Size = new System.Drawing.Size(414, 38);
+            this.menuDeleteLandlord.Size = new System.Drawing.Size(235, 22);
             this.menuDeleteLandlord.Text = "Als Vermieter entfernen";
             // 
             // menuAddSeller
             // 
             this.menuAddSeller.Name = "menuAddSeller";
-            this.menuAddSeller.Size = new System.Drawing.Size(414, 38);
+            this.menuAddSeller.Size = new System.Drawing.Size(235, 22);
             this.menuAddSeller.Text = "Als Anbieter hinzufügen";
             // 
             // menuDeleteSeller
             // 
             this.menuDeleteSeller.Name = "menuDeleteSeller";
-            this.menuDeleteSeller.Size = new System.Drawing.Size(414, 38);
+            this.menuDeleteSeller.Size = new System.Drawing.Size(235, 22);
             this.menuDeleteSeller.Text = "Als Anbieter entfernen";
             // 
             // menuAddInspector
             // 
             this.menuAddInspector.Name = "menuAddInspector";
-            this.menuAddInspector.Size = new System.Drawing.Size(414, 38);
+            this.menuAddInspector.Size = new System.Drawing.Size(235, 22);
             this.menuAddInspector.Text = "Als Inspektor hinzufügen";
             // 
             // menuDeleteInspector
             // 
             this.menuDeleteInspector.Name = "menuDeleteInspector";
-            this.menuDeleteInspector.Size = new System.Drawing.Size(414, 38);
+            this.menuDeleteInspector.Size = new System.Drawing.Size(235, 22);
             this.menuDeleteInspector.Text = "Als Inspektor entfernen";
             // 
             // menuAddVisitor
             // 
             this.menuAddVisitor.Name = "menuAddVisitor";
-            this.menuAddVisitor.Size = new System.Drawing.Size(414, 38);
+            this.menuAddVisitor.Size = new System.Drawing.Size(235, 22);
             this.menuAddVisitor.Text = "Als Marktbesucher hinzufügen";
             // 
             // menuDeleteVisitor
             // 
             this.menuDeleteVisitor.Name = "menuDeleteVisitor";
-            this.menuDeleteVisitor.Size = new System.Drawing.Size(414, 38);
+            this.menuDeleteVisitor.Size = new System.Drawing.Size(235, 22);
             this.menuDeleteVisitor.Text = "Als Marktbesucher entfernen";
             // 
             // menuAddEmployee
             // 
             this.menuAddEmployee.Name = "menuAddEmployee";
-            this.menuAddEmployee.Size = new System.Drawing.Size(414, 38);
+            this.menuAddEmployee.Size = new System.Drawing.Size(235, 22);
             this.menuAddEmployee.Text = "Als Mitarbeiter hinzufügen";
             // 
             // menuDeleteEmployee
             // 
             this.menuDeleteEmployee.Name = "menuDeleteEmployee";
-            this.menuDeleteEmployee.Size = new System.Drawing.Size(414, 38);
+            this.menuDeleteEmployee.Size = new System.Drawing.Size(235, 22);
             this.menuDeleteEmployee.Text = "Als Mitarbeiter entfernen";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(659, 62);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(355, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(738, 96);
+            this.label3.Size = new System.Drawing.Size(365, 45);
             this.label3.TabIndex = 5;
             this.label3.Text = "Hinweis:\r\n\r\nRechtsklick auf entsprechende person_id ermöglicht Zusatzaktionen";
             // 
             // insertPerson
             // 
-            this.insertPerson.Location = new System.Drawing.Point(955, 179);
-            this.insertPerson.Margin = new System.Windows.Forms.Padding(6);
+            this.insertPerson.Location = new System.Drawing.Point(514, 84);
             this.insertPerson.Name = "insertPerson";
-            this.insertPerson.Size = new System.Drawing.Size(284, 66);
+            this.insertPerson.Size = new System.Drawing.Size(153, 31);
             this.insertPerson.TabIndex = 3;
             this.insertPerson.Text = "Person eintragen";
             this.insertPerson.UseVisualStyleBackColor = true;
             this.insertPerson.Click += new System.EventHandler(this.insertPerson_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(687, 84);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 31);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Ökoboitätsprüfung anmelden";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Personalverwaltung
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1801, 1163);
+            this.ClientSize = new System.Drawing.Size(970, 497);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.insertPerson);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.personListview);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Personalverwaltung";
             this.Text = "Personalverwaltung";
             this.Activated += new System.EventHandler(this.Personalverwaltung_Activated);
@@ -336,5 +341,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuDeleteEmployee;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button insertPerson;
+        private System.Windows.Forms.Button button1;
     }
 }
