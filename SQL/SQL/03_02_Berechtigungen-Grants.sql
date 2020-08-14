@@ -1,7 +1,7 @@
 /*	
 	- Dateiname:		03_02_Berechtigungen-Grants.sql
 	- Beschreibung:		Grants 
-	- Autor:			Andr� Glatzl und Alban Ljutvija
+	- Autor:			André Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.2
 	- Version:			1.0
 	- Datum:			04.08.2020

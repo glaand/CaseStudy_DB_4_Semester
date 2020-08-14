@@ -2,7 +2,7 @@
 /*	
 	- Dateiname:		01_Datenbankerstellung.sql
 	- Beschreibung:		Datenbankerstellung und Aufbau der Tabellen
-	- Autor:			Andr� Glatzl und Alban Ljutvija
+	- Autor:			André Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.1
 	- Version:			1.0
 	- Datum:			19.07.2020
