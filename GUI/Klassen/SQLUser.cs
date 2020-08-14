@@ -121,12 +121,26 @@ namespace GUI.Klassen
         public DataTable select(string query)
         {
             SqlCommand cmd = new SqlCommand(query, this.connection);
-            this.OpenConnection();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
-            dataAdapter.Fill(table);
+            this.OpenConnection();
+            try
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                dataAdapter.Fill(table);
+                dataAdapter.Dispose();
+            }
+            catch (Exception ex)
+            {
+                if (ex.ToString().Contains("permission") && ex.ToString().Contains("permission"))
+                {
+                    MessageBox.Show("Keine Berechtigungen für diese Aktion.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(ex.ToString(), "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             this.CloseConnection();
-            dataAdapter.Dispose();
             return table;
         }
 
