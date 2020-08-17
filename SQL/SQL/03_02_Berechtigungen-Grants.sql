@@ -62,18 +62,28 @@ go
 /*
  *	- Tabelle: Inspectors
  */
+GRANT SELECT ON Inspectors TO customerService;
+go
+GRANT SELECT ON Inspectors TO areaManagement;
+go
 GRANT SELECT ON Inspectors TO accounting;
 go
 
 /*
  *	- Tabelle: Visitors
  */
+GRANT SELECT ON Visitors TO customerService;
+go
+GRANT SELECT ON Visitors TO areaManagement;
+go
 GRANT SELECT, UPDATE, INSERT, DELETE ON Visitors TO informationPlatform;
 go
 
 /*
  *	- Tabelle: Employees
  */
+GRANT SELECT ON Employees TO customerService;
+go
 GRANT SELECT ON Employees TO accounting;
 go
 GRANT SELECT ON Employees TO areaManagement;

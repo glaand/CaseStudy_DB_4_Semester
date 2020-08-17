@@ -171,7 +171,7 @@ go
 -- Fremdschlüssel RentalPermissions
 
 alter table RentalPermissions
-add constraint FK_RentalPermissions_Areas foreign key (area_id) references Areas (area_id);
+add constraint FK_RentalPermissions_Areas foreign key (area_id) references Areas (area_id) on delete cascade;
 go
 
 -- Fremdschlüssel Places
