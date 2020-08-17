@@ -1,19 +1,30 @@
+using GUI.Tabellen;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-
-using GUI.Klassen;
-using GUI.Klassen.ERM;
 
 namespace GUI
 {
     public static class Program
     {
-        // Beim Program wird der SQLUser verwaltet. Somit können alle Forms auf diese Globale Variabel zugreifen.
-        public static SQLUser sqlUser { get; set; }
-        
+
+        public static CustomMarktverwaltungssystemContext db { get; set; }
+
+        public static bool CheckConnection()
+        {
+            try
+            {
+                Program.db.Database.OpenConnection();
+                Program.db.Database.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
+
         [STAThread]
         static void Main()
         {

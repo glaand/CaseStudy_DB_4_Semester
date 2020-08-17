@@ -77,8 +77,6 @@ alter table QualityChecks
 add constraint PK_QualityChecks primary key (quality_check_id);
 go
 
-
-
 -- Tabelle Invoices
 
 alter table Invoices
@@ -150,9 +148,3 @@ go
 alter table Districts
 add constraint PK_Districts primary key (district_id);
 go
-
-
-
-
-
-

@@ -1,15 +1,18 @@
 ﻿using GUI.Forms.Allgemein;
-using GUI.Klassen.ERM;
+using GUI.Tabellen;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using GUI.Forms.Personalverwaltung;
 
 namespace GUI
 {
     public partial class Personalverwaltung : Form
     {
-        private List<dynamic> dataList;
-        private Person currentPerson;
+        private List<Persons> persons;
+        private Persons currentPerson;
         public Personalverwaltung()
         {
             InitializeComponent();
@@ -17,20 +20,55 @@ namespace GUI
 
         private void loadListview()
         {
-            this.dataList = (new Person()).selectAll();
+            this.persons = Program.db.Persons
+                .Include(p => p.Address)
+                .Include(p => p.Address.Place)
+                .Include(p => p.Address.Place.District)
+                .Include(p => p.Manager)
+                .Include(p => p.Sellers)
+                .Include(p => p.Landlords)
+                .Include(p => p.Inspectors)
+                .Include(p => p.Visitors)
+                .Include(p => p.Employees)
+                .ToList();
+
+
             personListview.Items.Clear();
-            foreach (Person person in dataList)
+            foreach (Persons person in persons)
             {
-                personListview.Items.Add(new ListViewItem(new[]
+                ListViewItem listviewItem = new ListViewItem(new[]
                 {
-                    person.person_id.ToString(),
-                    person.firstname,
-                    person.lastname,
-                    person.email,
-                    person.phone_nr,
-                    person.manager != null ? person.manager.firstname + " " + person.manager.lastname  : " -- Kein Vorgesetzter --",
-                    person.address.ToString()
-                }));
+                    person.PersonId.ToString(),
+                    person.Firstname,
+                    person.Lastname,
+                    person.Email,
+                    person.PhoneNr,
+                    person.Manager != null ? person.Manager.getFullname()  : " -- Kein Vorgesetzter --",
+                    person.Address.completeAddress()
+                });
+
+                if (person.Sellers != null)
+                {
+                    listviewItem.BackColor = System.Drawing.Color.Red;
+                }
+                else if (person.Landlords != null)
+                {
+                    listviewItem.BackColor = System.Drawing.Color.Yellow;
+                }
+                else if (person.Inspectors != null)
+                {
+                    listviewItem.BackColor = System.Drawing.Color.LawnGreen;
+                }
+                else if (person.Visitors != null)
+                {
+                    listviewItem.BackColor = System.Drawing.Color.DeepSkyBlue;
+                }
+                else if (person.Employees != null)
+                {
+                    listviewItem.BackColor = System.Drawing.Color.Pink;
+                }
+
+                personListview.Items.Add(listviewItem);
             }
             personListview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             personListview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -56,8 +94,15 @@ namespace GUI
                 if (personListview.FocusedItem.Bounds.Contains(e.Location))
                 {
                     int index = personListview.FocusedItem.Index;
-                    this.currentPerson = dataList[index];
-                    personMenu.Show(Cursor.Position);
+                    this.currentPerson = persons[index];
+                    if (this.currentPerson.Sellers != null)
+                    {
+                        sellerMenu.Show(Cursor.Position);
+                    }
+                    else
+                    {
+                        personMenu.Show(Cursor.Position);
+                    }
                 }
             }
         }
@@ -65,7 +110,7 @@ namespace GUI
 
         private void personMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            switch (e.ClickedItem.Name)
+            /*switch (e.ClickedItem.Name)
             {
                 case "menuPersonEdit":
                     {
@@ -148,17 +193,31 @@ namespace GUI
                     break;
                 default:
                     break;
-            }
+            }*/
         }
 
         private void insertPerson_Click(object sender, EventArgs e)
         {
-            new QueryForm(new Person().insertQuery(), this).Show();
+            new Person_eintragen().Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void sellerMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Name)
+            {
+                case "toolStripMenuItem1":
+                    {
+                        new Anmeldung___Öko_Bonitätsprüfung(this.currentPerson).Show();
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
     }
 }

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
+﻿using GUI.Tabellen;
+using System;
 using System.Windows.Forms;
-
-using GUI.Klassen;
 
 namespace GUI
 {
@@ -38,10 +35,9 @@ namespace GUI
             String password = passwordTextbox.Text;
             loginButton.Text = "Bitte warten...";
 
-            Program.sqlUser = new SQLUser(username, password);
-            Program.sqlUser.login();
+            Program.db = new CustomMarktverwaltungssystemContext(username, password);
 
-            if (Program.sqlUser.isLoggedIn)
+            if (Program.CheckConnection())
             {
                 MessageBox.Show("Du hast dich erfolgreich eingeloggt.", "Herzlich Willkommen", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();

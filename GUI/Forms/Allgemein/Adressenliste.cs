@@ -1,17 +1,15 @@
-﻿using GUI.Klassen.ERM;
+﻿using GUI.Tabellen;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GUI.Forms.Allgemein
 {
     public partial class Adressenliste : Form
     {
-        private List<dynamic> dataList;
+        private List<Addresses> dataList;
         public Adressenliste()
         {
             InitializeComponent();
@@ -19,18 +17,22 @@ namespace GUI.Forms.Allgemein
 
         private void loadListview()
         {
-            this.dataList = (new Address()).selectAll();
+            this.dataList = Program.db.Addresses
+                .Include(a => a.Place)
+                .Include(a => a.Place.District)
+                .ToList();
+
             addressListview.Items.Clear();
-            foreach (Address address in dataList)
+            foreach (Addresses address in dataList)
             {
                 addressListview.Items.Add(new ListViewItem(new[]
                 {
-                    address.address_id.ToString(),
-                    address.place.place_id.ToString(),
-                    address.place.district.district_id.ToString(),
-                    address.address,
-                    address.place.place,
-                    address.place.district.district
+                    address.AddressId.ToString(),
+                    address.Place.PlaceId.ToString(),
+                    address.Place.District.DistrictId.ToString(),
+                    address.Address,
+                    address.Place.Place,
+                    address.Place.District.District
                 }));
             }
             addressListview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -42,11 +44,5 @@ namespace GUI.Forms.Allgemein
             this.loadListview();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            WelcomeForm frm = new WelcomeForm();
-            frm.Show();
-        }
     }
 }
