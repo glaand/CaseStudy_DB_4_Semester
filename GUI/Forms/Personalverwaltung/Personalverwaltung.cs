@@ -95,14 +95,7 @@ namespace GUI
                 {
                     int index = personListview.FocusedItem.Index;
                     this.currentPerson = persons[index];
-                    if (this.currentPerson.Sellers != null)
-                    {
-                        sellerMenu.Show(Cursor.Position);
-                    }
-                    else
-                    {
-                        personMenu.Show(Cursor.Position);
-                    }
+                    personMenu.Show(Cursor.Position);
                 }
             }
         }
@@ -110,90 +103,14 @@ namespace GUI
 
         private void personMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            /*switch (e.ClickedItem.Name)
+            switch (e.ClickedItem.Name)
             {
-                case "menuPersonEdit":
-                    {
-                        this.Hide();
-                        string query = this.currentPerson.updateQuery();
-                        (new QueryForm(query, this)).Show();
-                        break;
-                    }
-                case "menuPersonDelete":
-                    {
-                        this.Hide();
-                        string beforeQuery = "";
-                        string query = this.currentPerson.deleteQuery();
-                        Landlord landlord = null;
-                        Seller seller = null;
-                        Inspector inspector = null;
-                        Visitor visitor = null;
-                        Employee employee = null;
-                        
-                        try
-                        {
-                            landlord = new Landlord(this.currentPerson.person_id);
-                            seller = new Seller(this.currentPerson.person_id);
-                            inspector = new Inspector(this.currentPerson.person_id);
-                            visitor = new Visitor(this.currentPerson.person_id);
-                            employee = new Employee(this.currentPerson.person_id);
-                        }
-                        catch (Exception ex)
-                        {
-
-                        }
-
-                        if (landlord != null)
-                            beforeQuery += landlord.deleteQuery() + "\r\n\r\n";
-
-                        if (seller != null)
-                            beforeQuery += seller.deleteQuery() + "\r\n\r\n";
-
-                        if (inspector != null)
-                            beforeQuery += inspector.deleteQuery() + "\r\n\r\n";
-
-                        if (visitor != null)
-                            beforeQuery += visitor.deleteQuery() + "\r\n\r\n";
-
-                        if (employee!= null)
-                            beforeQuery += employee.deleteQuery() + "\r\n\r\n";
-
-                        (new QueryForm(beforeQuery + query, this)).Show();
-                        break;
-                    }
-                case "menuAddLandlord":
-                    new QueryForm(new Landlord().insertQuery(this.currentPerson.person_id), this).Show();
-                    break;
-                case "menuDeleteLandlord":
-                    new QueryForm(new Landlord(this.currentPerson.person_id).deleteQuery(), this).Show();
-                    break;
-                case "menuAddSeller":
-                    new QueryForm(new Seller().insertQuery(this.currentPerson.person_id), this).Show();
-                    break;
-                case "menuDeleteSeller":
-                    new QueryForm(new Seller(this.currentPerson.person_id).deleteQuery(), this).Show();
-                    break;
-                case "menuAddInspector":
-                    new QueryForm(new Inspector().insertQuery(this.currentPerson.person_id), this).Show();
-                    break;
-                case "menuDeleteInspector":
-                    new QueryForm(new Inspector(this.currentPerson.person_id).deleteQuery(), this).Show();
-                    break;
-                case "menuAddVisitor":
-                    new QueryForm(new Visitor().insertQuery(this.currentPerson.person_id), this).Show();
-                    break;
-                case "menuDeleteVisitor":
-                    new QueryForm(new Visitor(this.currentPerson.person_id).deleteQuery(), this).Show();
-                    break;
-                case "menuAddEmployee":
-                    new QueryForm(new Employee().insertQuery(this.currentPerson.person_id), this).Show();
-                    break;
-                case "menuDeleteEmployee":
-                    new QueryForm(new Employee(this.currentPerson.person_id).deleteQuery(), this).Show();
+                case "bonitat":
+                    new Anmeldung___Öko_Bonitätsprüfung(this.currentPerson).Show();
                     break;
                 default:
                     break;
-            }*/
+            }
         }
 
         private void insertPerson_Click(object sender, EventArgs e)
@@ -204,20 +121,6 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void sellerMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            switch (e.ClickedItem.Name)
-            {
-                case "toolStripMenuItem1":
-                    {
-                        new Anmeldung___Öko_Bonitätsprüfung(this.currentPerson).Show();
-                        break;
-                    }
-                default:
-                    break;
-            }
         }
     }
 }

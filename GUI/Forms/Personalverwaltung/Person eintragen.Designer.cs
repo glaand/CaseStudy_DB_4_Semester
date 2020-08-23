@@ -85,14 +85,14 @@
             this.firstname.Location = new System.Drawing.Point(105, 98);
             this.firstname.Name = "firstname";
             this.firstname.Size = new System.Drawing.Size(174, 23);
-            this.firstname.TabIndex = 5;
+            this.firstname.TabIndex = 1;
             // 
             // lastname
             // 
             this.lastname.Location = new System.Drawing.Point(105, 127);
             this.lastname.Name = "lastname";
             this.lastname.Size = new System.Drawing.Size(174, 23);
-            this.lastname.TabIndex = 5;
+            this.lastname.TabIndex = 2;
             // 
             // label4
             // 
@@ -108,7 +108,7 @@
             this.email.Location = new System.Drawing.Point(105, 156);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(174, 23);
-            this.email.TabIndex = 5;
+            this.email.TabIndex = 3;
             // 
             // label5
             // 
@@ -124,7 +124,7 @@
             this.phone.Location = new System.Drawing.Point(105, 185);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(174, 23);
-            this.phone.TabIndex = 5;
+            this.phone.TabIndex = 4;
             // 
             // label6
             // 
@@ -150,7 +150,7 @@
             this.comboBox1.Location = new System.Drawing.Point(105, 216);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(420, 23);
-            this.comboBox1.TabIndex = 6;
+            this.comboBox1.TabIndex = 5;
             // 
             // label8
             // 
@@ -178,7 +178,7 @@
             this.comboBox3.Location = new System.Drawing.Point(105, 276);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(420, 23);
-            this.comboBox3.TabIndex = 6;
+            this.comboBox3.TabIndex = 7;
             // 
             // label9
             // 

@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\Arealverwaltung\Areal bearbeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Personalverwaltung\Personalverwaltung.cs">
       <SubType>Form</SubType>
     </Compile>

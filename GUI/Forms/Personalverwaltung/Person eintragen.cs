@@ -34,6 +34,8 @@ namespace GUI.Forms.Personalverwaltung
             List<Persons> managers = Program.db.Persons.ToList();
             List<KeyValuePair<Persons, string>> managersItems = new List<KeyValuePair<Persons, string>>();
 
+            managersItems.Add(new KeyValuePair<Persons, string>(null, " -- Kein Vorgesetzter --"));
+
             foreach (Persons manager in managers)
             {
                 managersItems.Add(new KeyValuePair<Persons, string>(manager, manager.getFullname()));

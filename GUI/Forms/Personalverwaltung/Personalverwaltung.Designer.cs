@@ -44,16 +44,7 @@
             this.personMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuPersonEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPersonDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAddLandlord = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDeleteLandlord = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAddSeller = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDeleteSeller = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAddInspector = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDeleteInspector = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAddVisitor = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDeleteVisitor = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAddEmployee = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDeleteEmployee = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.insertPerson = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -66,10 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.sellerMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.personMenu.SuspendLayout();
-            this.sellerMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -163,91 +151,28 @@
             this.personMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPersonEdit,
             this.menuPersonDelete,
-            this.menuAddLandlord,
-            this.menuDeleteLandlord,
-            this.menuAddSeller,
-            this.menuDeleteSeller,
-            this.menuAddInspector,
-            this.menuDeleteInspector,
-            this.menuAddVisitor,
-            this.menuDeleteVisitor,
-            this.menuAddEmployee,
-            this.menuDeleteEmployee});
+            this.toolStripMenuItem1});
             this.personMenu.Name = "personMenu";
-            this.personMenu.Size = new System.Drawing.Size(236, 268);
+            this.personMenu.Size = new System.Drawing.Size(329, 70);
             this.personMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.personMenu_ItemClicked);
             // 
             // menuPersonEdit
             // 
             this.menuPersonEdit.Name = "menuPersonEdit";
-            this.menuPersonEdit.Size = new System.Drawing.Size(235, 22);
+            this.menuPersonEdit.Size = new System.Drawing.Size(328, 22);
             this.menuPersonEdit.Text = "Person bearbeiten";
             // 
             // menuPersonDelete
             // 
             this.menuPersonDelete.Name = "menuPersonDelete";
-            this.menuPersonDelete.Size = new System.Drawing.Size(235, 22);
+            this.menuPersonDelete.Size = new System.Drawing.Size(328, 22);
             this.menuPersonDelete.Text = "Person löschen";
             // 
-            // menuAddLandlord
+            // toolStripMenuItem1
             // 
-            this.menuAddLandlord.Name = "menuAddLandlord";
-            this.menuAddLandlord.Size = new System.Drawing.Size(235, 22);
-            this.menuAddLandlord.Text = "Als Vermieter hinzufügen";
-            // 
-            // menuDeleteLandlord
-            // 
-            this.menuDeleteLandlord.Name = "menuDeleteLandlord";
-            this.menuDeleteLandlord.Size = new System.Drawing.Size(235, 22);
-            this.menuDeleteLandlord.Text = "Als Vermieter entfernen";
-            // 
-            // menuAddSeller
-            // 
-            this.menuAddSeller.Name = "menuAddSeller";
-            this.menuAddSeller.Size = new System.Drawing.Size(235, 22);
-            this.menuAddSeller.Text = "Als Anbieter hinzufügen";
-            // 
-            // menuDeleteSeller
-            // 
-            this.menuDeleteSeller.Name = "menuDeleteSeller";
-            this.menuDeleteSeller.Size = new System.Drawing.Size(235, 22);
-            this.menuDeleteSeller.Text = "Als Anbieter entfernen";
-            // 
-            // menuAddInspector
-            // 
-            this.menuAddInspector.Name = "menuAddInspector";
-            this.menuAddInspector.Size = new System.Drawing.Size(235, 22);
-            this.menuAddInspector.Text = "Als Inspektor hinzufügen";
-            // 
-            // menuDeleteInspector
-            // 
-            this.menuDeleteInspector.Name = "menuDeleteInspector";
-            this.menuDeleteInspector.Size = new System.Drawing.Size(235, 22);
-            this.menuDeleteInspector.Text = "Als Inspektor entfernen";
-            // 
-            // menuAddVisitor
-            // 
-            this.menuAddVisitor.Name = "menuAddVisitor";
-            this.menuAddVisitor.Size = new System.Drawing.Size(235, 22);
-            this.menuAddVisitor.Text = "Als Marktbesucher hinzufügen";
-            // 
-            // menuDeleteVisitor
-            // 
-            this.menuDeleteVisitor.Name = "menuDeleteVisitor";
-            this.menuDeleteVisitor.Size = new System.Drawing.Size(235, 22);
-            this.menuDeleteVisitor.Text = "Als Marktbesucher entfernen";
-            // 
-            // menuAddEmployee
-            // 
-            this.menuAddEmployee.Name = "menuAddEmployee";
-            this.menuAddEmployee.Size = new System.Drawing.Size(235, 22);
-            this.menuAddEmployee.Text = "Als Mitarbeiter hinzufügen";
-            // 
-            // menuDeleteEmployee
-            // 
-            this.menuDeleteEmployee.Name = "menuDeleteEmployee";
-            this.menuDeleteEmployee.Size = new System.Drawing.Size(235, 22);
-            this.menuDeleteEmployee.Text = "Als Mitarbeiter entfernen";
+            this.toolStripMenuItem1.Name = "bonitat";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(328, 22);
+            this.toolStripMenuItem1.Text = "Anbieter für die Öko-Bonitätsprüfung anmelden";
             // 
             // label3
             // 
@@ -353,20 +278,6 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Mitarbeiter";
             // 
-            // sellerMenu
-            // 
-            this.sellerMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.sellerMenu.Name = "sellerMenu";
-            this.sellerMenu.Size = new System.Drawing.Size(329, 26);
-            this.sellerMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.sellerMenu_ItemClicked);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(328, 22);
-            this.toolStripMenuItem1.Text = "Anbieter für die Öko-Bonitätsprüfung anmelden";
-            // 
             // Personalverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -393,7 +304,6 @@
             this.Activated += new System.EventHandler(this.Personalverwaltung_Activated);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.personListview_MouseClick);
             this.personMenu.ResumeLayout(false);
-            this.sellerMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,16 +333,6 @@
         private System.Windows.Forms.ContextMenuStrip personMenu;
         private System.Windows.Forms.ToolStripMenuItem menuPersonEdit;
         private System.Windows.Forms.ToolStripMenuItem menuPersonDelete;
-        private System.Windows.Forms.ToolStripMenuItem menuAddLandlord;
-        private System.Windows.Forms.ToolStripMenuItem menuDeleteLandlord;
-        private System.Windows.Forms.ToolStripMenuItem menuAddSeller;
-        private System.Windows.Forms.ToolStripMenuItem menuDeleteSeller;
-        private System.Windows.Forms.ToolStripMenuItem menuAddInspector;
-        private System.Windows.Forms.ToolStripMenuItem menuDeleteInspector;
-        private System.Windows.Forms.ToolStripMenuItem menuAddVisitor;
-        private System.Windows.Forms.ToolStripMenuItem menuDeleteVisitor;
-        private System.Windows.Forms.ToolStripMenuItem menuAddEmployee;
-        private System.Windows.Forms.ToolStripMenuItem menuDeleteEmployee;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button insertPerson;
         private System.Windows.Forms.Panel panel1;
@@ -445,7 +345,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ContextMenuStrip sellerMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

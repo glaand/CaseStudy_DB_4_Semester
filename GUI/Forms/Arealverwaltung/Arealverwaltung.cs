@@ -29,6 +29,7 @@ namespace GUI
                 .Include(a => a.Landlord)
                 .Include(a => a.Landlord.Person)
                 .Include(a => a.RentalProperties)
+                .Include(a => a.RentalPermissions)
                 .ToList();
 
             areaListview.Items.Clear();
@@ -116,6 +117,29 @@ namespace GUI
                         catch (Exception ex)
                         {
                             MessageBox.Show("Fehler beim Löschen.\n\nVersuch zuerst die Mietobjekte zu löschen.");
+                        }
+                        break;
+                    }
+                case "toolStripMenuItem3":
+                    {
+                        new Areal_bearbeiten(this.currentArea).Show();
+                        break;
+                    }
+                case "toolStripMenuItem4":
+                    {
+                        try
+                        {
+                            List<RentalPermissions> eventDates = this.currentArea.RentalPermissions.ToList();
+                            string msg = "An folgende Tagen sind Events bei diesem Areal erlaubt:\r\n\r\n";
+                            foreach (RentalPermissions eventDate in eventDates)
+                            {
+                                msg += eventDate.Date.ToString("dd-MM-yyyy") + "\r\n";
+                            }
+                            MessageBox.Show(msg);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Fehler beim Auflisten von Eventdaten.");
                         }
                         break;
                     }

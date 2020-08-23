@@ -52,6 +52,8 @@ go
  */
 GRANT SELECT, UPDATE, INSERT, DELETE ON Sellers TO customerService;
 go
+GRANT SELECT ON Sellers TO areaManagement;
+go
 GRANT SELECT ON Sellers TO qualityInspection;
 go
 GRANT SELECT ON Sellers TO accounting;
