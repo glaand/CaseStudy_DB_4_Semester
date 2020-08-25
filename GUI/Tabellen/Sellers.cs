@@ -22,5 +22,27 @@ namespace GUI.Tabellen
         public virtual ICollection<CreditChecks> CreditChecks { get; set; }
         public virtual ICollection<QualityChecks> QualityChecks { get; set; }
         public virtual ICollection<RentalPropertyReservations> RentalPropertyReservations { get; set; }
+
+        // Custom
+        public bool isQualified()
+        {
+            if (this.QualityChecks.Count == 2)
+            {
+                bool? qualified = null;
+                foreach (QualityChecks q in this.QualityChecks)
+                {
+                    if (qualified == null)
+                    {
+                        qualified = q.Approved;
+                    }
+                    else
+                    {
+                        qualified = (bool)qualified && (bool)q.Approved;
+                    }
+                }
+                return (bool)qualified;
+            }
+            return false;
+        }
     }
 }
