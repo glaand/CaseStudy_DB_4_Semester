@@ -100,19 +100,6 @@ namespace GUI
             }
         }
 
-
-        private void personMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            switch (e.ClickedItem.Name)
-            {
-                case "bonitat":
-                    new Anmeldung___Öko_Bonitätsprüfung(this.currentPerson).Show();
-                    break;
-                default:
-                    break;
-            }
-        }
-
         private void insertPerson_Click(object sender, EventArgs e)
         {
             new Person_eintragen().Show();
@@ -121,6 +108,18 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void personMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Name)
+            {
+                case "manageSeller":
+                    new Anbieter_verwalten(this.currentPerson.Sellers).Show();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

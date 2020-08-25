@@ -153,26 +153,26 @@
             this.menuPersonDelete,
             this.toolStripMenuItem1});
             this.personMenu.Name = "personMenu";
-            this.personMenu.Size = new System.Drawing.Size(329, 70);
+            this.personMenu.Size = new System.Drawing.Size(174, 70);
             this.personMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.personMenu_ItemClicked);
             // 
             // menuPersonEdit
             // 
             this.menuPersonEdit.Name = "menuPersonEdit";
-            this.menuPersonEdit.Size = new System.Drawing.Size(328, 22);
+            this.menuPersonEdit.Size = new System.Drawing.Size(173, 22);
             this.menuPersonEdit.Text = "Person bearbeiten";
             // 
             // menuPersonDelete
             // 
             this.menuPersonDelete.Name = "menuPersonDelete";
-            this.menuPersonDelete.Size = new System.Drawing.Size(328, 22);
+            this.menuPersonDelete.Size = new System.Drawing.Size(173, 22);
             this.menuPersonDelete.Text = "Person löschen";
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "bonitat";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(328, 22);
-            this.toolStripMenuItem1.Text = "Anbieter für die Öko-Bonitätsprüfung anmelden";
+            this.toolStripMenuItem1.Name = "manageSeller";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
+            this.toolStripMenuItem1.Text = "Anbieter verwalten";
             // 
             // label3
             // 

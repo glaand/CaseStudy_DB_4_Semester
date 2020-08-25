@@ -48,6 +48,7 @@
             this.personManagementButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -250,11 +251,21 @@
             // 
             this.button1.Location = new System.Drawing.Point(210, 279);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 64);
+            this.button1.Size = new System.Drawing.Size(179, 30);
             this.button1.TabIndex = 5;
             this.button1.Text = "Adressenliste";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(210, 315);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(179, 28);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Abonnemente";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // WelcomeForm
             // 
@@ -263,6 +274,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(888, 369);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.personManagementButton);
@@ -305,5 +317,6 @@
         private System.Windows.Forms.Button personManagementButton;
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
