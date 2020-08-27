@@ -118,12 +118,6 @@ alter table InvoiceItem
 add constraint FK_InvoiceItem_Orders foreign key (order_id) references Orders (order_id);
 go
 
--- Fremdschlüssel SalaryOrders
-
-alter table SalaryOrders
-add constraint FK_SalaryOrders_Persons foreign key (person_id) references Persons (person_id);
-go
-
 -- (IS-A Beziehung)
 
 alter table SalaryOrders

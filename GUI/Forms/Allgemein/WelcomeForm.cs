@@ -1,5 +1,6 @@
 ﻿using GUI.Forms.Allgemein;
-using GUI.Forms.Buchhaltung;
+using GUI.Forms.Eventverwaltung;
+using GUI.Forms.Inspektionsverwaltung;
 using GUI.Tabellen;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -74,8 +75,7 @@ namespace GUI
 
         private void areaManagementButton_Click(object sender, EventArgs e)
         {
-            var arealverwaltung = new Areaverwaltung();
-            arealverwaltung.Show();
+            new Areaverwaltung().Show();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -83,31 +83,32 @@ namespace GUI
             Program.db = null;
             this.Hide();
             MessageBox.Show("Du hast dich erfolgreich ausgeloggt.", "Ausgeloggt", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            var loginForm = new LoginForm();
-            loginForm.Show();
+            new LoginForm().Show();
         }
 
         private void personManagementButton_Click(object sender, EventArgs e)
         {
-            var personalverwaltung = new Personalverwaltung();
-            personalverwaltung.Show();
+            new Personalverwaltung().Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var adressenliste = new Adressenliste();
-            adressenliste.Show();
-        }
-
-        private void accountingButton_Click(object sender, EventArgs e)
-        {
-            var Buchhaltung = new Buchhaltung();
-            Buchhaltung.Show();
+            new Adressenliste().Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            (new Abonnement()).Show();
+            new Abonnement().Show();
+        }
+
+        private void inspectionManagementButton_Click(object sender, EventArgs e)
+        {
+            new Inspektionsverwaltung().Show();
+        }
+
+        private void eventManagementButton_Click(object sender, EventArgs e)
+        {
+            new Eventverwaltung().Show();
         }
     }
 }

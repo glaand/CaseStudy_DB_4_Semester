@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.accountingButton = new System.Windows.Forms.Button();
             this.areaManagementButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,17 +50,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // accountingButton
-            // 
-            this.accountingButton.BackColor = System.Drawing.Color.Transparent;
-            this.accountingButton.Location = new System.Drawing.Point(25, 209);
-            this.accountingButton.Name = "accountingButton";
-            this.accountingButton.Size = new System.Drawing.Size(179, 64);
-            this.accountingButton.TabIndex = 2;
-            this.accountingButton.Text = "Buchhaltung";
-            this.accountingButton.UseVisualStyleBackColor = false;
-            this.accountingButton.Click += new System.EventHandler(this.accountingButton_Click);
             // 
             // areaManagementButton
             // 
@@ -217,6 +205,7 @@
             this.eventManagementButton.TabIndex = 1;
             this.eventManagementButton.Text = "Eventverwaltung";
             this.eventManagementButton.UseVisualStyleBackColor = true;
+            this.eventManagementButton.Click += new System.EventHandler(this.eventManagementButton_Click);
             // 
             // inspectionManagementButton
             // 
@@ -226,10 +215,11 @@
             this.inspectionManagementButton.TabIndex = 3;
             this.inspectionManagementButton.Text = "Inspektionsverwaltung";
             this.inspectionManagementButton.UseVisualStyleBackColor = true;
+            this.inspectionManagementButton.Click += new System.EventHandler(this.inspectionManagementButton_Click);
             // 
             // personManagementButton
             // 
-            this.personManagementButton.Location = new System.Drawing.Point(25, 279);
+            this.personManagementButton.Location = new System.Drawing.Point(25, 209);
             this.personManagementButton.Name = "personManagementButton";
             this.personManagementButton.Size = new System.Drawing.Size(179, 64);
             this.personManagementButton.TabIndex = 4;
@@ -249,9 +239,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(210, 279);
+            this.button1.Location = new System.Drawing.Point(25, 279);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 30);
+            this.button1.Size = new System.Drawing.Size(179, 54);
             this.button1.TabIndex = 5;
             this.button1.Text = "Adressenliste";
             this.button1.UseVisualStyleBackColor = true;
@@ -259,9 +249,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(210, 315);
+            this.button2.Location = new System.Drawing.Point(210, 279);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 28);
+            this.button2.Size = new System.Drawing.Size(179, 54);
             this.button2.TabIndex = 7;
             this.button2.Text = "Abonnemente";
             this.button2.UseVisualStyleBackColor = true;
@@ -284,7 +274,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.areaManagementButton);
-            this.Controls.Add(this.accountingButton);
             this.Name = "WelcomeForm";
             this.Text = "Willkomen im Marktverwaltungssystem";
             this.Load += new System.EventHandler(this.WelcomeForms_Load);
@@ -296,8 +285,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button accountingButton;
         private System.Windows.Forms.Button areaManagementButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

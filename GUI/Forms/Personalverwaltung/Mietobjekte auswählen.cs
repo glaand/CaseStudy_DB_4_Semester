@@ -44,10 +44,10 @@ namespace GUI.Forms.Personalverwaltung
             int x = startX;
             int y = startY;
             int totalProperties = this.rentalProperties.Count;
-            int xCount = Convert.ToInt32(Math.Floor(Math.Sqrt(totalProperties)));
+            int xCount = Convert.ToInt32(Math.Ceiling(Math.Sqrt(totalProperties)));
             int currentXCount = 1;
 
-            int width = Convert.ToInt32(Math.Floor((decimal)(this.drawPanel.Width / xCount + 1) - 5));
+            int width = Convert.ToInt32(Math.Ceiling((decimal)(this.drawPanel.Width / xCount + 1) - 5));
             int height = width;
 
             foreach (RentalProperties rp in this.rentalProperties)

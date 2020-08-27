@@ -22,7 +22,7 @@ namespace GUI.Forms.Personalverwaltung
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Anmeldung___Öko_Bonitätsprüfung(this.seller.Seller).Show();
+            new Anmeldung___Öko_Bonitätsprüfung(this.seller.Person).Show();
         }
 
         private void Anbieter_verwalten_Load(object sender, EventArgs e)
@@ -45,9 +45,9 @@ namespace GUI.Forms.Personalverwaltung
                 .ToList()[0];
             this.subscriptions = Program.db.Subscriptions.ToList();
             this.areas = Program.db.Areas.Include(a => a.Address).Include(a => a.Address.Place).ToList();
-            string firstnameTxt = this.seller.Seller.Firstname;
-            string lastnameTxt = this.seller.Seller.Lastname;
-            string emailTxt = this.seller.Seller.Email;
+            string firstnameTxt = this.seller.Person.Firstname;
+            string lastnameTxt = this.seller.Person.Lastname;
+            string emailTxt = this.seller.Person.Email;
             string subscriptionTxt = this.seller.Subscription != null ? this.seller.Subscription.Name : "Kein Abonomment";
             string creditcheckTxt = "Noch nicht angemeldet";
             if (this.seller.CreditChecks.Count > 0)

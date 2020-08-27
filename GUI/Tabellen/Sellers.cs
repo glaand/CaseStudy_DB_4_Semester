@@ -17,7 +17,7 @@ namespace GUI.Tabellen
         public string Description { get; set; }
         public DateTime? LastUpdate { get; set; }
 
-        public virtual Persons Seller { get; set; }
+        public virtual Persons Person { get; set; }
         public virtual Subscriptions Subscription { get; set; }
         public virtual ICollection<CreditChecks> CreditChecks { get; set; }
         public virtual ICollection<QualityChecks> QualityChecks { get; set; }

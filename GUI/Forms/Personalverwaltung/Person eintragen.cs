@@ -64,7 +64,11 @@ namespace GUI.Forms.Personalverwaltung
                 Program.db.Persons.Add(person);
                 Program.db.SaveChanges();
 
-                if (this.comboBox3.SelectedItem.ToString() == "Anbieter")
+                if (this.comboBox3.SelectedItem == null)
+                {
+                    // Empty
+                }
+                else if (this.comboBox3.SelectedItem.ToString() == "Anbieter")
                 {
                     var seller = new Sellers
                     {

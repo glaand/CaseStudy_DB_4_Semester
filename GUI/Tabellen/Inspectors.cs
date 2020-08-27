@@ -13,7 +13,7 @@ namespace GUI.Tabellen
         public int InspectorId { get; set; }
         public decimal HourlySalary { get; set; }
 
-        public virtual Persons Inspector { get; set; }
+        public virtual Persons Person { get; set; }
         public virtual ICollection<QualityChecks> QualityChecks { get; set; }
     }
 }

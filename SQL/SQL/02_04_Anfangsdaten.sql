@@ -4,117 +4,384 @@
 	- Autor:			André Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.3
 	- Version:			1.0
-	- Datum:			06.08.2020
+	- Datum:			27.08.2020
 */
 
---Selektierung der Datenbank 
-use Marktverwaltungssystem;
+/*
+ZWEI MAL AUSFÜHREN BITTE
+*/
 
---Anfangsdaten für EmployeeRoles
-INSERT INTO EmployeeRoles ("name")
-VALUES 
-	('Kundendienst'),
-	('Standortverwalter'),
-	('Qualitätsinspektion'),
-	('Buchhaltung');
+USE [Marktverwaltungssystem]
+GO
+SET IDENTITY_INSERT [dbo].[Addresses] ON 
 
---Anfangsdaten für Kantone
-INSERT INTO Districts (district)
-VALUES
-	('Zürich'),
-	('Bern'),
-	('Luzern'),
-	('Uri'),
-	('Schwyz'),
-	('Obwalden'),
-	('Nidwalden'),
-	('Glarus'),
-	('Zug'),
-	('Freiburg'),
-	('Solothurn'),
-	('Basel-Stadt'),
-	('Basel-Landschaft'),
-	('Schaffhausen'),
-	('Appenzell Ausserrhoden'),
-	('Appenzell Innerrhoden'),
-	('St. Gallen'),
-	('Graubünden'),
-	('Aargau'),
-	('Thurgau'),
-	('Tessin'),
-	('Waadt'),
-	('Wallis'),
-	('Neuenburg'),
-	('Genf'),
-	('Jura');
-go
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (1, 8000, N'Bahnhofstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (2, 3000, N'Marktgasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (3, 6000, N'Habsburgerstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (4, 6460, N'Seedorferstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (5, 6430, N'Schützenstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (6, 6060, N'Schwanderstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (7, 6370, N'Buochsterstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (8, 8750, N'Kirchstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (9, 6300, N'Zugerstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (10, 1700, N'Rue des Alpes')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (11, 4500, N'Gibelinstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (12, 4001, N'Riehenstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (13, 4410, N'Tiergartenstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (14, 8200, N'Alpenstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (15, 9100, N'Poststrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (16, 9050, N'Hauptgasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (17, 9000, N'Oberstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (18, 7000, N'Giacomettistrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (19, 5000, N'Mühlemattstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (20, 8500, N'Oberkirchstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (21, 6500, N'Viale Officina')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (22, 1000, N'Rue du Midi')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (23, 1950, N'Rue Oscar Bider')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (24, 2000, N'Rue des Fahys')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (25, 1201, N'Rue de la Confédération')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (26, 2800, N'Bellevoie')
+SET IDENTITY_INSERT [dbo].[Addresses] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Areas] ON 
 
---Anfangsdaten für Städte
-INSERT INTO Places (district_id, place, place_id)
-VALUES
-	((SELECT district_id FROM Districts WHERE district = 'Zürich'), 'Zürich-Stadt', 8000),
-	((SELECT district_id FROM Districts WHERE district = 'Bern'), 'Bern', 3000),
-	((SELECT district_id FROM Districts WHERE district = 'Luzern'), 'Luzern', 6000),
-	((SELECT district_id FROM Districts WHERE district = 'Uri'), 'Altdorf', 6460),
-	((SELECT district_id FROM Districts WHERE district = 'Schwyz'), 'Schwyz', 6430),
-	((SELECT district_id FROM Districts WHERE district = 'Obwalden'), 'Sarnen', 6060),
-	((SELECT district_id FROM Districts WHERE district = 'Nidwalden'), 'Stans', 6370),
-	((SELECT district_id FROM Districts WHERE district = 'Glarus'), 'Glarus', 8750),
-	((SELECT district_id FROM Districts WHERE district = 'Zug'), 'Zug', 6300),
-	((SELECT district_id FROM Districts WHERE district = 'Freiburg'), 'Freiburg', 1700),
-	((SELECT district_id FROM Districts WHERE district = 'Solothurn'), 'Solothurn', 4500),
-	((SELECT district_id FROM Districts WHERE district = 'Basel-Stadt'), 'Basel', 4001),
-	((SELECT district_id FROM Districts WHERE district = 'Basel-Landschaft'), 'Liestal', 4410),
-	((SELECT district_id FROM Districts WHERE district = 'Schaffhausen'), 'Schaffhausen', 8200),
-	((SELECT district_id FROM Districts WHERE district = 'Appenzell Ausserrhoden'), 'Herisau', 9100),
-	((SELECT district_id FROM Districts WHERE district = 'Appenzell Innerrhoden'), 'Appenzell', 9050),
-	((SELECT district_id FROM Districts WHERE district = 'St. Gallen'), 'St. Gallen', 9000),
-	((SELECT district_id FROM Districts WHERE district = 'Graubünden'), 'Chur', 7000),
-	((SELECT district_id FROM Districts WHERE district = 'Aargau'), 'Aarau', 5000),
-	((SELECT district_id FROM Districts WHERE district = 'Thurgau'), 'Frauenfeld', 8500),
-	((SELECT district_id FROM Districts WHERE district = 'Tessin'), 'Bellinzona', 6500),
-	((SELECT district_id FROM Districts WHERE district = 'Waadt'), 'Lausanne', 1000),
-	((SELECT district_id FROM Districts WHERE district = 'Wallis'), 'Sitten', 1950),
-	((SELECT district_id FROM Districts WHERE district = 'Neuenburg'), 'Neuenburg', 2000),
-	((SELECT district_id FROM Districts WHERE district = 'Genf'), 'Genf', 1201),
-	((SELECT district_id FROM Districts WHERE district = 'Jura'), 'Delsberg', 2800);
-go
+INSERT [dbo].[Areas] ([area_id], [latitude], [longitude], [address_id], [additional_info], [square], [employee_id], [landlord_id]) VALUES (1, CAST(47.385870 AS Decimal(9, 6)), CAST(8.523235 AS Decimal(9, 6)), 1, N'Josefswiese', CAST(5000.00 AS Decimal(6, 2)), 1, 5)
+INSERT [dbo].[Areas] ([area_id], [latitude], [longitude], [address_id], [additional_info], [square], [employee_id], [landlord_id]) VALUES (2, CAST(46.853452 AS Decimal(9, 6)), CAST(9.534733 AS Decimal(9, 6)), 18, N'Quaderwiese', CAST(3000.00 AS Decimal(6, 2)), 1, 6)
+SET IDENTITY_INSERT [dbo].[Areas] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CreditChecks] ON 
 
---Anfangsdaten für Adressen
-INSERT INTO Addresses (place_id, address)
-VALUES
-	((SELECT place_id FROM Places WHERE place = 'Zürich-Stadt'), 'Bahnhofstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Bern'), 'Marktgasse'),
-	((SELECT place_id FROM Places WHERE place = 'Luzern'), 'Habsburgerstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Altdorf'), 'Seedorferstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Schwyz'), 'Schützenstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Sarnen'), 'Schwanderstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Stans'), 'Buochsterstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Glarus'), 'Kirchstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Zug'), 'Zugerstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Freiburg'), 'Rue des Alpes'),
-	((SELECT place_id FROM Places WHERE place = 'Solothurn'), 'Gibelinstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Basel'), 'Riehenstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Liestal'), 'Tiergartenstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Schaffhausen'), 'Alpenstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Herisau'), 'Poststrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Appenzell'), 'Hauptgasse'),
-	((SELECT place_id FROM Places WHERE place = 'St. Gallen'), 'Oberstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Chur'), 'Giacomettistrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Aarau'), 'Mühlemattstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Frauenfeld'), 'Oberkirchstrasse'),
-	((SELECT place_id FROM Places WHERE place = 'Bellinzona'), 'Viale Officina'),
-	((SELECT place_id FROM Places WHERE place = 'Lausanne'), 'Rue du Midi'),
-	((SELECT place_id FROM Places WHERE place = 'Sitten'), 'Rue Oscar Bider'),
-	((SELECT place_id FROM Places WHERE place = 'Neuenburg'), 'Rue des Fahys'),
-	((SELECT place_id FROM Places WHERE place = 'Genf'), 'Rue de la Confédération'),
-	((SELECT place_id FROM Places WHERE place = 'Delsberg'), 'Bellevoie');
-go
+INSERT [dbo].[CreditChecks] ([credit_check_id], [employee_id], [seller_id], [visit_date], [approved], [approved_on]) VALUES (1, 1, 7, CAST(N'2020-08-28' AS Date), 1, CAST(N'2020-08-28T01:00:00.000' AS DateTime))
+INSERT [dbo].[CreditChecks] ([credit_check_id], [employee_id], [seller_id], [visit_date], [approved], [approved_on]) VALUES (2, 1, 7, CAST(N'2020-08-28' AS Date), 1, CAST(N'2020-08-28T01:00:00.000' AS DateTime))
+SET IDENTITY_INSERT [dbo].[CreditChecks] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Districts] ON 
 
---Anfangsdaten für Abonnemente
-INSERT INTO Subscriptions ("name", duration, rental_properties_quantity, price)
-VALUES
-	('Probe Abo', 2, 1, 100),
-	('Halbjährliches Abo', 6, 1, 400),
-	('Jährliches Abo', 12, 1, 600),
-	('Regional Abo', 6, 3, 600);
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (19, N'Aargau')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (15, N'Appenzell Ausserrhoden')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (16, N'Appenzell Innerrhoden')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (13, N'Basel-Landschaft')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (12, N'Basel-Stadt')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (2, N'Bern')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (10, N'Freiburg')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (25, N'Genf')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (8, N'Glarus')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (18, N'Graubünden')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (26, N'Jura')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (3, N'Luzern')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (24, N'Neuenburg')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (7, N'Nidwalden')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (6, N'Obwalden')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (14, N'Schaffhausen')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (5, N'Schwyz')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (11, N'Solothurn')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (17, N'St. Gallen')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (21, N'Tessin')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (20, N'Thurgau')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (4, N'Uri')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (22, N'Waadt')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (23, N'Wallis')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (9, N'Zug')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (1, N'Zürich')
+SET IDENTITY_INSERT [dbo].[Districts] OFF
+GO
+SET IDENTITY_INSERT [dbo].[EmployeeRoles] ON 
+
+INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (1, N'Kundendienst')
+INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (2, N'Standortverwalter')
+INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (3, N'Qualitätsinspektion')
+INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (4, N'Buchhaltung')
+SET IDENTITY_INSERT [dbo].[EmployeeRoles] OFF
+GO
+INSERT [dbo].[Employees] ([employee_id], [employee_role_id], [hourly_salary]) VALUES (1, 1, CAST(25.00 AS Decimal(6, 2)))
+INSERT [dbo].[Employees] ([employee_id], [employee_role_id], [hourly_salary]) VALUES (2, 2, CAST(30.00 AS Decimal(6, 2)))
+INSERT [dbo].[Employees] ([employee_id], [employee_role_id], [hourly_salary]) VALUES (3, 3, CAST(70.00 AS Decimal(6, 2)))
+INSERT [dbo].[Employees] ([employee_id], [employee_role_id], [hourly_salary]) VALUES (4, 4, CAST(70.00 AS Decimal(6, 2)))
+GO
+SET IDENTITY_INSERT [dbo].[Events] ON 
+
+INSERT [dbo].[Events] ([event_id], [employee_id], [area_id], [event_date]) VALUES (1, 1, 1, CAST(N'2020-08-30T18:16:12.000' AS DateTime))
+SET IDENTITY_INSERT [dbo].[Events] OFF
+GO
+INSERT [dbo].[Inspectors] ([inspector_id], [hourly_salary]) VALUES (8, CAST(50.00 AS Decimal(6, 2)))
+GO
+INSERT [dbo].[Landlords] ([landlord_id]) VALUES (5)
+INSERT [dbo].[Landlords] ([landlord_id]) VALUES (6)
+GO
+SET IDENTITY_INSERT [dbo].[Persons] ON 
+
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (1, N'Vanda', N'Deplazes', N'vandadeplazes@gmail.com', N'0792009988', NULL, 1, 10)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (2, N'Walter', N'Mozart', N'waltermozart@gmail.com', N'0761234455', 1, 2, 11)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (3, N'Beat', N'Strikt', N'beatstrikt@gmail.com', N'0769998877', 1, 3, 12)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (4, N'Claudius', N'Numerus', N'claudiusnumerus@gmail.com', N'0782367283', 2, 4, 13)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (5, N'Thomas', N'Heinrich', N'thomas.heinrich@zuriimmo.ch', N'044 812 73 82', NULL, 1, 0)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (6, N'Thomas', N'Domenig', N'thomas.domenig@domenig.ch', N'081 284 72 83', NULL, 18, 0)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (7, N'André', N'Glatzl', N'a.g@g.com', N'0108239111', NULL, 10, 0)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (8, N'Inspektor', N'Max', N'inspektor.max@polizei.wien.at', N'019239181', NULL, 23, 0)
+SET IDENTITY_INSERT [dbo].[Persons] OFF
+GO
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (1000, 22, N'Lausanne')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (1201, 25, N'Genf')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (1700, 10, N'Freiburg')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (1950, 23, N'Sitten')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (2000, 24, N'Neuenburg')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (2800, 26, N'Delsberg')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (3000, 2, N'Bern')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (4001, 12, N'Basel')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (4410, 13, N'Liestal')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (4500, 11, N'Solothurn')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (5000, 19, N'Aarau')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6000, 3, N'Luzern')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6060, 6, N'Sarnen')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6300, 9, N'Zug')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6370, 7, N'Stans')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6430, 5, N'Schwyz')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6460, 4, N'Altdorf')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6500, 21, N'Bellinzona')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (7000, 18, N'Chur')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8000, 1, N'Zürich-Stadt')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8200, 14, N'Schaffhausen')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8500, 20, N'Frauenfeld')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8750, 8, N'Glarus')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (9000, 17, N'St. Gallen')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (9050, 16, N'Appenzell')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (9100, 15, N'Herisau')
+GO
+SET IDENTITY_INSERT [dbo].[QualityChecks] ON 
+
+INSERT [dbo].[QualityChecks] ([quality_check_id], [inspector_id], [seller_id], [round_check], [approved], [approved_on]) VALUES (1, 8, 7, 1, 1, CAST(N'2020-08-27T18:15:32.510' AS DateTime))
+INSERT [dbo].[QualityChecks] ([quality_check_id], [inspector_id], [seller_id], [round_check], [approved], [approved_on]) VALUES (2, 8, 7, 2, 1, CAST(N'2020-08-27T18:15:47.260' AS DateTime))
+SET IDENTITY_INSERT [dbo].[QualityChecks] OFF
+GO
+SET IDENTITY_INSERT [dbo].[RentalPermissions] ON 
+
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (1, 1, CAST(N'2020-08-01' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (2, 1, CAST(N'2020-10-24' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (3, 1, CAST(N'2020-10-25' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (4, 1, CAST(N'2020-11-01' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (5, 1, CAST(N'2020-11-07' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (6, 1, CAST(N'2020-11-08' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (7, 1, CAST(N'2020-11-14' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (8, 1, CAST(N'2020-11-15' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (9, 1, CAST(N'2020-11-21' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (10, 1, CAST(N'2020-10-18' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (11, 1, CAST(N'2020-11-22' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (12, 1, CAST(N'2020-11-29' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (13, 1, CAST(N'2020-12-05' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (14, 1, CAST(N'2020-12-06' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (15, 1, CAST(N'2020-12-12' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (16, 1, CAST(N'2020-12-13' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (17, 1, CAST(N'2020-12-19' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (18, 1, CAST(N'2020-12-20' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (19, 1, CAST(N'2020-12-26' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (20, 1, CAST(N'2020-11-28' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (21, 1, CAST(N'2020-10-17' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (22, 1, CAST(N'2020-10-11' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (23, 1, CAST(N'2020-10-10' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (24, 1, CAST(N'2020-08-02' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (25, 1, CAST(N'2020-08-08' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (26, 1, CAST(N'2020-08-09' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (27, 1, CAST(N'2020-08-15' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (28, 1, CAST(N'2020-08-16' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (29, 1, CAST(N'2020-08-22' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (30, 1, CAST(N'2020-08-23' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (31, 1, CAST(N'2020-08-29' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (32, 1, CAST(N'2020-08-30' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (33, 1, CAST(N'2020-09-05' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (34, 1, CAST(N'2020-09-06' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (35, 1, CAST(N'2020-09-12' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (36, 1, CAST(N'2020-09-13' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (37, 1, CAST(N'2020-09-19' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (38, 1, CAST(N'2020-09-20' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (39, 1, CAST(N'2020-09-26' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (40, 1, CAST(N'2020-09-27' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (41, 1, CAST(N'2020-10-03' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (42, 1, CAST(N'2020-10-04' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (43, 1, CAST(N'2020-12-27' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (44, 1, CAST(N'2020-10-31' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (45, 2, CAST(N'2020-12-14' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (46, 2, CAST(N'2020-10-17' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (47, 2, CAST(N'2020-10-16' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (48, 2, CAST(N'2020-10-15' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (49, 2, CAST(N'2020-10-14' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (50, 2, CAST(N'2020-10-13' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (51, 2, CAST(N'2020-10-12' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (52, 2, CAST(N'2020-10-11' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (53, 2, CAST(N'2020-10-10' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (54, 2, CAST(N'2020-10-09' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (55, 2, CAST(N'2020-10-08' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (56, 2, CAST(N'2020-10-07' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (57, 2, CAST(N'2020-10-06' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (58, 2, CAST(N'2020-10-05' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (59, 2, CAST(N'2020-10-18' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (60, 2, CAST(N'2020-10-04' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (61, 2, CAST(N'2020-10-02' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (62, 2, CAST(N'2020-10-01' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (63, 2, CAST(N'2020-12-15' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (64, 2, CAST(N'2020-12-16' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (65, 2, CAST(N'2020-12-17' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (66, 2, CAST(N'2020-12-18' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (67, 2, CAST(N'2020-12-19' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (68, 2, CAST(N'2020-12-20' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (69, 2, CAST(N'2020-12-21' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (70, 2, CAST(N'2020-12-22' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (71, 2, CAST(N'2020-12-23' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (72, 2, CAST(N'2020-12-24' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (73, 2, CAST(N'2020-12-25' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (74, 2, CAST(N'2020-10-03' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (75, 2, CAST(N'2020-12-26' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (76, 2, CAST(N'2020-10-19' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (77, 2, CAST(N'2020-10-21' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (78, 2, CAST(N'2020-12-13' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (79, 2, CAST(N'2020-12-12' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (80, 2, CAST(N'2020-12-11' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (81, 2, CAST(N'2020-12-10' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (82, 2, CAST(N'2020-12-09' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (83, 2, CAST(N'2020-12-08' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (84, 2, CAST(N'2020-12-07' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (85, 2, CAST(N'2020-12-06' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (86, 2, CAST(N'2020-12-05' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (87, 2, CAST(N'2020-12-04' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (88, 2, CAST(N'2020-11-08' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (89, 2, CAST(N'2020-11-07' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (90, 2, CAST(N'2020-11-06' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (91, 2, CAST(N'2020-10-20' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (92, 2, CAST(N'2020-11-05' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (93, 2, CAST(N'2020-11-03' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (94, 2, CAST(N'2020-11-02' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (95, 2, CAST(N'2020-11-01' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (96, 2, CAST(N'2020-10-31' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (97, 2, CAST(N'2020-10-30' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (98, 2, CAST(N'2020-10-29' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (99, 2, CAST(N'2020-10-28' AS Date))
+GO
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (100, 2, CAST(N'2020-10-27' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (101, 2, CAST(N'2020-10-26' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (102, 2, CAST(N'2020-10-25' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (103, 2, CAST(N'2020-10-24' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (104, 2, CAST(N'2020-10-23' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (105, 2, CAST(N'2020-10-22' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (106, 2, CAST(N'2020-11-04' AS Date))
+INSERT [dbo].[RentalPermissions] ([rental_permission_id], [area_id], [date]) VALUES (107, 2, CAST(N'2020-12-27' AS Date))
+SET IDENTITY_INSERT [dbo].[RentalPermissions] OFF
+GO
+SET IDENTITY_INSERT [dbo].[RentalProperties] ON 
+
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (11, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (12, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (13, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (14, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (15, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (16, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (17, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (18, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (19, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (20, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (21, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (22, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (23, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (24, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (25, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (26, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (27, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (28, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (29, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (30, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (31, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (32, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (33, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (34, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (35, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (36, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (37, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (38, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (39, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (40, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (41, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (42, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (43, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (44, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (45, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (46, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (47, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (48, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (49, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (50, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (51, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (52, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (53, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (54, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (55, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (56, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (57, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (58, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (59, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (60, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (61, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (62, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (63, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (64, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (65, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (66, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (67, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (68, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (69, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (70, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (71, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (72, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (73, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (74, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (75, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (76, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (77, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (78, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (79, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (80, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (81, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (82, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (83, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (84, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (85, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (86, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (87, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (88, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (89, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (90, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (91, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (92, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (93, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (94, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (95, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (96, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (97, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (98, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (99, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (100, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (101, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (102, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (103, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (104, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (105, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (106, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (107, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (108, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (109, 2, CAST(56.00 AS Decimal(6, 2)))
+GO
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (110, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (111, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (112, 2, CAST(56.00 AS Decimal(6, 2)))
+INSERT [dbo].[RentalProperties] ([rental_property_id], [area_id], [square]) VALUES (113, 2, CAST(56.00 AS Decimal(6, 2)))
+SET IDENTITY_INSERT [dbo].[RentalProperties] OFF
+GO
+INSERT [dbo].[RentalPropertyReservations] ([seller_id], [rental_property_id]) VALUES (7, 12)
+GO
+INSERT [dbo].[Sellers] ([seller_id], [subscription_id], [description], [last_update]) VALUES (7, 3, N'', CAST(N'2020-08-27T13:11:38.217' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[Subscriptions] ON 
+
+INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (1, N'Probe Abo', 2, 1, CAST(100.00 AS Decimal(6, 2)))
+INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (2, N'Halbjährliches Abo', 6, 1, CAST(400.00 AS Decimal(6, 2)))
+INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (3, N'Jährliches Abo', 12, 1, CAST(600.00 AS Decimal(6, 2)))
+INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (4, N'Regional Abo', 6, 3, CAST(600.00 AS Decimal(6, 2)))
+SET IDENTITY_INSERT [dbo].[Subscriptions] OFF
+GO

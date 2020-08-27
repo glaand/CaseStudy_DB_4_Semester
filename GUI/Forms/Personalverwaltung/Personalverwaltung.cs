@@ -114,7 +114,7 @@ namespace GUI
         {
             switch (e.ClickedItem.Name)
             {
-                case "manageSeller":
+                case "toolStripMenuItem1":
                     new Anbieter_verwalten(this.currentPerson.Sellers).Show();
                     break;
                 default:

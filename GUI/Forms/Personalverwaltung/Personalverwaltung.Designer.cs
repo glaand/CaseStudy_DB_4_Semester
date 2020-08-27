@@ -170,7 +170,7 @@
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "manageSeller";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
             this.toolStripMenuItem1.Text = "Anbieter verwalten";
             // 

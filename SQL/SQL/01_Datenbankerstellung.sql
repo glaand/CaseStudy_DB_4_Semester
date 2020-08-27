@@ -135,7 +135,6 @@ go
 
 create table SalaryOrders(
 	salary_order_id					int				not null,
-	person_id						int				not null,
 	"hours"							int				not null
 );
 go

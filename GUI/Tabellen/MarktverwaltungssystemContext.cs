@@ -251,7 +251,7 @@ namespace GUI.Tabellen
                     .HasColumnType("decimal(6, 2)")
                     .HasDefaultValueSql("((25.00))");
 
-                entity.HasOne(d => d.Inspector)
+                entity.HasOne(d => d.Person)
                     .WithOne(p => p.Inspectors)
                     .HasForeignKey<Inspectors>(d => d.InspectorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -520,7 +520,7 @@ namespace GUI.Tabellen
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_SalaryOrders_Persons");
 
-                entity.HasOne(d => d.SalaryOrder)
+                entity.HasOne(d => d.Order)
                     .WithOne(p => p.SalaryOrders)
                     .HasForeignKey<SalaryOrders>(d => d.SalaryOrderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -545,7 +545,7 @@ namespace GUI.Tabellen
 
                 entity.Property(e => e.SubscriptionId).HasColumnName("subscription_id");
 
-                entity.HasOne(d => d.Seller)
+                entity.HasOne(d => d.Person)
                     .WithOne(p => p.Sellers)
                     .HasForeignKey<Sellers>(d => d.SellerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -594,7 +594,7 @@ namespace GUI.Tabellen
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_SubscriptionsOrders_Subscriptions");
 
-                entity.HasOne(d => d.SubscriptionOrder)
+                entity.HasOne(d => d.Order)
                     .WithOne(p => p.SubscriptionsOrders)
                     .HasForeignKey<SubscriptionsOrders>(d => d.SubscriptionOrderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)

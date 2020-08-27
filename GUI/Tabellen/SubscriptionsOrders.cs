@@ -9,6 +9,6 @@ namespace GUI.Tabellen
         public int SubscriptionId { get; set; }
 
         public virtual Subscriptions Subscription { get; set; }
-        public virtual Orders SubscriptionOrder { get; set; }
+        public virtual Orders Order { get; set; }
     }
 }

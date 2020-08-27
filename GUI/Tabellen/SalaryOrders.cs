@@ -10,6 +10,6 @@ namespace GUI.Tabellen
         public int Hours { get; set; }
 
         public virtual Persons Person { get; set; }
-        public virtual Orders SalaryOrder { get; set; }
+        public virtual Orders Order { get; set; }
     }
 }
