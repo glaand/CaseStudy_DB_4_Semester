@@ -1,7 +1,7 @@
 /*	
 	- Dateiname:		03_03_Berechtigungen-Kontoerstellung.sql
 	- Beschreibung:		Kontoerstellung
-	- Autor:			Andr� Glatzl und Alban Ljutvija
+	- Autor:			André Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.2
 	- Version:			1.0
 	- Datum:			04.08.2020
@@ -11,7 +11,7 @@
 use Marktverwaltungssystem;
 go
 
--- Neues Konto f�r Vanda Deplazes f�r den Kundendienst
+-- Neues Konto für Vanda Deplazes für den Kundendienst
 CREATE LOGIN VandaDeplazes WITH PASSWORD = 'mBGf5RhF[GqyD=mS', CHECK_POLICY = OFF;
 go
 CREATE USER VandaDeplazes FOR LOGIN VandaDeplazes WITH DEFAULT_SCHEMA = Marktverwaltungssystem;
@@ -43,17 +43,14 @@ VALUES
 );
 go
 
-
-
-
-
--- Neues Konto f�r Walter Mozart f�r die Standortverwaltung
+-- Neues Konto für Walter Mozart für die Standortverwaltung
 CREATE LOGIN WalterMozart WITH PASSWORD = '*xC4$1#w9PvK', CHECK_POLICY = OFF;
 go
 CREATE USER WalterMozart FOR LOGIN WalterMozart WITH DEFAULT_SCHEMA = Marktverwaltungssystem;
 go
 ALTER ROLE areaManagement ADD MEMBER WalterMozart;
 go
+
 -- Query zum Persons erstellen mit sql_user_id von sys.database_principals
 INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, address_id, sql_user_id) 
 VALUES 
@@ -78,22 +75,14 @@ VALUES
 );
 go
 
-
-
-
-
-
-
-
-
-
--- Neues Konto f�r Beat Strikt f�r die Qualit�tsinspektion
+-- Neues Konto für Beat Strikt für die Qualitätsinspektion
 CREATE LOGIN BeatStrikt WITH PASSWORD = 'sT!wzbE4bpEX', CHECK_POLICY = OFF;
 go
 CREATE USER BeatStrikt FOR LOGIN BeatStrikt WITH DEFAULT_SCHEMA = Marktverwaltungssystem;
 go
 ALTER ROLE qualityInspection ADD MEMBER BeatStrikt;
 go
+
 -- Query zum Persons erstellen mit sql_user_id von sys.database_principals
 INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, address_id, sql_user_id) 
 VALUES 
@@ -118,22 +107,14 @@ VALUES
 );
 go
 
-
-
-
-
-
-
-
-
-
--- Neues Konto f�r Claudius Numerus f�r die Buchhaltung
+-- Neues Konto für Claudius Numerus für die Buchhaltung
 CREATE LOGIN ClaudiusNumerus WITH PASSWORD = '!nvKXXDoBSaM', CHECK_POLICY = OFF;
 go
 CREATE USER ClaudiusNumerus FOR LOGIN ClaudiusNumerus WITH DEFAULT_SCHEMA = Marktverwaltungssystem;
 go
 ALTER ROLE accounting ADD MEMBER ClaudiusNumerus;
 go
+
 -- Query zum Persons erstellen mit sql_user_id von sys.database_principals
 INSERT INTO Persons (firstname, lastname, email, phone_nr, manager_id, address_id, sql_user_id) 
 VALUES 
@@ -158,14 +139,7 @@ VALUES
 );
 go
 
-
-
-
-
-
-
-
--- Neues Konto f�r LinuxServer001 f�r die Informationsplattform
+-- Neues Konto für LinuxServer001 für die Informationsplattform
 CREATE LOGIN LinuxServer001 WITH PASSWORD = 'ixLjh@Vb1$cv', CHECK_POLICY = OFF;
 go
 CREATE USER LinuxServer001 FOR LOGIN LinuxServer001 WITH DEFAULT_SCHEMA = Marktverwaltungssystem;

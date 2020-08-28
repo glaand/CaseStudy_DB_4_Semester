@@ -52,6 +52,8 @@ go
  */
 GRANT SELECT, UPDATE, INSERT, DELETE ON Sellers TO customerService;
 go
+GRANT SELECT ON Sellers TO areaManagement;
+go
 GRANT SELECT ON Sellers TO qualityInspection;
 go
 GRANT SELECT ON Sellers TO accounting;
@@ -62,25 +64,42 @@ go
 /*
  *	- Tabelle: Inspectors
  */
+GRANT SELECT ON Inspectors TO customerService;
+go
+GRANT SELECT ON Inspectors TO areaManagement;
+go
 GRANT SELECT ON Inspectors TO accounting;
 go
 
 /*
  *	- Tabelle: Visitors
  */
+GRANT SELECT ON Visitors TO customerService;
+go
+GRANT SELECT ON Visitors TO areaManagement;
+go
 GRANT SELECT, UPDATE, INSERT, DELETE ON Visitors TO informationPlatform;
 go
 
 /*
  *	- Tabelle: Employees
  */
+GRANT SELECT ON Employees TO customerService;
+go
 GRANT SELECT ON Employees TO accounting;
+go
+GRANT SELECT ON Employees TO areaManagement;
 go
 
 /*
  *	- Tabelle: EmployeeRoles
  */
--- NOBODY
+GRANT SELECT ON EmployeeRoles TO customerService;
+go
+GRANT SELECT ON EmployeeRoles TO areaManagement;
+go
+GRANT SELECT ON EmployeeRoles TO accounting;
+go
 
 /*
  *	- Tabelle: CreditChecks
@@ -127,15 +146,15 @@ go
 /*
  *	- Tabelle: RentalPermissions
  */
-GRANT SELECT ON RentalProperties TO customerService;
+GRANT SELECT ON RentalPermissions TO customerService;
 go
-GRANT SELECT, UPDATE, INSERT, DELETE ON RentalProperties TO areaManagement;
+GRANT SELECT, UPDATE, INSERT, DELETE ON RentalPermissions TO areaManagement;
 go
-GRANT SELECT ON RentalProperties TO qualityInspection;
+GRANT SELECT ON RentalPermissions TO qualityInspection;
 go
-GRANT SELECT ON RentalProperties TO accounting;
+GRANT SELECT ON RentalPermissions TO accounting;
 go
-GRANT SELECT ON RentalProperties TO informationPlatform;
+GRANT SELECT ON RentalPermissions TO informationPlatform;
 go
 
 /*

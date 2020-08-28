@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,6 +39,10 @@
             this.round_check = new System.Windows.Forms.ColumnHeader();
             this.approved = new System.Windows.Forms.ColumnHeader();
             this.approved_on = new System.Windows.Forms.ColumnHeader();
+            this.label3 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -64,11 +69,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(406, 45);
+            this.button1.Location = new System.Drawing.Point(408, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 71);
+            this.button1.Size = new System.Drawing.Size(259, 38);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Inspektion erstellen";
+            this.button1.Text = "Inspektionstermin erstellen";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -88,14 +93,17 @@
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // quality_check_id
             // 
             this.quality_check_id.Text = "Inspektionsnummer";
+            this.quality_check_id.Width = 150;
             // 
             // inspector_id
             // 
             this.inspector_id.Text = "Inspektor";
+            this.inspector_id.Width = 100;
             // 
             // seller_id
             // 
@@ -103,15 +111,41 @@
             // 
             // round_check
             // 
-            this.round_check.Text = "Prüfung";
+            this.round_check.Text = "Prüfungsrunde";
+            this.round_check.Width = 100;
             // 
             // approved
             // 
             this.approved.Text = "absolviert";
+            this.approved.Width = 100;
             // 
             // approved_on
             // 
             this.approved_on.Text = "Absolvierungsdatum";
+            this.approved_on.Width = 150;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(408, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(329, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Für mehr Optionen, bitte rechtsklick auf Inspektionsnummer ";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 26);
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(256, 22);
+            this.toolStripMenuItem1.Text = "Inspektion als absolviert markieren";
             // 
             // Inspektionsverwaltung
             // 
@@ -119,13 +153,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Inspektionsverwaltung";
             this.Text = "Inspektionsverwaltung";
+            this.Activated += new System.EventHandler(this.Inspektionsverwaltung_Activated);
             this.Load += new System.EventHandler(this.Inspektionsverwaltung_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Inspektionsverwaltung_MouseClick);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +181,8 @@
         private System.Windows.Forms.ColumnHeader round_check;
         private System.Windows.Forms.ColumnHeader approved;
         private System.Windows.Forms.ColumnHeader approved_on;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

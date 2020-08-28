@@ -1,19 +1,18 @@
-﻿using GUI.Forms.Allgemein;
-using GUI.Klassen.ERM;
+﻿using GUI.Forms.Arealverwaltung;
+using GUI.Forms.Mietobjektverwaltung;
+using GUI.Tabellen;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class Areaverwaltung : Form
     {
-        private List<dynamic> dataList;
-        private Area currentArea;
+        private Areas currentArea;
+        private List<Areas> areas;
         public Areaverwaltung()
         {
             InitializeComponent();
@@ -21,22 +20,33 @@ namespace GUI
 
         private void loadListview()
         {
-            this.dataList = (new Area()).selectAll();
+            areas = Program.db.Areas
+                .Include(a => a.Address)
+                .Include(a => a.Address.Place)
+                .Include(a => a.Address.Place.District)
+                .Include(a => a.Employee)
+                .Include(a => a.Employee.Person)
+                .Include(a => a.Landlord)
+                .Include(a => a.Landlord.Person)
+                .Include(a => a.RentalProperties)
+                .Include(a => a.RentalPermissions)
+                .ToList();
+
             areaListview.Items.Clear();
-            foreach (Area area in dataList)
+            foreach (Areas area in areas)
             {
-                Person employeePerson = new Person(area.employee.employee_id);
-                Person landlordPerson = new Person(area.landlord.landlord_id);
                 areaListview.Items.Add(new ListViewItem(new[]
                 {
-                    area.area_id.ToString(),
-                    area.latitude.ToString(),
-                    area.longitude.ToString(),
-                    area.address.ToString(),
-                    area.additional_info,
-                    area.square.ToString(),
-                    employeePerson.firstname + " " + employeePerson.lastname + " (" + area.employee.employeeRole.name + ")",
-                    landlordPerson.firstname + " " + landlordPerson.lastname
+                    area.AreaId.ToString(),
+                    area.Latitude.ToString(),
+                    area.Longitude.ToString(),
+                    area.Address.completeAddress(),
+                    area.AdditionalInfo,
+                    area.Square.ToString(),
+                    area.Employee.Person.Firstname + " " + area.Employee.Person.Lastname,
+                    area.Landlord.Person.Firstname + " " + area.Landlord.Person.Lastname,
+                    area.RentalProperties.Count.ToString(),
+                    area.RentalProperties.Count > 0 ? area.RentalProperties.First().Square.ToString() : "--"
                 }));
             }
             areaListview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -57,7 +67,7 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new QueryForm(new Area().insertQuery(), this).Show();
+            new Areal_hinzufügen().Show();
         }
 
         private void areaListview_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +78,74 @@ namespace GUI
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           /* new QueryForm(new RentalProperty().insertQuery(), this).Show();*/
+        }
+
+        private void areaListview_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (areaListview.FocusedItem.Bounds.Contains(e.Location))
+                {
+                    int index = areaListview.FocusedItem.Index;
+                    this.currentArea = this.areas[index];
+                    contextMenuStrip1.Show(Cursor.Position);
+                }
+            }
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Name)
+            {
+                case "toolStripMenuItem1":
+                    {
+                        new Mietobjektverwaltung(this.currentArea).Show();
+                        break;
+                    }
+                case "toolStripMenuItem2":
+                    {
+                        try
+                        {
+                            Program.db.Areas.Remove(this.currentArea);
+                            Program.db.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Fehler beim Löschen.\n\nVersuch zuerst die Mietobjekte zu löschen.");
+                        }
+                        break;
+                    }
+                case "toolStripMenuItem3":
+                    {
+                        new Areal_bearbeiten(this.currentArea).Show();
+                        break;
+                    }
+                case "toolStripMenuItem4":
+                    {
+                        try
+                        {
+                            List<RentalPermissions> eventDates = this.currentArea.RentalPermissions.ToList();
+                            string msg = "An folgende Tagen sind Events bei diesem Areal erlaubt:\r\n\r\n";
+                            foreach (RentalPermissions eventDate in eventDates)
+                            {
+                                msg += eventDate.Date.ToString("dd-MM-yyyy") + "\r\n";
+                            }
+                            MessageBox.Show(msg);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Fehler beim Auflisten von Eventdaten.");
+                        }
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
     }
 }

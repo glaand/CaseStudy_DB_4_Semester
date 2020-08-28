@@ -67,36 +67,6 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>03_03_Berechtigungen-Kontoerstellung.sql</FullPath>
         </FileNode>
-        <FileNode Name="04_01_Views-Kundendienst.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>04_01_Views-Kundendienst.sql</FullPath>
-        </FileNode>
-        <FileNode Name="04_02_Views-Standortverwaltung.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>04_02_Views-Standortverwaltung.sql</FullPath>
-        </FileNode>
-        <FileNode Name="04_03_Views-Qualitätsinspektion.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>04_03_Views-Qualitätsinspektion.sql</FullPath>
-        </FileNode>
-        <FileNode Name="04_04_Views-Buchhaltung.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>04_04_Views-Buchhaltung.sql</FullPath>
-        </FileNode>
-        <FileNode Name="04_05_Views-Informationsplattform.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>04_05_Views-Informationsplattform.sql</FullPath>
-        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Sonstiges" Type="3" Sorted="true">
