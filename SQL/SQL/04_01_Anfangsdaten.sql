@@ -1,15 +1,15 @@
 /*	
 	- Dateiname:		02_04_Anfangsdaten.sql
 	- Beschreibung:		Konditionen und Bedingungen
-	- Autor:			André Glatzl und Alban Ljutvija
+	- Autor:			Andrï¿½ Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.3
 	- Version:			1.0
 	- Datum:			27.08.2020
 */
 
-/*
-ZWEI MAL AUSFÜHREN BITTE
-*/
+-- Zuerstmal alle Constrains deaktivieren
+EXEC sp_MSforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT all";
+go
 
 USE [Marktverwaltungssystem]
 GO
@@ -19,7 +19,7 @@ INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (1, 8000, 
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (2, 3000, N'Marktgasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (3, 6000, N'Habsburgerstrasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (4, 6460, N'Seedorferstrasse')
-INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (5, 6430, N'Schützenstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (5, 6430, N'Schï¿½tzenstrasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (6, 6060, N'Schwanderstrasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (7, 6370, N'Buochsterstrasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (8, 8750, N'Kirchstrasse')
@@ -33,13 +33,13 @@ INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (15, 9100,
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (16, 9050, N'Hauptgasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (17, 9000, N'Oberstrasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (18, 7000, N'Giacomettistrasse')
-INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (19, 5000, N'Mühlemattstrasse')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (19, 5000, N'Mï¿½hlemattstrasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (20, 8500, N'Oberkirchstrasse')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (21, 6500, N'Viale Officina')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (22, 1000, N'Rue du Midi')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (23, 1950, N'Rue Oscar Bider')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (24, 2000, N'Rue des Fahys')
-INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (25, 1201, N'Rue de la Confédération')
+INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (25, 1201, N'Rue de la Confï¿½dï¿½ration')
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (26, 2800, N'Bellevoie')
 SET IDENTITY_INSERT [dbo].[Addresses] OFF
 GO
@@ -66,7 +66,7 @@ INSERT [dbo].[Districts] ([district_id], [district]) VALUES (2, N'Bern')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (10, N'Freiburg')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (25, N'Genf')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (8, N'Glarus')
-INSERT [dbo].[Districts] ([district_id], [district]) VALUES (18, N'Graubünden')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (18, N'Graubï¿½nden')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (26, N'Jura')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (3, N'Luzern')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (24, N'Neuenburg')
@@ -82,14 +82,14 @@ INSERT [dbo].[Districts] ([district_id], [district]) VALUES (4, N'Uri')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (22, N'Waadt')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (23, N'Wallis')
 INSERT [dbo].[Districts] ([district_id], [district]) VALUES (9, N'Zug')
-INSERT [dbo].[Districts] ([district_id], [district]) VALUES (1, N'Zürich')
+INSERT [dbo].[Districts] ([district_id], [district]) VALUES (1, N'Zï¿½rich')
 SET IDENTITY_INSERT [dbo].[Districts] OFF
 GO
 SET IDENTITY_INSERT [dbo].[EmployeeRoles] ON 
 
 INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (1, N'Kundendienst')
 INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (2, N'Standortverwalter')
-INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (3, N'Qualitätsinspektion')
+INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (3, N'Qualitï¿½tsinspektion')
 INSERT [dbo].[EmployeeRoles] ([employee_role_id], [name]) VALUES (4, N'Buchhaltung')
 SET IDENTITY_INSERT [dbo].[EmployeeRoles] OFF
 GO
@@ -110,13 +110,13 @@ INSERT [dbo].[Landlords] ([landlord_id]) VALUES (6)
 GO
 SET IDENTITY_INSERT [dbo].[Persons] ON 
 
-INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (1, N'Vanda', N'Deplazes', N'vandadeplazes@gmail.com', N'0792009988', NULL, 1, 10)
-INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (2, N'Walter', N'Mozart', N'waltermozart@gmail.com', N'0761234455', 1, 2, 11)
-INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (3, N'Beat', N'Strikt', N'beatstrikt@gmail.com', N'0769998877', 1, 3, 12)
-INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (4, N'Claudius', N'Numerus', N'claudiusnumerus@gmail.com', N'0782367283', 2, 4, 13)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (1, N'Vanda', N'Deplazes', N'vandadeplazes@gmail.com', N'0792009988', NULL, 1, (select principal_id from sys.database_principals where "name" = 'VandaDeplazes'))
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (2, N'Walter', N'Mozart', N'waltermozart@gmail.com', N'0761234455', 1, 2, (select principal_id from sys.database_principals where "name" = 'WalterMozart'))
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (3, N'Beat', N'Strikt', N'beatstrikt@gmail.com', N'0769998877', 1, 3, (select principal_id from sys.database_principals where "name" = 'BeatStrikt'))
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (4, N'Claudius', N'Numerus', N'claudiusnumerus@gmail.com', N'0782367283', 2, 4, (select principal_id from sys.database_principals where "name" = 'ClaudiusNumerus'))
 INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (5, N'Thomas', N'Heinrich', N'thomas.heinrich@zuriimmo.ch', N'044 812 73 82', NULL, 1, 0)
 INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (6, N'Thomas', N'Domenig', N'thomas.domenig@domenig.ch', N'081 284 72 83', NULL, 18, 0)
-INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (7, N'André', N'Glatzl', N'a.g@g.com', N'0108239111', NULL, 10, 0)
+INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (7, N'Andrï¿½', N'Glatzl', N'a.g@g.com', N'0108239111', NULL, 10, 0)
 INSERT [dbo].[Persons] ([person_id], [firstname], [lastname], [email], [phone_nr], [manager_id], [address_id], [sql_user_id]) VALUES (8, N'Inspektor', N'Max', N'inspektor.max@polizei.wien.at', N'019239181', NULL, 23, 0)
 SET IDENTITY_INSERT [dbo].[Persons] OFF
 GO
@@ -139,7 +139,7 @@ INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6430, 5, N'Sc
 INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6460, 4, N'Altdorf')
 INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (6500, 21, N'Bellinzona')
 INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (7000, 18, N'Chur')
-INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8000, 1, N'Zürich-Stadt')
+INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8000, 1, N'Zï¿½rich-Stadt')
 INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8200, 14, N'Schaffhausen')
 INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8500, 20, N'Frauenfeld')
 INSERT [dbo].[Places] ([place_id], [district_id], [place]) VALUES (8750, 8, N'Glarus')
@@ -380,8 +380,12 @@ GO
 SET IDENTITY_INSERT [dbo].[Subscriptions] ON 
 
 INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (1, N'Probe Abo', 2, 1, CAST(100.00 AS Decimal(6, 2)))
-INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (2, N'Halbjährliches Abo', 6, 1, CAST(400.00 AS Decimal(6, 2)))
-INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (3, N'Jährliches Abo', 12, 1, CAST(600.00 AS Decimal(6, 2)))
+INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (2, N'Halbjï¿½hrliches Abo', 6, 1, CAST(400.00 AS Decimal(6, 2)))
+INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (3, N'Jï¿½hrliches Abo', 12, 1, CAST(600.00 AS Decimal(6, 2)))
 INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (4, N'Regional Abo', 6, 3, CAST(600.00 AS Decimal(6, 2)))
 SET IDENTITY_INSERT [dbo].[Subscriptions] OFF
 GO
+
+-- Alle Constrains wiederaktivieren
+exec sp_MSforeachtable @command1="print '?'", @command2="ALTER TABLE ? WITH CHECK CHECK CONSTRAINT all";
+go
