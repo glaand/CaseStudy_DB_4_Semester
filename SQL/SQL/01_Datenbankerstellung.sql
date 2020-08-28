@@ -2,13 +2,13 @@
 /*	
 	- Dateiname:		01_Datenbankerstellung.sql
 	- Beschreibung:		Datenbankerstellung und Aufbau der Tabellen
-	- Autor:			Andr� Glatzl und Alban Ljutvija
+	- Autor:			André Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.1
 	- Version:			1.0
 	- Datum:			19.07.2020
 */
 
--- Datenbank l�schen, falls es existiert
+-- Datenbank löschen, falls es existiert
 
 drop database if exists Marktverwaltungssystem;
 
@@ -135,7 +135,6 @@ go
 
 create table SalaryOrders(
 	salary_order_id					int				not null,
-	person_id						int				not null,
 	"hours"							int				not null
 );
 go
@@ -200,8 +199,3 @@ create table Districts (
 	district						varchar(50)		not null,
 );
 go
-
-
-
-
-

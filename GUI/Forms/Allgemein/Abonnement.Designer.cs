@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.subscriptions_id = new System.Windows.Forms.ColumnHeader();
             this.name = new System.Windows.Forms.ColumnHeader();
@@ -60,15 +59,6 @@
             this.label2.Size = new System.Drawing.Size(250, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "Freie Marktgruppe";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(436, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(275, 61);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Abonnemente erstellen";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // listView1
             // 
@@ -113,11 +103,11 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Abonnement";
             this.Text = "Abonnement";
+            this.Activated += new System.EventHandler(this.Abonnement_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +117,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader subscriptions_id;
         private System.Windows.Forms.ColumnHeader name;

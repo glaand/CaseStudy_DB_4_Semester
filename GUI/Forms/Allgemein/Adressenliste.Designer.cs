@@ -37,7 +37,6 @@
             this.address = new System.Windows.Forms.ColumnHeader();
             this.place = new System.Windows.Forms.ColumnHeader();
             this.district = new System.Windows.Forms.ColumnHeader();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,10 +44,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(47, 50);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(25, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(567, 47);
+            this.label1.Size = new System.Drawing.Size(288, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Marktverwaltungssystem";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,10 +55,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(47, 128);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(25, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(482, 54);
+            this.label2.Size = new System.Drawing.Size(250, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "Freie Marktgruppe";
             // 
@@ -77,9 +74,10 @@
             this.place,
             this.district});
             this.addressListview.HideSelection = false;
-            this.addressListview.Location = new System.Drawing.Point(47, 233);
+            this.addressListview.Location = new System.Drawing.Point(25, 109);
+            this.addressListview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.addressListview.Name = "addressListview";
-            this.addressListview.Size = new System.Drawing.Size(1454, 779);
+            this.addressListview.Size = new System.Drawing.Size(785, 367);
             this.addressListview.TabIndex = 4;
             this.addressListview.UseCompatibleStateImageBehavior = false;
             this.addressListview.View = System.Windows.Forms.View.Details;
@@ -108,27 +106,16 @@
             // 
             this.district.Text = "Kanton";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(635, 131);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(284, 66);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Zurück";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button4_Click);
-            // 
             // Adressenliste
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1547, 1055);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(833, 495);
             this.Controls.Add(this.addressListview);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "Adressenliste";
             this.Text = "Adressenliste";
             this.Activated += new System.EventHandler(this.Adressenliste_Activated);
@@ -148,6 +135,5 @@
         private System.Windows.Forms.ColumnHeader address;
         private System.Windows.Forms.ColumnHeader place;
         private System.Windows.Forms.ColumnHeader district;
-        private System.Windows.Forms.Button button1;
     }
 }
