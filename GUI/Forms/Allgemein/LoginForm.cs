@@ -35,7 +35,7 @@ namespace GUI
             String password = passwordTextbox.Text;
             loginButton.Text = "Bitte warten...";
 
-            Program.db = new CustomMarktverwaltungssystemContext(username, password);
+            Program.db = new CustomMarktverwaltungssystemContext(username, password, comboBox1.Text);
 
             if (Program.CheckConnection())
             {

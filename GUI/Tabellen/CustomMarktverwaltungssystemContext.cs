@@ -11,12 +11,14 @@ namespace GUI.Tabellen
     {
         public string username;
         private string password;
+        public string ipaddress;
 
         public CustomMarktverwaltungssystemContext() : base() { }
-        public CustomMarktverwaltungssystemContext(string username, string password) : base()
+        public CustomMarktverwaltungssystemContext(string username, string password, string ipaddress) : base()
         {
             this.username = username;
             this.password = password;
+            this.ipaddress = ipaddress;
         }
 
         public CustomMarktverwaltungssystemContext(DbContextOptions<MarktverwaltungssystemContext> options)
@@ -28,7 +30,7 @@ namespace GUI.Tabellen
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=34.65.73.57;Database=Marktverwaltungssystem;User ID=" + this.username + ";Password=" + this.password + ";Trusted_Connection=True;Integrated Security=False");
+                optionsBuilder.UseSqlServer("Server=" + this.ipaddress + ";Database=Marktverwaltungssystem;User ID=" + this.username + ";Password=" + this.password + ";Trusted_Connection=True;Integrated Security=False");
             }
         }
     }
