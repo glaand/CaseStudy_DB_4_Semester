@@ -62,7 +62,7 @@ namespace GUI.Forms.Mietobjektverwaltung
                 }
                 catch (Exception ex)
                 {
-                    if (ex.InnerException.Message.Contains("permission was denied"))
+                    if (ex.InnerException != null && ex.InnerException.Message.Contains("permission was denied"))
                     {
                         MessageBox.Show("Du hast keine Berechtigungen dafür.");
                     } else
