@@ -14,21 +14,25 @@ go
 
 DROP VIEW IF exists SUBSCRIPTIONS_SALES;
 GO
+
 -- Anzahl Verkäufe
+-- Eine Auflistung welche uns zeigt, wie viele Zahlungen pro Anbieter getätigt wurden.
 
 CREATE VIEW SUBSCRIPTIONS_SALES
 AS
-SELECT Subscriptions."name",
-		Subscriptions.duration,
-		SubscriptionsOrders.subscription_order_id,
-		Sellers.seller_id,
-		Persons.firstname,
-		Persons.lastname,
-		(SELECT COUNT(subscription_order_id)FROM SubscriptionsOrders) AS TOTAL_SALES
-		FROM Sellers INNER JOIN Subscriptions ON Subscriptions.subscription_id = Sellers.subscription_id
-		INNER JOIN Persons ON Persons.person_id = Sellers.seller_id
-		INNER JOIN SubscriptionsOrders ON SubscriptionsOrders.subscription_id = Subscriptions.subscription_id
-		INNER JOIN Orders ON Orders.order_id = SubscriptionsOrders.subscription_order_id;
+SELECT
+	MAX(Subscriptions."name") AS Abo,
+	MAX(Subscriptions.duration) AS Dauer,
+	Sellers.seller_id,
+	MAX(Persons.firstname) AS Vorname,
+	MAX(Persons.lastname) AS Nachname,
+	SUM(Subscriptions.price) AS Gesamtsumme
+	FROM Sellers
+	INNER JOIN Persons ON Persons.person_id = Sellers.seller_id
+	INNER JOIN Subscriptions ON Subscriptions.subscription_id = Sellers.subscription_id
+	INNER JOIN SubscriptionsOrders ON SubscriptionsOrders.subscription_id = Subscriptions.subscription_id
+	INNER JOIN Orders ON Orders.order_id = SubscriptionsOrders.subscription_order_id
+	GROUP BY Sellers.seller_id
 GO
 SELECT * FROM SUBSCRIPTIONS_SALES;
 GO
