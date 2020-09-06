@@ -7,12 +7,13 @@
 	- Datum:			27.08.2020
 */
 
+USE [Marktverwaltungssystem]
+GO
+
 -- Zuerstmal alle Constrains deaktivieren
 EXEC sp_MSforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT all";
 go
 
-USE [Marktverwaltungssystem]
-GO
 SET IDENTITY_INSERT [dbo].[Addresses] ON 
 
 INSERT [dbo].[Addresses] ([address_id], [place_id], [address]) VALUES (1, 8000, N'Bahnhofstrasse')
@@ -384,6 +385,96 @@ INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_pro
 INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (3, N'J�hrliches Abo', 12, 1, CAST(600.00 AS Decimal(6, 2)))
 INSERT [dbo].[Subscriptions] ([subscription_id], [name], [duration], [rental_properties_quantity], [price]) VALUES (4, N'Regional Abo', 6, 3, CAST(600.00 AS Decimal(6, 2)))
 SET IDENTITY_INSERT [dbo].[Subscriptions] OFF
+GO
+
+SET IDENTITY_INSERT [dbo].[InvoiceItem] ON 
+
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (1, 1, 1)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (2, 2, 2)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (3, 3, 3)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (4, 4, 4)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (5, 5, 5)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (6, 6, 6)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (7, 7, 7)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (8, 8, 8)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (9, 9, 9)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (10, 10, 10)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (11, 11, 11)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (12, 12, 12)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (13, 13, 13)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (14, 14, 14)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (15, 15, 15)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (16, 16, 16)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (17, 17, 17)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (18, 18, 18)
+INSERT [dbo].[InvoiceItem] ([invoice_item_id], [invoice_id], [order_id]) VALUES (19, 19, 19)
+SET IDENTITY_INSERT [dbo].[InvoiceItem] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Invoices] ON 
+
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (1, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-08-07T12:16:29.770' AS DateTime), CAST(N'2020-08-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (2, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-07-07T12:16:29.770' AS DateTime), CAST(N'2020-07-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (3, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-06-07T12:16:29.770' AS DateTime), CAST(N'2020-06-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (4, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-05-07T12:16:29.770' AS DateTime), CAST(N'2020-05-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (5, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-04-07T12:16:29.770' AS DateTime), CAST(N'2020-04-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (6, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-03-07T12:16:29.770' AS DateTime), CAST(N'2020-03-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (7, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-02-07T12:16:29.770' AS DateTime), CAST(N'2020-02-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (8, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-01-07T12:16:29.770' AS DateTime), CAST(N'2020-01-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (9, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2019-12-07T12:16:29.770' AS DateTime), CAST(N'2019-12-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (10, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2019-11-07T12:16:29.770' AS DateTime), CAST(N'2019-11-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (11, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2019-10-07T12:16:29.770' AS DateTime), CAST(N'2019-10-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (12, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2019-09-07T12:16:29.770' AS DateTime), CAST(N'2019-09-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (13, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-08-07T12:16:29.770' AS DateTime), CAST(N'2020-08-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (14, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-07-07T12:16:29.770' AS DateTime), CAST(N'2020-07-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (15, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-06-07T12:16:29.770' AS DateTime), CAST(N'2020-06-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (16, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-05-07T12:16:29.770' AS DateTime), CAST(N'2020-05-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (17, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-04-07T12:16:29.770' AS DateTime), CAST(N'2020-04-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (18, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-03-07T12:16:29.770' AS DateTime), CAST(N'2020-03-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (19, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-02-07T12:16:29.770' AS DateTime), CAST(N'2020-02-06T12:16:29.770' AS DateTime))
+SET IDENTITY_INSERT [dbo].[Invoices] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Orders] ON 
+
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (1, CAST(N'2020-08-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (2, CAST(N'2020-07-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (3, CAST(N'2020-06-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (4, CAST(N'2020-05-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (5, CAST(N'2020-04-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (6, CAST(N'2020-03-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (7, CAST(N'2020-02-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (8, CAST(N'2020-01-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (9, CAST(N'2019-12-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (10, CAST(N'2019-11-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (11, CAST(N'2019-10-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (12, CAST(N'2019-09-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (13, CAST(N'2020-08-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (14, CAST(N'2020-07-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (15, CAST(N'2020-06-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (16, CAST(N'2020-05-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (17, CAST(N'2020-04-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (18, CAST(N'2020-03-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+INSERT [dbo].[Orders] ([order_id], [created_on], [total_price]) VALUES (19, CAST(N'2020-02-06T12:06:14.180' AS DateTime), CAST(600.00 AS Decimal(9, 2)))
+SET IDENTITY_INSERT [dbo].[Orders] OFF
+GO
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (1, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (2, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (3, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (4, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (5, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (6, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (7, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (8, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (9, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (10, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (11, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (12, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (13, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (14, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (15, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (16, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (17, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (18, 3)
+INSERT [dbo].[SubscriptionsOrders] ([subscription_order_id], [subscription_id]) VALUES (19, 3)
 GO
 
 -- Alle Constrains wiederaktivieren
