@@ -15,38 +15,50 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Abfrage</ApplicationName>
         </ConnectionNode>
+        <ConnectionNode Name="ALBAN:ALBAN\a_lju">
+          <Created>2020-09-06T17:10:12.0814012+02:00</Created>
+          <Type>SQL</Type>
+          <Server>ALBAN</Server>
+          <UserName />
+          <Authentication>Windows-Authentifizierung</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Abfrage</ApplicationName>
+        </ConnectionNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Abfragen" Type="0" Sorted="true">
       <Items>
         <FileNode Name="01_Datenbankerstellung.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>01_Datenbankerstellung.sql</FullPath>
         </FileNode>
         <FileNode Name="02_01_Constraint-Primary-Keys.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>02_01_Constraint-Primary-Keys.sql</FullPath>
         </FileNode>
         <FileNode Name="02_02_Constraint-Foreign-Keys.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>02_02_Constraint-Foreign-Keys.sql</FullPath>
         </FileNode>
         <FileNode Name="02_03_Constraint-Conditions.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>02_03_Constraint-Conditions.sql</FullPath>
         </FileNode>
         <FileNode Name="02_04_Indexes.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>02_04_Indexes.sql</FullPath>
         </FileNode>
         <FileNode Name="02_05_Views.sql">
@@ -56,27 +68,27 @@
           <FullPath>02_05_Views.sql</FullPath>
         </FileNode>
         <FileNode Name="03_01_Berechtigungen-Rollenerstellung.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>03_01_Berechtigungen-Rollenerstellung.sql</FullPath>
         </FileNode>
         <FileNode Name="03_02_Berechtigungen-Grants.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>03_02_Berechtigungen-Grants.sql</FullPath>
         </FileNode>
         <FileNode Name="03_03_Berechtigungen-Kontoerstellung.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>03_03_Berechtigungen-Kontoerstellung.sql</FullPath>
         </FileNode>
         <FileNode Name="04_01_Anfangsdaten.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ALBAN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ALBAN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>04_01_Anfangsdaten.sql</FullPath>
         </FileNode>
       </Items>

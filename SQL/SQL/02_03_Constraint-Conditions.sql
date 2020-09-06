@@ -13,8 +13,15 @@ use Marktverwaltungssystem;
 
 -- E-Mail Adresse muss einzigartig sein 
 alter table Persons
-add constraint UQ_Email unique (email);
+add constraint UQ_Email unique (email)
 go
+
+-- gültige E-Mail Adresse
+alter table Persons 
+add constraint CH_Email check (email LIKE '%_@_%');
+
+alter table Persons 
+add constraint CH_Phone check (phone_nr not like '%[^0-9]%');
 
 -- Das Eventdatum darf nicht in der Vergangenheit stattfinden
 
