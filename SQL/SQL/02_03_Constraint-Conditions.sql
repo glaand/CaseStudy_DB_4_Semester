@@ -60,6 +60,11 @@ alter table CreditChecks
 add constraint CC_Date check (visit_date < approved_on or approved_on is null);
 go
 
+-- Besichtigungsdatum darf nicht in der Vergangenheit sein.
+alter table CreditChecks
+add constraint CC_Date_Past check (visit_date > CURRENT_TIMESTAMP);
+go
+
 -- Round-Checks bearbeiten
 alter table QualityChecks
 add default (1) for round_check;

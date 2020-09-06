@@ -52,8 +52,8 @@ SET IDENTITY_INSERT [dbo].[Areas] OFF
 GO
 SET IDENTITY_INSERT [dbo].[CreditChecks] ON 
 
-INSERT [dbo].[CreditChecks] ([credit_check_id], [employee_id], [seller_id], [visit_date], [approved], [approved_on]) VALUES (1, 1, 7, CAST(N'2020-08-28' AS Date), 1, CAST(N'2020-08-28T01:00:00.000' AS DateTime))
-INSERT [dbo].[CreditChecks] ([credit_check_id], [employee_id], [seller_id], [visit_date], [approved], [approved_on]) VALUES (2, 1, 7, CAST(N'2020-08-28' AS Date), 1, CAST(N'2020-08-28T01:00:00.000' AS DateTime))
+INSERT [dbo].[CreditChecks] ([credit_check_id], [employee_id], [seller_id], [visit_date], [approved], [approved_on]) VALUES (1, 1, 7, CAST(N'2020-10-28' AS Date), 1, CAST(N'2020-10-28T01:00:00.000' AS DateTime))
+INSERT [dbo].[CreditChecks] ([credit_check_id], [employee_id], [seller_id], [visit_date], [approved], [approved_on]) VALUES (2, 1, 7, CAST(N'2020-10-28' AS Date), 1, CAST(N'2020-10-28T01:00:00.000' AS DateTime))
 SET IDENTITY_INSERT [dbo].[CreditChecks] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Districts] ON 
