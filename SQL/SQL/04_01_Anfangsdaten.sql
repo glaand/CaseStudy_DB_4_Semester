@@ -101,7 +101,7 @@ INSERT [dbo].[Employees] ([employee_id], [employee_role_id], [hourly_salary]) VA
 GO
 SET IDENTITY_INSERT [dbo].[Events] ON 
 
-INSERT [dbo].[Events] ([event_id], [employee_id], [area_id], [event_date]) VALUES (1, 1, 1, CAST(N'2020-08-30T18:16:12.000' AS DateTime))
+INSERT [dbo].[Events] ([event_id], [employee_id], [area_id], [event_date]) VALUES (1, 1, 1, CAST(N'2020-12-20T18:16:12.000' AS DateTime))
 SET IDENTITY_INSERT [dbo].[Events] OFF
 GO
 INSERT [dbo].[Inspectors] ([inspector_id], [hourly_salary]) VALUES (8, CAST(50.00 AS Decimal(6, 2)))
