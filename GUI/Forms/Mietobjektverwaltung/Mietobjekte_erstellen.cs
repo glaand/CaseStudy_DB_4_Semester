@@ -22,18 +22,35 @@ namespace GUI.Forms.Arealverwaltung
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int countProperties = (int)Math.Floor(this.area.Square / this.numericUpDown1.Value);
-            for (int i = 0; i < countProperties; i++)
+            Program.db.Database.BeginTransaction();
+            try
             {
-                var rentalProperty = new RentalProperties
+                int countProperties = (int)Math.Floor(this.area.Square / this.numericUpDown1.Value);
+                for (int i = 0; i < countProperties; i++)
                 {
-                    AreaId = this.area.AreaId,
-                    Square = this.numericUpDown1.Value
-                };
-                Program.db.RentalProperties.Add(rentalProperty);
+                    var rentalProperty = new RentalProperties
+                    {
+                        AreaId = this.area.AreaId,
+                        Square = this.numericUpDown1.Value
+                    };
+                    Program.db.RentalProperties.Add(rentalProperty);
+                }
+                MessageBox.Show(countProperties.ToString() + " neue Mietobjekte wurden erstellt.");
+                Program.db.SaveChanges();
+                Program.db.Database.CommitTransaction();
             }
-            MessageBox.Show(countProperties.ToString() + " neue Mietobjekte wurden erstellt.");
-            Program.db.SaveChanges();
+            catch (Exception ex)
+            {
+                Program.db.Database.RollbackTransaction();
+                if (ex.InnerException.Message.Contains("permission was denied"))
+                {
+                    MessageBox.Show("Du hast keine Berechtigungen dafür.");
+                }
+                else
+                {
+                    MessageBox.Show("Ein Fehler ist aufgetreten.");
+                }
+            }
         }
     }
 }
