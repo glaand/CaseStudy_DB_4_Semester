@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical">
+  <Class Name="GUI.Forms.Allgemein.Abonnement" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAIAACAABBAAAACAAAACAAAEgAAIAAAAgIAACAA=</HashCode>
+      <FileName>Forms\Allgemein\Abonnement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Allgemein.Adressenliste" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAECAAACMABBAAAACAAAACAAIAQAAAAAAAoQAAAAA=</HashCode>
+      <FileName>Forms\Allgemein\Adressenliste.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.LoginForm" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAhESAACAAAAiAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\Allgemein\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.WelcomeForm" Collapsed="true">
+    <Position X="9.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAQQASAAALAABiCggBACAAAYAAAAAGAhAAACQAg=</HashCode>
+      <FileName>Forms\Allgemein\WelcomeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Areaverwaltung" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAQAAAACAAVBQKAACJAID/CwISAAAAADCICAAAJAA=</HashCode>
+      <FileName>Forms\Arealverwaltung\Arealverwaltung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Personalverwaltung" Collapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBQAAChChABBAiAACAGAL+AQIAAiAAAUBIQQgAAEA=</HashCode>
+      <FileName>Forms\Personalverwaltung\Personalverwaltung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Program" Collapsed="true">
+    <Position X="18.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAQAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Arealverwaltung.Areal_bearbeiten" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAQAABICAAgBAQAACAAAACCAAIAAAAEEAACAAAIAE=</HashCode>
+      <FileName>Forms\Arealverwaltung\Areal bearbeiten.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Arealverwaltung.Areal_hinzufügen" Collapsed="true">
+    <Position X="11.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAQAABACABABAQAACAAAACCAAIAAAAEEAACAAAIAA=</HashCode>
+      <FileName>Forms\Arealverwaltung\Areal hinzufügen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Arealverwaltung.Mietobjekte_erstellen" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAIAABAAEAAAAAAAAE=</HashCode>
+      <FileName>Forms\Mietobjektverwaltung\Mietobjekte_erstellen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Eventverwaltung.Event_erstellen" Collapsed="true">
+    <Position X="13.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEABAAACIAABACAACIAIACAAAIAEAAAEAAAAAAAAA=</HashCode>
+      <FileName>Forms\Eventverwaltung\Event erstellen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Eventverwaltung.Eventverwaltung" Collapsed="true">
+    <Position X="18.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACBAACCAAABAABADAAAACAAAIAAIAAECAAIAAAAE=</HashCode>
+      <FileName>Forms\Eventverwaltung\Eventverwaltung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Inspektionsverwaltung.Inspektionstermin_erstellen" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIBAAACAAQBAAJACAAAACAAAIAAAAAkAAAAAAAAA=</HashCode>
+      <FileName>Forms\Inspektionsverwaltung\Inspektionstermin erstellen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Inspektionsverwaltung.Inspektionsverwaltung" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgCAAAKBARBACABSBAABDAgQIAAAAAEAAAIAAEAA=</HashCode>
+      <FileName>Forms\Inspektionsverwaltung\Inspektionsverwaltung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Mietobjektverwaltung.Mietobjektverwaltung" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABFAAAACAAAACCAAYAAAAAGAAYIAAAAE=</HashCode>
+      <FileName>Forms\Mietobjektverwaltung\Mietobjektverwaltung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Personalverwaltung.Anbieter_verwalten" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>85CIABAAACEAABAQgACBKIQCAMB6AAQAAHAIIAAAAIA=</HashCode>
+      <FileName>Forms\Personalverwaltung\Anbieter verwalten.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Personalverwaltung.Mietobjekte_auswählen" Collapsed="true">
+    <Position X="18.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAQAAACAAQBAAAgDAABACAIAIAAEECACEQQAAAAU=</HashCode>
+      <FileName>Forms\Personalverwaltung\Mietobjekte auswählen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Personalverwaltung.RPRectangle" Collapsed="true">
+    <Position X="13.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAACAAAAAAAAAAAE=</HashCode>
+      <FileName>Forms\Personalverwaltung\Mietobjekte auswählen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Personalverwaltung.Anmeldung___Öko_Bonitätsprüfung" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABACAAABAQAACAAAACAAAIAAAAAEIAAAjAAAA=</HashCode>
+      <FileName>Forms\Personalverwaltung\Öko-Bonitätsprüfung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Forms.Personalverwaltung.Person_eintragen" Collapsed="true">
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAgAAAAAChAABAwAACAAAACAAAIAAAgAEAAAEAAAAA=</HashCode>
+      <FileName>Forms\Personalverwaltung\Person eintragen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Addresses" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAACAAAACAEAAAIEABAA=</HashCode>
+      <FileName>Tabellen\Addresses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Areas" Collapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAAEAAAAAAAAAICAAACgAAAACCIAJgAAACAAA=</HashCode>
+      <FileName>Tabellen\Areas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.CreditChecks" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAAAACAAAAAIAAAAAAAAAACAAAAQAAAAAAAAACCAA=</HashCode>
+      <FileName>Tabellen\CreditChecks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.CustomMarktverwaltungssystemContext" Collapsed="true">
+    <Position X="4" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAIAAAAAAAAEAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Tabellen\CustomMarktverwaltungssystemContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Districts" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAAA=</HashCode>
+      <FileName>Tabellen\Districts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.EmployeeRoles" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabellen\EmployeeRoles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Employees" Collapsed="true">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAAIAAABAAAAAAAAAAAgCAAAAAACAAAAACAAA=</HashCode>
+      <FileName>Tabellen\Employees.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Events" Collapsed="true">
+    <Position X="16.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAACAAAAAAAIAAAAQBCAAA=</HashCode>
+      <FileName>Tabellen\Events.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Inspectors" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabellen\Inspectors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.InvoiceItem" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQg=</HashCode>
+      <FileName>Tabellen\InvoiceItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Invoices" Collapsed="true">
+    <Position X="15" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAAACCAAAEAAAAAAAAAAACAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Tabellen\Invoices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Landlords" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Tabellen\Landlords.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.MarktverwaltungssystemContext" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAFQAQIAAQASAAAAAgAACAQAGgiAAECAAGBkACEAAAA=</HashCode>
+      <FileName>Tabellen\MarktverwaltungssystemContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Orders" Collapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAACAAAAAAAAAAAAAAACQAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Tabellen\Orders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Persons" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAEAAACAABAAMAgAICAQACAAAhAACAAAgACEAAAg=</HashCode>
+      <FileName>Tabellen\Persons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Places" Collapsed="true">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAQAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAABAA=</HashCode>
+      <FileName>Tabellen\Places.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.QualityChecks" Collapsed="true">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAAAAAiAAAAAAAAAAAAAAAAAAAAgQBAAAAAAAAACAA=</HashCode>
+      <FileName>Tabellen\QualityChecks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.RentalPermissions" Collapsed="true">
+    <Position X="9.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABIAAAAQAAAAA=</HashCode>
+      <FileName>Tabellen\RentalPermissions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.RentalProperties" Collapsed="true">
+    <Position X="16.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAAIAAgAQAAAAA=</HashCode>
+      <FileName>Tabellen\RentalProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.RentalPropertyReservations" Collapsed="true">
+    <Position X="11.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAACAA=</HashCode>
+      <FileName>Tabellen\RentalPropertyReservations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.SalaryOrders" Collapsed="true">
+    <Position X="15" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Tabellen\SalaryOrders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Sellers" Collapsed="true">
+    <Position X="16.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAQAAAAEIAgAAAAAAAAAAAQAAAAAUBAACAAAAAAAAA=</HashCode>
+      <FileName>Tabellen\Sellers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Subscriptions" Collapsed="true">
+    <Position X="18.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEQACAAEAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabellen\Subscriptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.SubscriptionsOrders" Collapsed="true">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAEIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabellen\SubscriptionsOrders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Tabellen.Visitors" Collapsed="true">
+    <Position X="18.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAACAAAAAAAAAAAAAAKAAAAAAAAAAA=</HashCode>
+      <FileName>Tabellen\Visitors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
