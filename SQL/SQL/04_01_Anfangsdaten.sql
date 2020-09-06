@@ -424,13 +424,13 @@ INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_o
 INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (10, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2019-11-07T12:16:29.770' AS DateTime), CAST(N'2019-11-06T12:16:29.770' AS DateTime))
 INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (11, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2019-10-07T12:16:29.770' AS DateTime), CAST(N'2019-10-06T12:16:29.770' AS DateTime))
 INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (12, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2019-09-07T12:16:29.770' AS DateTime), CAST(N'2019-09-06T12:16:29.770' AS DateTime))
-INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (13, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-08-07T12:16:29.770' AS DateTime), CAST(N'2020-08-06T12:16:29.770' AS DateTime))
-INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (14, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-07-07T12:16:29.770' AS DateTime), CAST(N'2020-07-06T12:16:29.770' AS DateTime))
-INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (15, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-06-07T12:16:29.770' AS DateTime), CAST(N'2020-06-06T12:16:29.770' AS DateTime))
-INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (16, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-05-07T12:16:29.770' AS DateTime), CAST(N'2020-05-06T12:16:29.770' AS DateTime))
-INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (17, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-04-07T12:16:29.770' AS DateTime), CAST(N'2020-04-06T12:16:29.770' AS DateTime))
-INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (18, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-03-07T12:16:29.770' AS DateTime), CAST(N'2020-03-06T12:16:29.770' AS DateTime))
-INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (19, 10, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-02-07T12:16:29.770' AS DateTime), CAST(N'2020-02-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (13, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-08-07T12:16:29.770' AS DateTime), CAST(N'2020-08-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (14, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-07-07T12:16:29.770' AS DateTime), CAST(N'2020-07-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (15, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-06-07T12:16:29.770' AS DateTime), CAST(N'2020-06-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (16, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-05-07T12:16:29.770' AS DateTime), CAST(N'2020-05-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (17, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-04-07T12:16:29.770' AS DateTime), CAST(N'2020-04-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (18, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-03-07T12:16:29.770' AS DateTime), CAST(N'2020-03-06T12:16:29.770' AS DateTime))
+INSERT [dbo].[Invoices] ([invoice_id], [person_id], [vat], [paid_on], [created_on]) VALUES (19, 7, CAST(7.70 AS Decimal(5, 2)), CAST(N'2020-02-07T12:16:29.770' AS DateTime), CAST(N'2020-02-06T12:16:29.770' AS DateTime))
 SET IDENTITY_INSERT [dbo].[Invoices] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Orders] ON 
