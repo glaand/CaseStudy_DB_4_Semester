@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SQL">
   <Items>
-    <LogicalFolder Name="Verbindungen" Type="2" Sorted="true">
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="34.65.73.57:sa">
           <Created>2020-07-15T20:37:19.09561+02:00</Created>
@@ -17,7 +17,7 @@
         </ConnectionNode>
       </Items>
     </LogicalFolder>
-    <LogicalFolder Name="Abfragen" Type="0" Sorted="true">
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="01_Datenbankerstellung.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
@@ -43,11 +43,11 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>02_03_Constraint-Conditions.sql</FullPath>
         </FileNode>
-        <FileNode Name="02_04_Anfangsdaten.sql">
+        <FileNode Name="02_04_Indexes.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>02_04_Anfangsdaten.sql</FullPath>
+          <FullPath>02_04_Indexes.sql</FullPath>
         </FileNode>
         <FileNode Name="03_01_Berechtigungen-Rollenerstellung.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
@@ -67,9 +67,15 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>03_03_Berechtigungen-Kontoerstellung.sql</FullPath>
         </FileNode>
+        <FileNode Name="04_01_Anfangsdaten.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:34.65.73.57:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>34.65.73.57</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>04_01_Anfangsdaten.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
-    <LogicalFolder Name="Sonstiges" Type="3" Sorted="true">
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
       <Items />
     </LogicalFolder>
   </Items>

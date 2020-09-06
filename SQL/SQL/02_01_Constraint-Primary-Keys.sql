@@ -1,7 +1,7 @@
 /*	
 	- Dateiname:		02_01_Constraint-Primary-Keys.sql
-	- Beschreibung:		Primärschlüsselvergabe
-	- Autor:			André Glatzl und Alban Ljutvija
+	- Beschreibung:		PrimÃ¤rschlÃ¼sselvergabe
+	- Autor:			AndrÃ© Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.1
 	- Version:			1.0
 	- Datum:			21.07.2020

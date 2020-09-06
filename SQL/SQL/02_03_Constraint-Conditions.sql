@@ -1,7 +1,7 @@
 /*	
 	- Dateiname:		02_03_Constraint-Conditions.sql
 	- Beschreibung:		Konditionen und Bedingungen
-	- Autor:			André Glatzl und Alban Ljutvija
+	- Autor:			AndrÃ© Glatzl und Alban Ljutvija
 	- Arbeitspaktet:	3.1
 	- Version:			1.0
 	- Datum:			21.07.2020
@@ -67,17 +67,17 @@ alter table Places
 add constraint PLZ check (place_id BETWEEN 1000 AND 9999);
 go
 
--- Werte für duration müssen grösser als 0 sein
+-- Werte fï¿½r duration mï¿½ssen grï¿½sser als 0 sein
 alter table Subscriptions
 add constraint unsigned check ("duration" > 0);
 go
 
--- Werte für square müssen grösser als 0 sein
+-- Werte fï¿½r square mï¿½ssen grï¿½sser als 0 sein
 alter table Areas
 add constraint "Areas_square" check ("square" > 0);
 go
 
--- Werte für square müssen grösser als 0 sein
+-- Werte fï¿½r square mï¿½ssen grï¿½sser als 0 sein
 alter table RentalProperties
 add constraint "RP_square" check ("square" > 0);
 go
@@ -87,12 +87,12 @@ alter table Areas
 add constraint latitude_range check (latitude BETWEEN -90 AND 90);
 go
 
--- Längengrade min. & max. Werte
+-- Lï¿½ngengrade min. & max. Werte
 alter table Areas
 add constraint longitude_range check (longitude BETWEEN -180 AND 80);
 go
 
--- Zahlungsdatum muss grösser als Erstelldatum sein
+-- Zahlungsdatum muss grï¿½sser als Erstelldatum sein
 alter table Invoices
 add constraint date_check check (paid_on > created_on);
 go

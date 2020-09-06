@@ -70,6 +70,8 @@ GRANT SELECT ON Inspectors TO areaManagement;
 go
 GRANT SELECT ON Inspectors TO accounting;
 go
+GRANT SELECT ON Inspectors TO qualityInspection;
+go
 
 /*
  *	- Tabelle: Visitors
