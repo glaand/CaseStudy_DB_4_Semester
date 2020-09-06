@@ -61,6 +61,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtWebprofil = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -393,12 +396,42 @@
             this.comboBox2.Size = new System.Drawing.Size(143, 23);
             this.comboBox2.TabIndex = 10;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(26, 401);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(118, 15);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Webprofil bearbeiten";
+            // 
+            // txtWebprofil
+            // 
+            this.txtWebprofil.Location = new System.Drawing.Point(32, 432);
+            this.txtWebprofil.Multiline = true;
+            this.txtWebprofil.Name = "txtWebprofil";
+            this.txtWebprofil.Size = new System.Drawing.Size(357, 191);
+            this.txtWebprofil.TabIndex = 12;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(32, 629);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(357, 31);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Webprofil speichern";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Anbieter_verwalten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 695);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txtWebprofil);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button4);
@@ -455,5 +488,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtWebprofil;
+        private System.Windows.Forms.Button button3;
     }
 }

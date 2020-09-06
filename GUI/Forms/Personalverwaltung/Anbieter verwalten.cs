@@ -129,6 +129,9 @@ namespace GUI.Forms.Personalverwaltung
             comboBox2.DataSource = new BindingSource(areaItems, null);
             comboBox2.DisplayMember = "Value";
             comboBox2.ValueMember = "Key";
+
+            // Webprofil bearbeiten
+            txtWebprofil.Text = this.seller.Description;
         }
 
         private void Anbieter_verwalten_Activated(object sender, EventArgs e)
@@ -166,6 +169,31 @@ namespace GUI.Forms.Personalverwaltung
         private void button4_Click(object sender, EventArgs e)
         {
             new Mietobjekte_auswählen(((KeyValuePair<Areas, String>)this.comboBox2.SelectedItem).Key, this.seller).Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        { 
+            if (this.seller.LastUpdate != null && ((DateTime)this.seller.LastUpdate).AddDays(31) > DateTime.Now)
+            {
+                MessageBox.Show("Das Webprofil vom Anbieter darf nur 1-mal im Monat bearbeitet werden.");
+                return;
+            }
+
+            Program.db.Database.BeginTransaction();
+            try
+            {
+                this.seller.Description = txtWebprofil.Text;
+                this.seller.LastUpdate = DateTime.Now;
+                Program.db.SaveChanges();
+                Program.db.Database.CommitTransaction();
+                MessageBox.Show("Das Webprofil wurde erfolgreich gespeichert.");
+            }
+            catch (Exception ex)
+            {
+                Program.db.Database.RollbackTransaction();
+                MessageBox.Show("Ein Fehler ist aufgetreten.");
+            }
+
         }
     }
 }
