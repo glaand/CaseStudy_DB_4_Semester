@@ -30,8 +30,10 @@ SELECT
 	FROM Sellers
 	INNER JOIN Persons ON Persons.person_id = Sellers.seller_id
 	INNER JOIN Subscriptions ON Subscriptions.subscription_id = Sellers.subscription_id
+	INNER JOIN Invoices ON Invoices.person_id = Sellers.seller_id
+	INNER JOIN InvoiceItem ON InvoiceItem.invoice_id = Invoices.invoice_id
+	INNER JOIN Orders ON Orders.order_id = InvoiceItem.order_id
 	INNER JOIN SubscriptionsOrders ON SubscriptionsOrders.subscription_id = Subscriptions.subscription_id
-	INNER JOIN Orders ON Orders.order_id = SubscriptionsOrders.subscription_order_id
 	GROUP BY Sellers.seller_id
 GO
 SELECT * FROM SUBSCRIPTIONS_SALES;
