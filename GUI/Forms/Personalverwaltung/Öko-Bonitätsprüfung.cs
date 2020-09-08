@@ -41,6 +41,11 @@ namespace GUI.Forms.Personalverwaltung
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (monthCalendar1.SelectionRange.Start < DateTime.Now)
+            {
+                MessageBox.Show("Die Öko-Bonitätsprüfung darf nicht in der Vergangenheit stattfinden.");
+                return;
+            }
             Program.db.Database.BeginTransaction();
             try
             {
