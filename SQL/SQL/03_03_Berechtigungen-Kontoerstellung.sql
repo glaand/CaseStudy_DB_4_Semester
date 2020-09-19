@@ -2,7 +2,7 @@
 	- Dateiname:		03_03_Berechtigungen-Kontoerstellung.sql
 	- Beschreibung:		Kontoerstellung
 	- Autor:			André Glatzl und Alban Ljutvija
-	- Arbeitspaktet:	3.2
+	- Arbeitspaktet:	3.3
 	- Version:			1.0
 	- Datum:			04.08.2020
 */
